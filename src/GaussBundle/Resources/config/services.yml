@@ -1,0 +1,4 @@
+services:
+#    gauss.example:
+#        class: GaussBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

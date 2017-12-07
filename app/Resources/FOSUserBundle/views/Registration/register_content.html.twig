@@ -1,0 +1,57 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="page-wrapper" style="padding: 70px;">
+    <section class="section" id="page-login">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-offset-3">
+                    <div class="box">
+                        <h2>Register</h2><br>
+                        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'register-form inputs-border inputs-bg'}}) }}
+
+                        <div class="form-group">
+                            <div class="required">
+                                {{ form_widget(form.username, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Username'} }) }}
+                            </div>
+                            <div class="form-group text-right">
+                                {{ form_errors(form.username) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="required">
+                                {{ form_widget(form.email, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Email'} }) }}
+                            </div>
+                            <div class="form-group text-right">
+                                {{ form_errors(form.username) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="required">
+                                {{ form_widget(form.plainPassword.first, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Password' } } ) }}
+                            </div>
+                            <div class="form-group text-right">
+                                {{ form_errors(form.plainPassword.first) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="required">
+                                {{ form_widget(form.plainPassword.second, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Confirme Password'} } ) }}
+                            </div>
+                            <div class="form-group text-right">
+                                {{ form_errors(form.plainPassword.second) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-default">{{ 'registration.submit'|trans }}</button>
+                        </div>
+                        {{ form_end(form) }}
+
+                    </div><!-- /.box -->
+                </div>
+
+
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- #page-login -->
+</div><!-- /.page-wrapper -->

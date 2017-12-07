@@ -5,7 +5,9 @@
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
-            "GaussBundle\\": "src/GaussBundle"
+            "GaussBundle\\": "src/GaussBundle",
+            "UserBundle\\": "src/UserBundle",
+            "MultimediaBundle\\": "src/MultimediaBundle"
         },
         "classmap": [
             "app/AppKernel.php",

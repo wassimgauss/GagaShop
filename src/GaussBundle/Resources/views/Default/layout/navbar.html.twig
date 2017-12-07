@@ -20,10 +20,29 @@
                 </ul>
             </div>
         </div>
-
         <ul class="pull-right list-inline">
-            <li><a href="#!">My account</a></li>
-            <li><a href="wishlist.html">My Wishlist</a></li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                <li><a href="#!"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
+                <li><a href="wishlist.html">My Wishlist</a></li>
+
+            {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+
+                <li><a href="#!"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
+                <li><a href="wishlist.html">My Wishlist</a></li>
+
+            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                <div class="list-select">
+                    <div class="inner-select">
+                        <div class="selected" style="margin-left: -39px;"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</div>
+                        <ul>
+                            <li><a href="{{ path('fos_user_security_login') }}"> LOGIN </a></li>
+                            <li><a href="{{ path('fos_user_registration_register') }}"> REGISTER </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <li><a href="wishlist.html">My Wishlist</a></li>
+            {% endif %}
         </ul>
         <div class="clearfix"></div>
     </nav><!-- /.sub-navbar -->
@@ -47,7 +66,7 @@
                     <ul class="dropdown-menu">
                         <div class="dropdown-wrap" slim-scroll="√">
                             <li>
-                                <a href="product.html"><img src="build/img/products/2.jpg" class="img-responsive product-img" alt=""></a>
+                                <a href="product.html"><img src="{{ asset('build/img/products/2.jpg') }}" class="img-responsive product-img" alt=""></a>
                                 <div class="product-details">
                                     <p class="product-title clearfix"><a href="product.html">Bag Dark Beige</a></p>
                                     <p class="product-price clearfix">
@@ -58,21 +77,21 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="product.html"><img src="build/img/products/24.jpg" class="img-responsive product-img" alt=""></a>
+                                <a href="product.html"><img src="{{ asset('build/img/products/24.jpg') }}" class="img-responsive product-img" alt=""></a>
                                 <div class="product-details">
                                     <p class="product-title clearfix"><a href="product.html">Shoes Maroon</a></p>
                                     <div class="product-price clearfix">$80.99</div>
                                 </div>
                             </li>
                             <li>
-                                <a href="product.html"><img src="build/img/products/3.jpg" class="img-responsive product-img" alt=""></a>
+                                <a href="product.html"><img src="{{ asset('build/img/products/3.jpg') }}" class="img-responsive product-img" alt=""></a>
                                 <div class="product-details">
                                     <p class="product-title clearfix"><a href="product.html">Unisex Cap</a></p>
                                     <div class="product-price clearfix">$99.99</div>
                                 </div>
                             </li>
                             <li>
-                                <a href="product.html"><img src="build/img/products/12.jpg" class="img-responsive product-img" alt=""></a>
+                                <a href="product.html"><img src="{{ asset('build/img/products/13.jpg') }}" class="img-responsive product-img" alt=""></a>
                                 <div class="product-details">
                                     <p class="product-title clearfix"><a href="product.html">Twill Silk Scarf</a></p>
                                     <div class="product-price clearfix">$49.99</div>

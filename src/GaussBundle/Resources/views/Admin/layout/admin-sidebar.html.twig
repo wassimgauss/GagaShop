@@ -1,0 +1,31 @@
+<div class="col-md-3">
+    <div class="shop-sidebar shop-sidebar-left">
+        <div class="widgets">
+
+            {% block widget_search %}
+            {{ include ('@Gauss/Shop/layout/widget-search.html.twig') }}
+            {% endblock %}
+
+            {% block widget_price_filter %}
+            {#{{ include ('@Gauss/Shop/layout/widget-price-filter.twig') }}#}
+            {% endblock %}
+
+            {% block widget_sizes %}
+            {#{{ include ('@Gauss/Shop/layout/widget-sizes.html.twig') }}#}
+            {% endblock %}
+
+            {% block widget_categories %}
+            {{ include ('@Gauss/Admin/layout/widget-categories.html.twig') }}
+            {% endblock %}
+
+            {% block widget_top_seller %}
+            {#{{ include ('@Gauss/Shop/layout/widget-top-seller.html.twig') }}#}
+            {% endblock %}
+
+            {% block widget_instagram %}
+           {# {{ include ('@Gauss/Shop/layout/widget-instagram.html.twig') }}#}
+            {% endblock %}
+
+        </div><!-- /.widgets -->
+    </div><!-- /.shop-sidebar -->
+</div>

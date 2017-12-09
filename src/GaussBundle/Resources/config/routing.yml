@@ -1,3 +1,15 @@
 homepage:
     path:     /
     defaults: { _controller: GaussBundle:Default:index }
+
+shoppage:
+    path:     /shop
+    defaults: { _controller: GaussBundle:Shop:index }
+
+adminpage:
+    path:     /admin
+    defaults: { _controller: GaussBundle:Admin:index }
+
+adminpage_add_product:
+    path:     /admin/addProduct
+    defaults: { _controller: GaussBundle:Admin:addProduct }

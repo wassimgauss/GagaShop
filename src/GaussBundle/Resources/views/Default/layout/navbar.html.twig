@@ -23,13 +23,16 @@
         <ul class="pull-right list-inline">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-                <li><a href="#!"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
+                <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
                 <li><a href="wishlist.html">My Wishlist</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
             {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 
-                <li><a href="#!"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
+                <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
                 <li><a href="wishlist.html">My Wishlist</a></li>
+                <li><a href="wishlist.html"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
             {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
                 <div class="list-select">
@@ -42,7 +45,9 @@
                     </div>
                 </div>
                 <li><a href="wishlist.html">My Wishlist</a></li>
+
             {% endif %}
+
         </ul>
         <div class="clearfix"></div>
     </nav><!-- /.sub-navbar -->
@@ -54,8 +59,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index-2.html">
-                    <img src="build/img/logo.svg" alt="Sham Theme">
+                <a class="navbar-brand" href="{{ path('homepage') }}">
+                    <img src="{{ asset('build/img/satellite.png') }}" alt="Sham Theme" class="img-responsive" style="max-width:40px; margin-top: -4px;">
                 </a>
             </div>
             <ul class="navbar-nav navbar-icons">
@@ -146,7 +151,7 @@
                         </ul>
                     </li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="{{ path('shoppage') }}">Contact</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container -->

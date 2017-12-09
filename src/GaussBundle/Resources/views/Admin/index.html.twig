@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+
+{% block navbar %}
+      {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+      <div class="page-head content-top-margin">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-8 col-sm-7">
+               <ol class="breadcrumb">
+                  <li><a href="index-2.html">Home</a></li>
+                  <li class="active">Products</li>
+               </ol>
+            </div>
+         </div><!-- /.row -->
+      </div><!-- /.container -->
+      </div><!-- /.page-head -->
+{% endblock %}
+{% block slider %}
+   {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}
+{% endblock %}
+
+{% block collection %}
+  {# {{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
+{% endblock %}
+
+{% block promotion %}
+   {#{{ include ('@Gauss/Default/layout/promotion.html.twig') }}#}
+{% endblock %}
+
+{% block content %}
+<section class="section products-grid second-style">
+   <div class="container">
+      <div class="row">
+
+         {% block shop_sidebar %}
+            {{ include ('@Gauss/Admin/layout/admin-sidebar.html.twig') }}
+         {% endblock %}
+
+          {% block shop_body %}
+            {#{{ include ('@Gauss/Admin/layout/admin-body.html.twig') }}#}
+                  <div class="col-md-9">
+                      <div class="masonry row">
+
+
+
+                      </div><!-- /.masonry -->
+                  </div>
+          {% endblock %}
+      </div><!-- /.row -->
+      </div>
+   </div><!-- /.container -->
+</section><!-- /.products-grid -->
+{% endblock %}
+
+{% block brands %}
+
+{% endblock %}
+
+{% block footer %}
+   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+{% endblock %}

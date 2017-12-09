@@ -32,7 +32,9 @@
                         </form>
                     </div><!-- /.box -->
                     {% if error %}
-                        <div class="btn btn-default" >{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        <div class=" col-sm-8 col-lg-offset-2">
+                        <div class="btn btn-default" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        </div>
                     {% endif %}
                 </div>
 

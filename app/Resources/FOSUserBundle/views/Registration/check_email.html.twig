@@ -3,5 +3,27 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
+<div class="page-wrapper" style="padding: 70px;">
+    <section class="section" id="page-login">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-offset-3">
+                    <div class="box">
+                        <h2>Registration Success</h2><br>
+
+
     <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+
+                    </div><!-- /.box -->
+                    <div class="form-group text-right">
+                        <a  href="https://mail.google.com/" class="btn btn-default"> <i class="fa fa-envelope" aria-hidden="true"></i>
+                            Acces to Gmail </a>
+                    </div>
+                </div>
+
+
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- #page-login -->
+</div><!-- /.page-wrapper -->
 {% endblock fos_user_content %}

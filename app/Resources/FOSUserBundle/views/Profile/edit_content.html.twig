@@ -1,8 +1,55 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
+
+
+<div class="page-wrapper" style="padding: 70px;">
+    <section class="section" id="page-login">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12 col-md-6 col-lg-offset-3 ">
+                    <div class="box">
+                        <h2>Edit Account </h2><br>
+
+
+                        {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'register-form inputs-border inputs-bg' } }) }}
+
+                        <div class="form-group">
+                            <div class="required">
+                                {{ form_widget(form.username, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Username'} }) }}
+                            </div>
+                            <div class="form-group text-right">
+                                {{ form_errors(form.username) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="required">
+                                {{ form_widget(form.email, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Email'} }) }}
+                            </div>
+                            <div class="form-group text-right">
+                                {{ form_errors(form.username) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="required">
+                                {{ form_widget(form.current_password, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Password' } } ) }}
+                            </div>
+                            <div class="form-group text-right">
+                                {{ form_errors(form.current_password) }}
+                            </div>
+                        </div>
+                        <div class="form-group text-right">
+                            <input type="submit" class="btn btn-default" value="{{ 'profile.edit.submit'|trans }}" />
+                        </div>
+                        {{ form_end(form) }}
+
+                    </div><!-- /.box -->
+                    <div class="form-group text-right">
+                        <a  href="{{ path('fos_user_profile_edit') }}" class="btn btn-default"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a>
+                    </div>
+                </div>
+
+
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- #page-login -->
+</div><!-- /.page-wrapper -->

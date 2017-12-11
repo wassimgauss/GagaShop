@@ -1,11 +1,23 @@
 {% extends "base.html.twig" %}
 
 {% block navbar %}
-   {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+
+   <div class="container">
+      <div class="panel panel-default">
+         {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+      </div>
+   </div>
+
 {% endblock %}
 
+
 {% block slider %}
-   {{ include ('@Gauss/Default/layout/slider.html.twig') }}
+   <div class="container">
+      <div class="row">
+         {{ include ('@Gauss/Default/layout/slider.html.twig') }}
+      </div>
+   </div>
+
 {% endblock %}
 
 {% block collection %}

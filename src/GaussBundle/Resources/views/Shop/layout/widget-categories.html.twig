@@ -1,7 +1,12 @@
 <div class="widget widget-categories">
     <h3 class="widget-title">Categories</h3>
     <ul>
-        <li>
+        {% for category in listCategory %}
+            <li>
+                <a href="#!">{{ category.nom }} <span class="count">(6)</span></a>
+            </li>
+        {% endfor %}
+{#        <li>
             <a href="#!">Chairs <span class="count">(6)</span></a>
         </li>
         <li>
@@ -20,6 +25,6 @@
         </li>
         <li>
             <a href="#!">Lighting <span class="count">(4)</span></a>
-        </li>
+        </li>#}
     </ul>
 </div><!-- /.widget-categories -->

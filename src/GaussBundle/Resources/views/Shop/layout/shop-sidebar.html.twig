@@ -11,15 +11,17 @@
             {% endblock %}
 
             {% block widget_sizes %}
-            {{ include ('@Gauss/Shop/layout/widget-sizes.html.twig') }}
+           {# {{ include ('@Gauss/Shop/layout/widget-sizes.html.twig') }}#}
             {% endblock %}
 
             {% block widget_categories %}
-            {{ include ('@Gauss/Shop/layout/widget-categories.html.twig') }}
+            {#{{ include ('@Gauss/Shop/layout/widget-categories.html.twig') }}#}
+                {{ render(controller('GaussBundle:Shop:getCategory')) }}
             {% endblock %}
 
             {% block widget_top_seller %}
-            {{ include ('@Gauss/Shop/layout/widget-top-seller.html.twig') }}
+           {# {{ include ('@Gauss/Shop/layout/widget-top-seller.html.twig') }}#}
+                {{ render(controller('GaussBundle:Shop:getTopSeller')) }}
             {% endblock %}
 
             {% block widget_instagram %}

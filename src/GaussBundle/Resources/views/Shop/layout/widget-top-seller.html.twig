@@ -1,33 +1,38 @@
 <div class="widget widget-top-seller">
     <h3 class="widget-title">Top Seller</h3>
     <ul>
+        {% for productTop in listProductTop %}
         <li class="clearfix">
             <div class="media">
                 <div class="media-left pull-left">
                     <a href="#">
-                        <img class="media-object img-responsive" src="build/img/products/20.jpg">
+                        <img class="media-object img-responsive" src="{{ asset(productTop.image.webPath) }}">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading"><a href="product.html">Men Cap</a></h4>
+                    <h4 class="media-heading"><a href="product.html">{{ productTop.nameProduct }}</a></h4>
                     <div class="rating">
                         <div class="star-rating">
-                            <span style="width:90%"></span>
+                            <span style="width:{{ productTop.classement * 20 }}%"></span>
                         </div>
                     </div>
                     <p class="price">
+                        {% if(productTop.otherPrice > 0) %}
                         <del>
-                            <span class="amount">$200.00</span>
+
+                            <span class="amount">{{ productTop.otherPrice }}</span>
                         </del>
+                        {% endif %}
                         <ins>
-                            <span class="amount">$450.00</span>
+                            <span class="amount">{{ productTop.currentPrice }}.000 TTc</span>
                         </ins>
                     </p>
                 </div>
             </div>
         </li>
+        {% endfor %}
 
-        <li class="clearfix">
+{#        <li class="clearfix">
             <div class="media">
                 <div class="media-left pull-left">
                     <a href="#">
@@ -74,6 +79,6 @@
                     </p>
                 </div>
             </div>
-        </li>
+        </li>#}
     </ul>
 </div><!-- /.widget-top-seller -->

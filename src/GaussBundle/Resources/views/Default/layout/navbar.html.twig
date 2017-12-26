@@ -1,12 +1,12 @@
 <div class="nav-container navbar-fixed-top nav-sticky">
-            <nav class="sub-navbar row">
+            <nav class="sub-navbar" style="background-color:#B0BEC5">
                 <div class="list-select">
                     <div class="inner-select">
-                        <div class="selected">&nbsp;&nbsp;EN</div>
+                        <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
                         <ul>
-                            <li><a href="#!">&nbsp;&nbsp;EN</a></li>
-                            <li><a href="#!">&nbsp;&nbsp;AR</a></li>
-                            <li><a href="#!">&nbsp;&nbsp;TR</a></li>
+                            <li><a href="#!">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
+                            <li><a href="#!">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
+                            <li><a href="#!">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
                         </ul>
                     </div>
                 </div>
@@ -35,23 +35,25 @@
                         <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
                     {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                        <div class="list-select">
+{#                        <div class="list-select">
                             <div class="inner-select">
-                                <div class="selected" style="margin-left: -39px;"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</div>
+                                <div class="selected" style="margin-left: -45px;"><i class="fa fa-user-circle" aria-hidden="true"></i> My account&nbsp;</div>
                                 <ul>
-                                    <li><a href="{{ path('fos_user_security_login') }}"> LOGIN </a></li>
-                                    <li><a href="{{ path('fos_user_registration_register') }}"> REGISTER </a></li>
+                                    <li><a href="{{ path('fos_user_security_login') }}">&nbsp;&nbsp;&nbsp;LOGIN&nbsp;&nbsp;&nbsp;</a></li>
+                                    <li><a href="{{ path('fos_user_registration_register') }}">&nbsp;&nbsp;&nbsp;REGISTER&nbsp;&nbsp;&nbsp;</a></li>
                                 </ul>
                             </div>
-                        </div>
-                        <li><a href="wishlist.html">My Wishlist</a></li>
+                        </div>#}
+                        <li><a href="{{ path('fos_user_security_login') }}">&nbsp;LOGIN&nbsp;</a></li>
+                        <li><a href="{{ path('fos_user_registration_register') }}">REGISTER&nbsp;</a></li>
+                        <li><a href="wishlist.html">My Wishlist&nbsp;&nbsp;</a></li>
 
                     {% endif %}
 
                 </ul>
                 <div class="clearfix"></div>
             </nav><!-- /.sub-navbar -->
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default" style="background-color:#B0BEC5">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -60,7 +62,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="{{ path('homepage') }}">
-                            <img src="{{ asset('build/img/satellite.png') }}" alt="Sham Theme" class="img-responsive" style="max-width:40px; margin-top: -4px;">
+                            <img src="{{ asset('build/img/apple_icons_114x114.png') }}" alt="Sham Theme" class="img-responsive" style="max-width:40px; margin-top: 0px;">
                         </a>
                     </div>
                     <ul class="navbar-nav navbar-icons">
@@ -104,7 +106,7 @@
                                     </li>
                                 </div>
                                 <li class="dropdown-footer">
-                                    <a href="cart.html">View Cart</a>
+                                    <a href="{{ path('adminpage_view_cart') }}">View Cart</a>
                                 </li>
                             </ul>
                         </li>
@@ -150,7 +152,7 @@
                                     <li><a href="faqs.html">FAQ'S</a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="{{ path('adminpage_view_cart') }}">About</a></li>
                             <li><a href="{{ path('shoppage') }}">Contact</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->

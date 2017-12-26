@@ -22,11 +22,35 @@ class Produit
     private $id;
 
     /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="GaussBundle\Entity\Category", inversedBy="produits", cascade={"persist","merge"})
+     * @ORM\JoinColumn(nullable=false, name="category_id", referencedColumnName="id")
+     */
+    private $category;
+
+    /**
      *
      * @ORM\OneToOne(targetEntity="MultimediaBundle\Entity\Image", cascade={"persist", "remove"})
      *
      */
     private $image;
+
+
 
     /**
      * @var string
@@ -70,6 +94,28 @@ class Produit
      */
     private $codeProduct;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="classement", type="integer", nullable=true)
+     */
+    private $classement;
+
+    /**
+     * @return int
+     */
+    public function getClassement()
+    {
+        return $this->classement;
+    }
+
+    /**
+     * @param int $classement
+     */
+    public function setClassement($classement)
+    {
+        $this->classement = $classement;
+    }
 
     /**
      * Get id

@@ -12,4 +12,38 @@ adminpage:
 
 adminpage_add_product:
     path:     /admin/addProduct
-    defaults: { _controller: GaussBundle:Admin:addProduct }
+    defaults: { _controller: GaussBundle:AdminProduct:addProduct }
+
+adminpage_list_product:
+    path:     /admin/allProducts
+    defaults: { _controller: GaussBundle:AdminProduct:listProduct }
+
+adminpage_view_product:
+    path:     /admin/viewProduct/{id_product}
+    defaults: { _controller: GaussBundle:Shop:viewProduct }
+    requirements:
+        id_product: \d+
+
+adminpage_add_category:
+    path:     /admin/addCategory
+    defaults: { _controller: GaussBundle:AdminCategory:addCategory }
+
+adminpage_list_category:
+    path:     /admin/allCategory
+    defaults: { _controller: GaussBundle:AdminCategory:listCategory }
+
+adminpage_view_cart:
+    path:     /admin/viewCart
+    defaults: { _controller: GaussBundle:Panier:viewCart }
+
+adminpage_add_to_cart:
+    path:     /admin/addToCart/{id_product}
+    defaults: { _controller: GaussBundle:Panier:addToCart }
+    requirements:
+        id_product: \d+
+
+adminpage_delete_from_cart:
+    path:     /admin/deleteFromCart/{id_product}
+    defaults: { _controller: GaussBundle:Panier:deleteFromCart }
+    requirements:
+        id_product: \d+

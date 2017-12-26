@@ -2,7 +2,9 @@
 
 namespace GaussBundle\Form;
 
+use GaussBundle\Repository\CategoryRepository;
 use MultimediaBundle\Form\ImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
@@ -21,6 +23,16 @@ class ProduitType extends AbstractType
     {
         $builder
             ->add('nameProduct',TextType::class)
+            ->add('category', EntityType::class, array(
+                'label' => 'Select category:',
+                'class' => 'GaussBundle:Category',
+                'choice_label' => 'nom',
+                'multiple' => false,
+                'expanded' => false,
+                'query_builder' => function (CategoryRepository $er){
+                    return $er->createQueryBuilder('c')
+                        ;
+                }))
             ->add('descriptionProduct',TextareaType::class)
             ->add('currentPrice',IntegerType::class)
             ->add('otherPrice',IntegerType::class)

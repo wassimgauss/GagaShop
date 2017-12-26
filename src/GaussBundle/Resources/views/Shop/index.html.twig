@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block collection %}
-  {# {{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
+   {#{{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
 {% endblock %}
 
 {% block promotion %}
@@ -31,19 +31,21 @@
 <section class="section products-grid second-style">
    <div class="container">
       <div class="row">
-
          {% block shop_sidebar %}
             {{ include ('@Gauss/Shop/layout/shop-sidebar.html.twig') }}
          {% endblock %}
 
-          {% block shop_body %}
-            {{ include ('@Gauss/Shop/layout/shop-body.html.twig') }}
+          {% block content_shop %}
+              {{ render(controller('GaussBundle:Shop:getProduct')) }}
           {% endblock %}
 
       </div>
    </div><!-- /.container -->
+
+
 </section><!-- /.products-grid -->
 {% endblock %}
+
 
 {% block brands %}
 

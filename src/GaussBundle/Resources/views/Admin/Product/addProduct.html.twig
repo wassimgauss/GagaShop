@@ -37,7 +37,48 @@
          {% endblock %}
 
           {% block shop_body %}
-            {#{{ include ('@Gauss/Admin/layout/admin-body.html.twig') }}#}
+              <div class="col-md-9" style="background-color: #E0E0E0;">
+
+                  {{ form_start(form, { 'attr': {'class': 'inputs-border'}}) }}
+                  <div class="form-group">
+                      <div class="required">
+                          {{ form_widget(form.nameProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Category 's name "} }) }}
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      {{ form_widget(form.descriptionProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Category 's description "} }) }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form_widget(form.category, { 'attr' : {'class' : 'form-control'} }) }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form_widget(form.currentPrice, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Current Price "} }) }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form_widget(form.otherPrice, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Other Price "} }) }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form_widget(form.statusProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Status Product"} }) }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form_widget(form.codeProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Code Product  "} }) }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form_widget(form.image) }}
+                  </div>
+
+                  {{ form_errors(form) }}
+                  <div class="form-group">
+
+                  {{ form_end(form) }}
+                      </div>
+              </div>
 
           {% endblock %}
       </div><!-- /.row -->

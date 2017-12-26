@@ -1,0 +1,196 @@
+{% extends "base.html.twig" %}
+
+{% block navbar %}
+      {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+    <div class="page-head content-top-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-7">
+                    <ol class="breadcrumb">
+                        <li><a href="index-2.html">Home</a></li>
+                        <li class="active">Shopping Cart</li>
+                    </ol>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.page-head -->
+{% endblock %}
+{% block slider %}
+   {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}
+{% endblock %}
+
+{% block collection %}
+   {#{{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
+{% endblock %}
+
+{% block promotion %}
+   {#{{ include ('@Gauss/Default/layout/promotion.html.twig') }}#}
+{% endblock %}
+
+{% block content %}
+<section class="section products-grid second-style">
+   <div class="container">
+      <div class="row">
+         {% block shop_sidebar %}
+            {{ include ('@Gauss/Shop/layout/shop-sidebar-view.html.twig') }}
+         {% endblock %}
+
+          {% block content_shop %}
+
+              <div class="section" id="page-cart">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-9">
+                              <div class="table-responsive">
+                                  <table class="table cart-table" cellspacing="0">
+                                      <thead>
+                                      <tr>
+                                          <th class="product-remove">&nbsp;</th>
+                                          <th class="product-thumbnail">&nbsp;</th>
+                                          <th class="product-name">Product</th>
+                                          <th class="product-price">Price</th>
+                                          <th class="product-quantity">Quantity</th>
+                                          <th class="product-subtotal">Total</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+
+                                    {% if listproduct is not null %}
+                                        {% for product in listproduct %}
+                                                <tr class="item">
+                                                    <form action="{{ path('adminpage_add_to_cart', {'id_product' : product.id}) }}" method="GET">
+                                          <td scope="row" class="product-remove">
+                                              <a href="{{ path('adminpage_delete_from_cart', {'id_product' : product.id}) }}" class="remove" title="Remove this item"><i class="lil-close"></i></a>
+                                          </td>
+                                          <td class="product-thumbnail">
+                                              <a href="product.html">
+                                                  <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
+                                              </a>
+                                          </td>
+                                          <td class="product-name">
+                                              <a href="product.html">{{ product.nameProduct }}</a>
+                                          </td>
+                                          <td class="product-price">
+                                              <span class="amount">{{ product.currentPrice }}.000 TTc</span>
+                                          </td>
+                                          <td class="product-quantity">
+                                              <div class="quantity">
+                                                  <input type="button" value="+" class="plus">
+                                                  <input id="n" type="number" name="qte" step="1" max="5" min="1" value="{{ panier[product.id] }}" title="Qty" class="qty" size="4">
+                                                  <input type="button" value="-" class="minus">
+                                              </div>
+
+                                                  <button type="submit" class="btn btn-default"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+
+                                          </td>
+                                          <td class="product-subtotal">
+                                              <span class="amount">{{ product.currentPrice * panier[product.id]}}.000 TTc</span>
+                                          </td>
+                                                    </form>
+                                      </tr>
+                                        {% endfor %}
+                                    {% endif %}
+                                      <tr>
+                                          <td colspan="5" class="actions">
+                                              <div class="coupon col-md-4 col-sm-4 col-lg-offset-5 no-padding-left">
+                                                  <div class="row">
+                                                      <div class="col-xs-6">
+                                                          <input type="text" class="form-control" placeholder="Coupon Code">
+                                                      </div>
+                                                      <div class="col-xs-6">
+                                                          <input type="submit" class="btn btn-default" value="Apply Coupon">
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="cart-collaterals col-md-8 col-sm-8 col-lg-offset-4 no-padding-right">
+                                                  <div class="cart-totals">
+                                                      <h2>Cart Totals</h2>
+                                                      <table class="table table-condensed" cellspacing="0">
+                                                          <tbody>
+                                                          <tr class="cart-subtotal">
+                                                              <th>Subtotal</th>
+                                                              <td class="text-right">
+                                                                  <span class="amount">$899.00</span>
+                                                              </td>
+                                                          </tr>
+                                                          <tr class="shipping">
+                                                              <th>Shipping</th>
+                                                              <td class="text-right">
+                                                                  <span class="amount">$50.00</span>
+                                                              </td>
+                                                          </tr>
+                                                          <tr class="order-total">
+                                                              <th>Total</th>
+                                                              <td class="text-right">
+                                                                  <strong><span class="amount">$999.00</span></strong>
+                                                              </td>
+                                                          </tr>
+                                                          </tbody>
+                                                      </table>
+                                                      <div class="form-group clearfix">
+                                                          <div class="pull-left">
+                                                              <input type="submit" class="btn btn-primary" value="Update Cart">
+                                                          </div>
+                                                          <div class="pull-right text-right">
+                                                              <a href="checkout.html" class="btn btn-default">Proceed to Checkout</a>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="text-right">
+                                                          <a href="#!" class="shipping-calculator-button effect" data-slide-toggle=".shipping-calculator-form">Calculate Shipping</a>
+                                                      </div>
+
+                                                      <div class="shipping-calculator-form inputs-border inputs-bg" style="display: none;">
+                                                          <div class="form-group">
+                                                              <select class="form-control">
+                                                                  <option>Select a Country..</option>
+                                                                  <option value="SY">Syria</option>
+                                                                  <option value="UK">United Kingdom</option>
+                                                                  <option value="US">United States</option>
+                                                                  <option value="TR">Turkey</option>
+                                                              </select>
+                                                          </div>
+                                                          <div class="form-group">
+                                                              <select class="form-control">
+                                                                  <option>Select an City..</option>
+                                                                  <option value="SY">Syria</option>
+                                                                  <option value="UK">United Kingdom</option>
+                                                                  <option value="US">United States</option>
+                                                                  <option value="TR">Turkey</option>
+                                                              </select>
+                                                          </div>
+                                                          <div class="form-group">
+                                                              <input type="text" class="form-control" placeholder="Postcode / Zip">
+                                                          </div>
+                                                          <div class="form-group text-right">
+                                                              <button type="submit" class="btn btn-default">Update Totals</button>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </td>
+                                      </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div><!-- /.table-responsive -->
+                          </div>
+                      </div><!-- /.row -->
+                  </div><!-- /.container -->
+              </div><!-- #page-cart -->
+          {% endblock %}
+      </div>
+   </div><!-- /.container -->
+</section><!-- /.products-grid -->
+{% endblock %}
+
+
+{% block brands %}
+
+{% endblock %}
+
+{% block footer %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+{% endblock %}

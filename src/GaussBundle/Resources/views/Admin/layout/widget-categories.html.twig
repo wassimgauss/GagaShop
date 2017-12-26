@@ -1,25 +1,42 @@
 <div class="widget widget-categories">
     <h3 class="widget-title">Operations</h3>
     <ul>
-        <li>
-            <a href="{{ path('adminpage_add_product') }}">Add Product <span class="count">(6)</span></a>
+{#        <li>
+            <a href="{{ path('adminpage_add_product') }}">Add Product</a>
         </li>
         <li>
-            <a href="#!">Tables <span class="count">(7)</span></a>
+            <a href="{{ path('adminpage_add_category') }}">Add Category</a>
+        </li>#}
+        <li>
+            <a href="#!">Category <span class="count">(6)</span> </a>
             <ul class="children">
                 <li>
-                    <a href="#!">Side Tables <span class="count">(2)</span></a>
+                    <a href="{{ path('adminpage_list_category') }}">list Category</a>
                 </li>
                 <li>
-                    <a href="#!">Lunch Tables <span class="count">(5)</span></a>
+                    <a href="{{ path('adminpage_add_category') }}">Add Category</a>
                 </li>
             </ul>
         </li>
+
         <li>
+            <a href="#!">Products <span class="count">(3)</span></a>
+            <ul class="children">
+                <li>
+                    <a href="{{ path('adminpage_list_product') }}">list Products</a>
+                </li>
+                <li>
+                    <a href="{{ path('adminpage_add_product') }}">Add Product</a>
+                </li>
+            </ul>
+        </li>
+
+
+{#        <li>
             <a href="#!">Couches <span class="count">(3)</span></a>
         </li>
         <li>
             <a href="#!">Lighting <span class="count">(4)</span></a>
-        </li>
+        </li>#}
     </ul>
 </div><!-- /.widget-categories -->

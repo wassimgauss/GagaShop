@@ -86,3 +86,8 @@ fos_user:
                 address:    "wassim.gauss92@gmail.com"
                 sender_name:    "admin"
             enabled:    true
+services:
+  twig.extension.text:
+       class: Twig_Extensions_Extension_Text
+       tags:
+           - { name: twig.extension }

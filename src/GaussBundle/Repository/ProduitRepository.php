@@ -10,5 +10,5 @@ namespace GaussBundle\Repository;
  */
 class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
-
+    
 }

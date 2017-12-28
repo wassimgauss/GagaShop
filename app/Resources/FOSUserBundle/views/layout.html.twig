@@ -28,7 +28,11 @@
 {% block body %}
 
     {% block navbar %}
-        {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+        <div class="container">
+            <div class="row">
+                {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+            </div>
+        </div>
     {% endblock %}
 
     {% block slider %} {% endblock %}
@@ -36,18 +40,18 @@
     {% block collection %} {% endblock %}
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-        <a href="{{ path('fos_user_security_logout') }}">
+        <a href="{{ path('fos_user_security_logout') }}" style="opacity: 0">
             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
         </a>
     {% else %}
-        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        <a href="{{ path('fos_user_security_login') }}" style="opacity: 0">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
     {% endif %}
 
     {% if app.request.hasPreviousSession %}
         {% for type, messages in app.session.flashbag.all() %}
             {% for message in messages %}
-                <div class="flash-{{ type }}">
-                    {{ message }}
+                <div class="flash-{{ type }}" style="opacity: 0">
+                   {# {{ message }}#}
                 </div>
             {% endfor %}
         {% endfor %}

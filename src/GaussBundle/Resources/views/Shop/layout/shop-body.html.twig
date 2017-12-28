@@ -4,11 +4,11 @@
         {% for product in listProduct %}
         <div class="product col-md-4 col-sm-6 col-xs-12" data-product-id="1">
             <div class="inner-product">
-                {% if (product.statusPRoduct == 1) %}
+                {% if (product.statusProduct == 1) %}
                     <span class="onsale">Sale!</span>
-                {% elseif (product.statusPRoduct == 2) %}
+                {% elseif (product.statusProduct == 2) %}
                     <span class="onsale hot">Hot!</span>
-                {% elseif (product.statusPRoduct == 3) %}
+                {% elseif (product.statusProduct == 3) %}
                     <span class="onsale new" style="background-color: #4DB6AC">New!</span>
                 {% endif %}
                 <div class="product-thumbnail">

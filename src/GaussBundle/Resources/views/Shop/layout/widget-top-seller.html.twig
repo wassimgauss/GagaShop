@@ -5,12 +5,12 @@
         <li class="clearfix">
             <div class="media">
                 <div class="media-left pull-left">
-                    <a href="#">
+                    <a href="{{ path('adminpage_view_product', {'id_product' : productTop.id }) }}">
                         <img class="media-object img-responsive" src="{{ asset(productTop.image.webPath) }}">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading"><a href="product.html">{{ productTop.nameProduct }}</a></h4>
+                    <h4 class="media-heading"><a href="{{ path('adminpage_view_product', {'id_product' : productTop.id }) }}">{{ productTop.nameProduct }}</a></h4>
                     <div class="rating">
                         <div class="star-rating">
                             <span style="width:{{ productTop.classement * 20 }}%"></span>

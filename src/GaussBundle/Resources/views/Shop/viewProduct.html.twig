@@ -1,38 +1,52 @@
 {% extends "base.html.twig" %}
 
 {% block navbar %}
-      {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
-    <div class="page-head content-top-margin">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-7">
-                    <ol class="breadcrumb">
-                        <li><a href="index-2.html">Home</a></li>
-                        <li><a href="#!">Products</a></li>
-                        <li class="active">Twill Silk Scarf</li>
-                    </ol>
-                </div>
+    <div class="container">
+        <div class="row">
+        {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+        <div class="page-head content-top-margin">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-7">
+                        <ol class="breadcrumb">
+                            <li><a href="index-2.html">Home</a></li>
+                            <li><a href="#!">Products</a></li>
+                            <li class="active">{{ product.nameProduct }}</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4 col-sm-5 header-nav text-right">
+                        {% set id_next = product.id  %}
+                        {% set id_prev = product.id  %}
+                        {#{{ count[0][1] }}#}
+                        {% if id_next < count[0][1] %}
+                            {% set id_next = product.id + 1 %}
+                        {% else %}
+                            {% set id_next = 1 %}
+                        {% endif %}
 
-                <div class="col-md-4 col-sm-5 header-nav text-right">
-                    <a rel="previous" href="#!"><i class="lil-angle-left"></i> Previous</a>
-                    <a rel="next" href="#!">Next <i class="lil-angle-right"></i></a>
-                </div>
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.page-head -->
+                        {% if id_prev >= 1 %}
+                            {% set id_prev = count[0][1] %}
+                        {% else %}
+                            {% set id_next = product.id - 1 %}
+                        {% endif %}
+                        <a rel="previous" href="{{ path('adminpage_view_product', {'id_product' : id_prev }) }}"><i class="lil-angle-left"></i> Previous</a>
+                        <a rel="next" href="{{ path('adminpage_view_product', {'id_product' : id_next  }) }}">Next <i class="lil-angle-right"></i></a>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.page-head -->
+        </div>
+    </div>
 {% endblock %}
 {% block slider %}
    {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}
 {% endblock %}
-
 {% block collection %}
    {#{{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
 {% endblock %}
-
 {% block promotion %}
    {#{{ include ('@Gauss/Default/layout/promotion.html.twig') }}#}
 {% endblock %}
-
 {% block content %}
 <section class="section products-grid second-style">
    <div class="container">
@@ -40,9 +54,7 @@
          {% block shop_sidebar %}
             {{ include ('@Gauss/Shop/layout/shop-sidebar-view.html.twig') }}
          {% endblock %}
-
           {% block content_shop %}
-
               <section class="section single-product-wrapper">
                   <div class="container">
                       <div class="row">
@@ -82,7 +94,6 @@
                                   </div>
                               </div><!-- /.product-images -->
                           </div>
-
                           <div class="col-sm-4">
                               <div class="product-details">
                                   <div class="rating">
@@ -92,13 +103,11 @@
                                       <span class="rating-text">{{ product.classement }} Reviews</span>
                                       <span class="pull-right">CODE: <span>{{ product.codeProduct }}</span></span>
                                   </div>
-
                                   <div class="product-title">
                                       <h3 class="product-name">{{ product.nameProduct }}</h3>
                                       <p class="product-available">In Stock / Shipping Available</p>
                                       <hr>
                                   </div>
-
                                   <div class="description">
                                       <p> {{ product.descriptionProduct }}</p>
                                   </div>
@@ -112,7 +121,6 @@
                                           <span class="amount">{{ product.currentPrice }}.000 TTc</span>
                                       </ins>
                                   </p>
-
                                     <form action="{{ path('adminpage_add_to_cart', {'id_product' : product.id }) }}" method="GET" class="inputs-border">
 {#                                        <div class="product-attributes row">
                                             <div class="form-group col-md-6">
@@ -137,18 +145,15 @@
                                                 </select>
                                             </div>
                                         </div>#}
-
                                         <div class="form-group">
                                             <div class="quantity">
                                                 <input type="button" value="+" class="plus">
                                                 <input type="number" name="qte" step="1" max="5" min="1" value="1" title="Qty" class="qty" size="4">
                                                 <input type="button" value="-" class="minus">
                                             </div>
-
                                             <button type="submit" class="btn btn-default"><i class="lil-add_shopping_cart"></i> Add to cart</button>
                                         </div>
                                     </form>
-
                                   <div class="product-share">
                                       <span>Share on</span>
                                       <ul class="social">
@@ -161,7 +166,6 @@
                                   </div>
                               </div><!-- /.product-details -->
                           </div>
-
                             <div class="col-sm-12">
                                 <div class="tabs-wrapper">
                                     <!-- Nav tabs -->
@@ -333,7 +337,7 @@
                                   <div class="product-details text-center">
                                       <div class="product-btns">
 								<span data-toggle="tooltip" data-placement="top" title="Add To Cart">
-									<a href="#!" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
+									<a href="{{ path('adminpage_add_to_cart', {'id_product' : product.id }) }}" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
 								</span>
 								<span data-toggle="tooltip" data-placement="top" title="Add to Favorites">
 									<a href="#!" class="li-icon"><i class="lil-favorite"></i></a>

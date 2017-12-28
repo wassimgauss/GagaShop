@@ -16,4 +16,4 @@
 /vendor/
 /web/bundles/
 /web/uploads
-/.idea/
+/.idea/*

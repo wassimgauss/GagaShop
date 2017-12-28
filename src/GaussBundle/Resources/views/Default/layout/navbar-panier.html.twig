@@ -1,0 +1,46 @@
+<ul class="navbar-nav navbar-icons">
+    <li class="shopping-cart">
+        <a href="#!" class="li-icon" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+            <i class="lil-shopping_cart"></i><span class="badge">{{ listproduct|length }}</span>
+        </a>
+        <ul class="dropdown-menu">
+            <div class="dropdown-wrap" slim-scroll="√">
+                {% if listproduct is not empty %}
+                {% for product in listproduct %}
+                    <li>
+                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}"><img src="{{ asset(product.image.webPath) }}" class="img-responsive product-img" alt=""></a>
+                        <div class="product-details">
+                            <p class="product-title clearfix"><a href="product.html">{{ product.nameProduct  }}</a></p>
+                            <p class="product-price clearfix">
+                                <ins>
+                                    <span class="amount">{{ product.currentPrice }}.000 TTc</span>
+                                </ins>
+                            </p>
+                        </div>
+                    </li>
+                {% endfor %}
+                    <li class="dropdown-footer">
+                        <a href="{{ path('adminpage_view_cart') }}">View Cart</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="product.html"><img src="{{ asset('build/img/empty.png') }}" class="img-responsive" alt=""></a>
+                        <br>
+                        <p class="product-price clearfix">
+                            <ins>
+                                <span class="amount center">&nbsp; &nbsp; &nbsp; Your cart is empty .</span>
+                            </ins>
+                        </p>
+                    </li>
+                    <li class="dropdown-footer">
+                        <a href="{{ path('adminpage_view_cart') }}">View Cart</a>
+                    </li>
+                {% endif %}
+            </div>
+
+        </ul>
+    </li>
+    <li><a href="#!" class="li-icon" id="trigger-overlay"><i class="lil-search"></i></a></li>
+</ul>
+
+

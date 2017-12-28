@@ -1,7 +1,10 @@
 {% extends "base.html.twig" %}
 
 {% block navbar %}
-      {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+    <div class="container">
+        <div class="row">
+            {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+
       <div class="page-head content-top-margin">
       <div class="container">
          <div class="row">
@@ -14,6 +17,9 @@
          </div><!-- /.row -->
       </div><!-- /.container -->
       </div><!-- /.page-head -->
+
+        </div>
+    </div>
 {% endblock %}
 {% block slider %}
    {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}

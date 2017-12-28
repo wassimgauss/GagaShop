@@ -1,6 +1,8 @@
 {% extends "base.html.twig" %}
 
 {% block navbar %}
+<div class="container">
+    <div class="row">
       {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
     <div class="page-head content-top-margin">
         <div class="container">
@@ -14,6 +16,8 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div><!-- /.page-head -->
+    </div>
+</div>
 {% endblock %}
 {% block slider %}
    {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}
@@ -34,9 +38,7 @@
          {% block shop_sidebar %}
             {{ include ('@Gauss/Shop/layout/shop-sidebar-view.html.twig') }}
          {% endblock %}
-
           {% block content_shop %}
-
               <div class="section" id="page-cart">
                   <div class="container">
                       <div class="row">
@@ -54,7 +56,6 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-
                                     {% if listproduct is not null %}
                                         {% for product in listproduct %}
                                                 <tr class="item">
@@ -184,7 +185,6 @@
    </div><!-- /.container -->
 </section><!-- /.products-grid -->
 {% endblock %}
-
 
 {% block brands %}
 

@@ -2,3 +2,8 @@ services:
 #    gauss.example:
 #        class: GaussBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+services:
+    smf_example.last_route_event_listener:
+        class: GaussBundle\EventListener\LastRouteListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 30 }

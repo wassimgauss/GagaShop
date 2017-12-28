@@ -43,7 +43,16 @@ class PanierController extends Controller
             }
         }
         $session->set('panier',$panier);
-        return $this->redirect($this->generateUrl('adminpage_view_cart'));
+        print_r($session->get('last_route')['name']);
+        if($session->get('last_route')['name'] === "shoppage"){
+            return $this->redirect($this->generateUrl('shoppage'));
+        }
+        elseif ($session->get('last_route')['name'] === "adminpage_view_product") {
+            return $this->redirect($this->generateUrl('adminpage_view_product',array('id_product' => $id_product)));
+        }
+        else {
+            return $this->redirect($this->generateUrl('adminpage_view_cart'));
+        }
     }
 
     public function deleteFromCartAction($id_product, Request $request){
@@ -57,4 +66,19 @@ class PanierController extends Controller
         return $this->redirect($this->generateUrl('adminpage_view_cart'));
     }
 
+
+    public function getProductAction(Request $request){
+
+        $session = $request->getSession();
+        $em = $this->getDoctrine()->getManager();
+        if(!$session->has('panier'))
+            $session->set('panier',array());
+        //print_r(array_keys($session->get('panier')));
+        $listproduct = array();
+        foreach (array_keys($session->get('panier')) as $key ){
+            $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => intval($key)));
+            array_push($listproduct,$product);
+        }
+        return $this->render('@Gauss/Default/layout/navbar-panier.html.twig',array('listproduct' => $listproduct,'panier' =>$session->get('panier')));
+    }
 }

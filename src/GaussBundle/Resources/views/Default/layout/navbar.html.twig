@@ -1,4 +1,4 @@
-<div class="nav-container navbar-fixed-top nav-sticky">
+<div class="nav-container nav-sticky" style="position: fixed; z-index: 99;">
             <nav class="sub-navbar" style="background-color:#B0BEC5">
                 <div class="list-select">
                     <div class="inner-select">
@@ -22,34 +22,19 @@
                 </div>
                 <ul class="pull-right list-inline">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-
                         <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
                         <li><a href="wishlist.html">My Wishlist</a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;</a></li>
-
                     {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-
                         <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
                         <li><a href="wishlist.html">My Wishlist</a></li>
                         <li><a href="wishlist.html"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-
                     {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-{#                        <div class="list-select">
-                            <div class="inner-select">
-                                <div class="selected" style="margin-left: -45px;"><i class="fa fa-user-circle" aria-hidden="true"></i> My account&nbsp;</div>
-                                <ul>
-                                    <li><a href="{{ path('fos_user_security_login') }}">&nbsp;&nbsp;&nbsp;LOGIN&nbsp;&nbsp;&nbsp;</a></li>
-                                    <li><a href="{{ path('fos_user_registration_register') }}">&nbsp;&nbsp;&nbsp;REGISTER&nbsp;&nbsp;&nbsp;</a></li>
-                                </ul>
-                            </div>
-                        </div>#}
                         <li><a href="{{ path('fos_user_security_login') }}">&nbsp;LOGIN&nbsp;</a></li>
                         <li><a href="{{ path('fos_user_registration_register') }}">REGISTER&nbsp;</a></li>
                         <li><a href="wishlist.html">My Wishlist&nbsp;&nbsp;</a></li>
-
                     {% endif %}
-
                 </ul>
                 <div class="clearfix"></div>
             </nav><!-- /.sub-navbar -->
@@ -65,53 +50,7 @@
                             <img src="{{ asset('build/img/apple_icons_114x114.png') }}" alt="Sham Theme" class="img-responsive" style="max-width:40px; margin-top: 0px;">
                         </a>
                     </div>
-                    <ul class="navbar-nav navbar-icons">
-                        <li class="shopping-cart">
-                            <a href="#!" class="li-icon" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                                <i class="lil-shopping_cart"></i><span class="badge">4</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <div class="dropdown-wrap" slim-scroll="√">
-                                    <li>
-                                        <a href="product.html"><img src="{{ asset('build/img/products/2.jpg') }}" class="img-responsive product-img" alt=""></a>
-                                        <div class="product-details">
-                                            <p class="product-title clearfix"><a href="product.html">Bag Dark Beige</a></p>
-                                            <p class="product-price clearfix">
-                                                <ins>
-                                                    <span class="amount">$66.50</span>
-                                                </ins>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="product.html"><img src="{{ asset('build/img/products/24.jpg') }}" class="img-responsive product-img" alt=""></a>
-                                        <div class="product-details">
-                                            <p class="product-title clearfix"><a href="product.html">Shoes Maroon</a></p>
-                                            <div class="product-price clearfix">$80.99</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="product.html"><img src="{{ asset('build/img/products/3.jpg') }}" class="img-responsive product-img" alt=""></a>
-                                        <div class="product-details">
-                                            <p class="product-title clearfix"><a href="product.html">Unisex Cap</a></p>
-                                            <div class="product-price clearfix">$99.99</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="product.html"><img src="{{ asset('build/img/products/13.jpg') }}" class="img-responsive product-img" alt=""></a>
-                                        <div class="product-details">
-                                            <p class="product-title clearfix"><a href="product.html">Twill Silk Scarf</a></p>
-                                            <div class="product-price clearfix">$49.99</div>
-                                        </div>
-                                    </li>
-                                </div>
-                                <li class="dropdown-footer">
-                                    <a href="{{ path('adminpage_view_cart') }}">View Cart</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#!" class="li-icon" id="trigger-overlay"><i class="lil-search"></i></a></li>
-                    </ul>
+                    {{ render(controller('GaussBundle:Panier:getProduct')) }}
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-left">
                             <li class="active">
@@ -124,9 +63,9 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Shop <i class="caret"></i></a>
+                                <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Shop <i class="caret"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="products.html">Full Width Shop</a></li>
+                                    <li><a href="{{ path('shoppage') }}"> All products</a></li>
                                     <li><a href="products-with-filter.html">Shop With Filter</a></li>
                                     <li><a href="products-sidebar-left.html">Sidebar Left</a></li>
                                     <li><a href="products-sidebar-right.html">Sidebar Right</a></li>
@@ -141,15 +80,6 @@
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="order-received.html">Order Received</a></li>
                                     <li><a href="order-tracking.html">Order Tracking</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Pages <i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="page.html">Page Default</a></li>
-                                    <li><a href="login-register.html">Login / Register</a></li>
-                                    <li><a href="404.html">Not Found (404)</a></li>
-                                    <li><a href="faqs.html">FAQ'S</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ path('adminpage_view_cart') }}">About</a></li>

@@ -4,9 +4,7 @@
 
    <div class="container">
       <div class="row">
-      <div class="panel panel-default">
          {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
-      </div>
       </div>
    </div>
 
@@ -16,19 +14,23 @@
 {% block slider %}
    <div class="container">
       <div class="row">
-         {{ include ('@Gauss/Default/layout/slider.html.twig') }}
-      </div>
-   </div>
+         {{ include ('@Gauss/Default/layout/header.html.twig') }}
 
+{% endblock %}
+
+
+{% block promotion %}
+   {{ include ('@Gauss/Default/layout/promotion.html.twig') }}
 {% endblock %}
 
 {% block collection %}
-   {{ include ('@Gauss/Default/layout/collection.html.twig') }}
+  {# {{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
+   {{ render(controller('GaussBundle:Default:getCollection')) }}
+
+      </div>
+   </div>
 {% endblock %}
 
-{% block promotion %}
-   {#{{ include ('@Gauss/Default/layout/promotion.html.twig') }}#}
-{% endblock %}
 
 {% block content %}
 

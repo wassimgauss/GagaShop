@@ -6,6 +6,11 @@ shoppage:
     path:     /shop
     defaults: { _controller: GaussBundle:Shop:index }
 
+shoppage_category:
+    path:     /shop/{id_categ}
+    defaults: { _controller: GaussBundle:Shop:indexCateg }
+    requirements:
+        id_categ: \d+
 adminpage:
     path:     /admin
     defaults: { _controller: GaussBundle:Admin:index }
@@ -47,3 +52,27 @@ adminpage_delete_from_cart:
     defaults: { _controller: GaussBundle:Panier:deleteFromCart }
     requirements:
         id_product: \d+
+
+shoppage_wishlist:
+    path:     /WishList
+    defaults: { _controller: GaussBundle:Wish:index }
+
+adminpage_add_to_wish:
+    path:     /Shop/addToWish/{id_product}
+    defaults: { _controller: GaussBundle:Wish:addToWish }
+    requirements:
+        id_product: \d+
+
+adminpage_delete_from_wish:
+    path:     /Shop/deleteFromWish/{id_product}
+    defaults: { _controller: GaussBundle:Wish:deleteFromWish }
+    requirements:
+        id_product: \d+
+
+homepage_contact:
+    path:     /contact
+    defaults: { _controller: GaussBundle:Default:contact }
+
+homepage_about:
+    path:     /about
+    defaults: { _controller: GaussBundle:Default:about }

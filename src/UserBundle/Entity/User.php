@@ -2,8 +2,10 @@
 
 namespace UserBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use GaussBundle\Entity\Produit;
 
 /**
  * User
@@ -21,7 +23,7 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
+    
 
     /**
      * Get id
@@ -36,6 +38,13 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+       
     }
+
+
+
+
+
+
 }
 

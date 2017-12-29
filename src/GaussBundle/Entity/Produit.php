@@ -2,6 +2,7 @@
 
 namespace GaussBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -38,20 +39,18 @@ class Produit
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="GaussBundle\Entity\Category", inversedBy="produits", cascade={"persist","merge"})
-     * @ORM\JoinColumn(nullable=false, name="category_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="GaussBundle\Entity\Category", inversedBy="produits")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
-
+    
     /**
      *
      * @ORM\OneToOne(targetEntity="MultimediaBundle\Entity\Image", cascade={"persist", "remove"})
      *
      */
     private $image;
-
-
-
+    
     /**
      * @var string
      *
@@ -286,5 +285,7 @@ class Produit
     {
         $this->image = $image;
     }
+
+
 }
 

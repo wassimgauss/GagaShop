@@ -22,18 +22,19 @@
                 </div>
                 <ul class="pull-right list-inline">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
-                        <li><a href="wishlist.html">My Wishlist</a></li>
-                        <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;</a></li>
+                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
                     {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i> My account</a></li>
-                        <li><a href="wishlist.html">My Wishlist</a></li>
-                        <li><a href="wishlist.html"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
                     {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
                         <li><a href="{{ path('fos_user_security_login') }}">&nbsp;LOGIN&nbsp;</a></li>
                         <li><a href="{{ path('fos_user_registration_register') }}">REGISTER&nbsp;</a></li>
-                        <li><a href="wishlist.html">My Wishlist&nbsp;&nbsp;</a></li>
+                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;</a></li>
                     {% endif %}
                 </ul>
                 <div class="clearfix"></div>
@@ -56,34 +57,34 @@
                             <li class="active">
                                 <a href="index-2.html" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Home <i class="caret"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li class="active"><a href="index-2.html">Home Default</a></li>
-                                    <li><a href="index-3.html">Home Default Slider</a></li>
+                                    <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
+                                {#    <li><a href="index-3.html">Home Default Slider</a></li>
                                     <li><a href="index-4.html">Home Overlay Products</a></li>
-                                    <li><a href="index-5.html#instagram">Home instagram section</a></li>
+                                    <li><a href="index-5.html#instagram">Home instagram section</a></li>#}
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Shop <i class="caret"></i></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ path('shoppage') }}"> All products</a></li>
-                                    <li><a href="products-with-filter.html">Shop With Filter</a></li>
-                                    <li><a href="products-sidebar-left.html">Sidebar Left</a></li>
+                                    {{ render(controller('GaussBundle:Default:getCategMenu')) }}
+{#                                    <li><a href="products-sidebar-left.html">Sidebar Left</a></li>
                                     <li><a href="products-sidebar-right.html">Sidebar Right</a></li>
-                                    <li><a href="product.html">Simple Product</a></li>
+                                    <li><a href="product.html">Simple Product</a></li>#}
                                 </ul>
                             </li>
                             <li>
                                 <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">eCommerce Pages <i class="caret"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{{ path('shoppage_wishlist') }}">Wishlist</a></li>
+                                    <li><a href="{{ path('adminpage_view_cart') }}">Cart</a></li>
+{#                                    <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="order-received.html">Order Received</a></li>
-                                    <li><a href="order-tracking.html">Order Tracking</a></li>
+                                    <li><a href="order-tracking.html">Order Tracking</a></li>#}
                                 </ul>
                             </li>
-                            <li><a href="{{ path('adminpage_view_cart') }}">About</a></li>
-                            <li><a href="{{ path('shoppage') }}">Contact</a></li>
+                            <li><a href="{{ path('homepage_about') }}">About</a></li>
+                            <li><a href="{{ path('homepage_contact') }}">Contact</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container -->

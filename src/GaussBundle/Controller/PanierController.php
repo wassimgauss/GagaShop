@@ -43,12 +43,26 @@ class PanierController extends Controller
             }
         }
         $session->set('panier',$panier);
-        print_r($session->get('last_route')['name']);
+        //print_r($session->get('last_route')['name']);
+        sleep(2);
         if($session->get('last_route')['name'] === "shoppage"){
             return $this->redirect($this->generateUrl('shoppage'));
         }
         elseif ($session->get('last_route')['name'] === "adminpage_view_product") {
             return $this->redirect($this->generateUrl('adminpage_view_product',array('id_product' => $id_product)));
+        }
+        elseif ($session->get('last_route')['name'] === "shoppage_wishlist"){
+            $user = $this->getUser();
+            $em = $this->getDoctrine()->getManager();
+            $myfav = $em->getRepository("GaussBundle:Favoris")->findOneBy(array('idUser' => $user->getId(),'idProduct' => $id_product));
+            if($myfav != null) {
+                $em->remove($myfav);
+                $em->flush();
+            }
+            else {
+                throw new EntityNotFoundException();
+            }
+            return $this->redirect($this->generateUrl('adminpage_view_cart'));
         }
         else {
             return $this->redirect($this->generateUrl('adminpage_view_cart'));

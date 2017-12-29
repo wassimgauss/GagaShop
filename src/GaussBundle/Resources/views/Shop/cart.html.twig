@@ -19,20 +19,8 @@
     </div>
 </div>
 {% endblock %}
-{% block slider %}
-   {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}
-{% endblock %}
-
-{% block collection %}
-   {#{{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
-{% endblock %}
-
-{% block promotion %}
-   {#{{ include ('@Gauss/Default/layout/promotion.html.twig') }}#}
-{% endblock %}
-
 {% block content %}
-<section class="section products-grid second-style">
+<section class="section products-grid second-style" style="margin-top: -70px;">
    <div class="container">
       <div class="row">
          {% block shop_sidebar %}
@@ -47,7 +35,7 @@
                                   <table class="table cart-table" cellspacing="0">
                                       <thead>
                                       <tr>
-                                          <th class="product-remove">&nbsp;</th>
+                                          <th class="product-remove">&nbsp;&nbsp;&nbsp;</th>
                                           <th class="product-thumbnail">&nbsp;</th>
                                           <th class="product-name">Product</th>
                                           <th class="product-price">Price</th>
@@ -92,8 +80,8 @@
                                         {% endfor %}
                                     {% endif %}
                                       <tr>
-                                          <td colspan="5" class="actions">
-                                              <div class="coupon col-md-4 col-sm-4 col-lg-offset-5 no-padding-left">
+                                          <td colspan="8" class="actions">
+   {#                                           <div class="coupon col-md-4 col-sm-4 col-lg-offset-5 no-padding-left">
                                                   <div class="row">
                                                       <div class="col-xs-6">
                                                           <input type="text" class="form-control" placeholder="Coupon Code">
@@ -102,7 +90,7 @@
                                                           <input type="submit" class="btn btn-default" value="Apply Coupon">
                                                       </div>
                                                   </div>
-                                              </div>
+                                              </div>#}
 
                                               <div class="cart-collaterals col-md-8 col-sm-8 col-lg-offset-4 no-padding-right">
                                                   <div class="cart-totals">

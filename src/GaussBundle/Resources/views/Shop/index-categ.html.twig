@@ -30,7 +30,7 @@
          {% endblock %}
 
           {% block content_shop %}
-              {{ render(controller('GaussBundle:Shop:getProduct')) }}
+              {{ render(controller('GaussBundle:Shop:getProductCateg',{'id_categ' : id_categ})) }}
           {% endblock %}
 
       </div>

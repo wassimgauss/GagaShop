@@ -1,0 +1,119 @@
+{% extends "base.html.twig" %}
+
+{% block navbar %}
+<div class="container">
+    <div class="row">
+      {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+    <div class="page-head content-top-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-7">
+                    <ol class="breadcrumb">
+                        <li><a href="index-2.html">Home</a></li>
+                        <li class="active">Wishlist</li>
+                    </ol>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.page-head -->
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="section products-grid second-style" style="margin-top: -70px;">
+   <div class="container">
+      <div class="row">
+         {% block shop_sidebar %}
+            {{ include ('@Gauss/Shop/layout/shop-sidebar-view.html.twig') }}
+         {% endblock %}
+          {% block content_shop %}
+              <div class="section" id="page-cart">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-9 col-lg-offset-0">
+                              <div class="table-responsive">
+                                  <table class="table cart-table" cellspacing="0">
+                                      <thead>
+                                      <tr>
+                                          <th class="product-remove">&nbsp;&nbsp;&nbsp;</th>
+                                          <th class="product-thumbnail">&nbsp;&nbsp;&nbsp;</th>
+                                          <th class="product-name">Product</th>
+                                          <th class="product-price">Price</th>
+                                          <th class="product-price">Status</th>
+                                          <th class="product-price">Rating</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                    {% if listproduct is not null %}
+                                        {% for product in listproduct %}
+                                                <tr class="item">
+
+                                                        <td scope="row" class="product-remove">
+                                                        <a href="{{ path('adminpage_delete_from_wish', {'id_product' : product.id}) }}" class="remove" title="Remove this item"><i class="lil-close"></i></a>
+                                                        </td>
+                                                        <td class="product-thumbnail">
+                                                        <a href="product.html">
+                                                        <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
+                                                        </a>
+                                                        </td>
+                                                        <td class="product-name">
+                                                        <a href="product.html">{{ product.nameProduct }}</a>
+                                                        </td>
+                                                        <td class="product-subtotal">
+                                                        <span class="amount">{{ product.currentPrice }}.000 TTc</span>
+                                                        </td>
+
+                                                        <td>
+                                                        {% if (product.statusProduct == 1) %}
+                                                        <span class="onsale">Sale!</span>
+                                                        {% elseif (product.statusProduct == 2) %}
+                                                        <span class="onsale hot">Hot!</span>
+                                                        {% elseif (product.statusProduct == 3) %}
+                                                        <span class="onsale new" style="background-color: #4DB6AC">New!</span>
+                                                        {% endif %}
+                                                        </td>
+                                                        <td>
+                                                        <div class="rating">
+                                                        <div class="star-rating">
+                                                        <span style="width:{{ product.classement *20 }}%"></span>
+                                                        </div>
+                                                        </div>
+                                                        </td>
+                                                        <td class="product-quantity">
+                                                            <form action="{{ path('adminpage_add_to_cart', {'id_product' : product.id}) }}" method="GET">
+                                                                <div class="quantity">
+                                                                <input type="button" value="+" class="plus">
+                                                                <input id="n" type="number" name="qte" step="1" max="5" min="1" value="1" title="Qty" class="qty" size="4">
+                                                                <input type="button" value="-" class="minus">
+                                                                </div>
+                                                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                                                            </form>
+
+                                                        </td>
+                                      </tr>
+                                    {% endfor %}
+                                    {% endif %}
+
+
+                                      </tbody>
+                                  </table>
+                              </div><!-- /.table-responsive -->
+                          </div>
+                      </div><!-- /.row -->
+                  </div><!-- /.container -->
+              </div><!-- #page-cart -->
+          {% endblock %}
+      </div>
+   </div><!-- /.container -->
+</section><!-- /.products-grid -->
+{% endblock %}
+
+{% block brands %}
+
+{% endblock %}
+
+{% block footer %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+{% endblock %}

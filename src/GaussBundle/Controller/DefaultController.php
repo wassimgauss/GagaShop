@@ -19,7 +19,12 @@ class DefaultController extends Controller
     public function getCategMenuAction(){
         $em= $this->getDoctrine()->getManager();
         $listCategory = $em->getRepository("GaussBundle:Category")->findAll();
-        return $this->render('@Gauss/Default/layout/menu-home.html.twig',array('listCategory' => $listCategory));
+        $data = array();
+        foreach ($listCategory as $value) {
+            $listProduct = $em->getRepository("GaussBundle:Produit")->findBy(array('category' => $value));
+            array_push($data,(count($listProduct)));
+        }
+        return $this->render('@Gauss/Default/layout/menu-home.html.twig',array('listCategory' => $listCategory,'count' => $data));
     }
 
     public function contactAction()

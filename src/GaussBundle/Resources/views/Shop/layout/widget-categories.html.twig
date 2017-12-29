@@ -4,7 +4,7 @@
         {% set i =0 %}
         {% for category in listCategory %}
             <li>
-                <a href="{{ path('shoppage_category', { 'id_categ' : category.id }) }}">{{ category.nom }} <span class="count">{{ count[i] }}</span></a>
+                <a href="{{ path('shoppage_category', { 'id_categ' : category.id }) }}">{{ category.nom }} <span class="count">({{ count[i] }})</span></a>
             </li>
             {% set i = i+1 %}
         {% endfor %}

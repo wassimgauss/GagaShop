@@ -38,15 +38,7 @@
         </div>
     </div>
 {% endblock %}
-{% block slider %}
-   {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}
-{% endblock %}
-{% block collection %}
-   {#{{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
-{% endblock %}
-{% block promotion %}
-   {#{{ include ('@Gauss/Default/layout/promotion.html.twig') }}#}
-{% endblock %}
+
 {% block content %}
 <section class="section products-grid second-style" style="margin-top: -30px;">
    <div class="container">
@@ -54,6 +46,7 @@
          {% block shop_sidebar %}
             {{ include ('@Gauss/Shop/layout/shop-sidebar-view.html.twig') }}
          {% endblock %}
+
           {% block content_shop %}
               <section class="section single-product-wrapper">
                   <div class="container">
@@ -340,7 +333,7 @@
 									<a href="{{ path('adminpage_add_to_cart', {'id_product' : product.id }) }}" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
 								</span>
 								<span data-toggle="tooltip" data-placement="top" title="Add to Favorites">
-									<a href="#!" class="li-icon"><i class="lil-favorite"></i></a>
+									<a href="{{ path('adminpage_add_to_wish',{'id_product' : product.id }) }}" class="li-icon"><i class="lil-favorite"></i></a>
 								</span>
 								<span data-toggle="tooltip" data-placement="top" title="View">
 									<a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}" class="li-icon view-details"><i class="lil-search"></i></a>

@@ -15,13 +15,18 @@ class WishController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $user = $this->getUser();
-        $myfav = $em->getRepository("GaussBundle:Favoris")->findBy(array('idUser' => $user->getId()));
-        $listProduct = array();
-        foreach ($myfav as $item) {
-            $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $item->getIdProduct()));
-            array_push($listProduct,$product);
+        if($user != null) {
+            $myfav = $em->getRepository("GaussBundle:Favoris")->findBy(array('idUser' => $user->getId()));
+            $listProduct = array();
+            foreach ($myfav as $item) {
+                $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $item->getIdProduct()));
+                array_push($listProduct,$product);
+            }
+            return $this->render('@Gauss/Shop/wish-list.html.twig',array('listproduct' => $listProduct));
         }
-        return $this->render('@Gauss/Shop/wish-list.html.twig',array('listproduct' => $listProduct));
+        else {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
     }
 
     public function addToWishAction($id_product, Request $request){

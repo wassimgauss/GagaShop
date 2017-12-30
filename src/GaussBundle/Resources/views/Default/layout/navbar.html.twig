@@ -12,23 +12,24 @@
                 </div>
                 <div class="list-select">
                     <div class="inner-select">
-                        <div class="selected"><i class="lil-dollar"></i></div>
+                        <div class="selected">TTc</div>
                         <ul>
+                            <li><a href="#!">TTc</a></li>
                             <li><a href="#!"><i class="lil-dollar"></i></a></li>
-                            <li><a href="#!"><i class="lil-gbp"></i></a></li>
                             <li><a href="#!"><i class="lil-try"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <ul class="pull-right list-inline">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
-                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ path('fos_user_profile_show') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Account</a></li>
+                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
                     {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 
-                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
-                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Account</a></li>
+                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
                     {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
@@ -71,6 +72,15 @@
 {#                                    <li><a href="products-sidebar-left.html">Sidebar Left</a></li>
                                     <li><a href="products-sidebar-right.html">Sidebar Right</a></li>
                                     <li><a href="product.html">Simple Product</a></li>#}
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">IPTV <i class="caret"></i></a>
+                                <ul class="dropdown-menu">
+                                {#    <li><a href="{{ path('shoppage') }}"> All products</a></li>
+                                    {{ render(controller('GaussBundle:Default:getCategMenu')) }}#}
+                                    <li><a href="{{ path('shoppage_list_aboIptv') }}"> Abonnement IPTV</a></li>
+                                    <li><a href="{{ path('shoppage_center') }}"> Download Center</a></li>
                                 </ul>
                             </li>
                             <li>

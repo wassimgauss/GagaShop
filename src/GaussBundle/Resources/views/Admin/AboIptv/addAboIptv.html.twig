@@ -43,15 +43,14 @@
 
           {% block shop_body %}
               <div class="col-md-9" style="background-color: #E0E0E0;">
-
                   {{ form_start(form, { 'attr': {'class': 'inputs-border'}}) }}
                   <div class="form-group">
                       <div class="required">
-                          {{ form_widget(form.nameProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Product 's name "} }) }}
+                          {{ form_widget(form.nameProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Abonnement 's name "} }) }}
                       </div>
                   </div>
                   <div class="form-group">
-                      {{ form_widget(form.descriptionProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Product 's description "} }) }}
+                      {{ form_widget(form.descriptionProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Abonnement 's description "} }) }}
                   </div>
 
                   <div class="form-group">
@@ -67,25 +66,25 @@
                   </div>
 
                   <div class="form-group">
-                      {{ form_widget(form.statusProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Status Product"} }) }}
+                      {{ form_widget(form.statusProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Status Abonnement"} }) }}
                   </div>
 
                   <div class="form-group">
-                      {{ form_widget(form.codeProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Code Product  "} }) }}
+                      {{ form_widget(form.codeProduct, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Code Abonnement  "} }) }}
                   </div>
 
                   <div class="form-group">
-                      {{ form_widget(form.classement, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Classement Product  "} }) }}
+                      {{ form_widget(form.duree, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Duree Abonnement  "} }) }}
                   </div>
 
                   <div class="form-group">
-                      {{ form_widget(form.image) }}
+                      {{ form_widget(form.classement, { 'attr' : {'class' : 'form-control', 'placeholder' :  "Classement Abonnement  "} }) }}
                   </div>
 
                   {{ form_errors(form) }}
                   <div class="form-group">
 
-                  {{ form_end(form) }}
+                      {{ form_end(form) }}
                       </div>
               </div>
 

@@ -10,5 +10,11 @@ namespace GaussBundle\Repository;
  */
 class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
-    
+    public function getCollection(){
+        $qb = $this->createQueryBuilder('u');
+        $qb->where('u.category != :param order by u.id desc ')
+            ->setParameter('param', 5)
+            ->setMaxResults(6);
+        return $qb->getQuery()->getResult();
+    }
 }

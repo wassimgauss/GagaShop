@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProduitType extends AbstractType
+class ProduitIPTVType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -38,8 +38,8 @@ class ProduitType extends AbstractType
             ->add('otherPrice',IntegerType::class)
             ->add('statusProduct',IntegerType::class)
             ->add('codeProduct',TextType::class)
+            ->add('duree',TextType::class)
             ->add('classement',TextType::class)
-            ->add('image',ImageType::class)
             ->add('Submit',SubmitType::class);
     }
     

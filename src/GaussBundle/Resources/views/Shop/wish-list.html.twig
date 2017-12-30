@@ -21,7 +21,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="section products-grid second-style" style="margin-top: -70px;">
+<section class="section products-grid second-style" style="margin-top: -30px;">
    <div class="container">
       <div class="row">
          {% block shop_sidebar %}
@@ -48,14 +48,19 @@
                                     {% if listproduct is not null %}
                                         {% for product in listproduct %}
                                                 <tr class="item">
-
                                                         <td scope="row" class="product-remove">
                                                         <a href="{{ path('adminpage_delete_from_wish', {'id_product' : product.id}) }}" class="remove" title="Remove this item"><i class="lil-close"></i></a>
                                                         </td>
                                                         <td class="product-thumbnail">
-                                                        <a href="product.html">
+                                                    {% if product.image is not null %}
+                                                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
                                                         <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
                                                         </a>
+                                                        {% else %}
+                                                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                                                        <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive">
+                                                        </a>
+                                                        {% endif %}
                                                         </td>
                                                         <td class="product-name">
                                                         <a href="product.html">{{ product.nameProduct }}</a>

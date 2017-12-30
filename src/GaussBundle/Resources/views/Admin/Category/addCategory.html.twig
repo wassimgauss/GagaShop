@@ -1,19 +1,25 @@
 {% extends "base.html.twig" %}
 
 {% block navbar %}
-      {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
-      <div class="page-head content-top-margin">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-8 col-sm-7">
-               <ol class="breadcrumb">
-                  <li><a href="index-2.html">Home</a></li>
-                  <li class="active">Products</li>
-               </ol>
-            </div>
-         </div><!-- /.row -->
-      </div><!-- /.container -->
-      </div><!-- /.page-head -->
+    <div class="container">
+        <div class="row">
+
+            {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+            <div class="page-head content-top-margin">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-7">
+                            <ol class="breadcrumb">
+                                <li><a href="index-2.html">Home</a></li>
+                                <li class="active">Admin</li>
+                            </ol>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.page-head -->
+
+        </div>
+    </div>
 {% endblock %}
 {% block slider %}
    {#{{ include ('@Gauss/Default/layout/slider.html.twig') }}#}

@@ -49,28 +49,36 @@
                       <thead>
                       <tr>
                       <th> ID</th>
-                      <th> Picture</th>
-                      <th> Name</th>
-                      <th> Description</th>
-                      <th> Current Price</th>
-                      <th> Other Price</th>
-                      <th> Status</th>
+                      <th> Username</th>
+                      <th> Email</th>
+                      <th> Enable</th>
+                      <th> Activer_User</th>
                       <th> Code</th>
 
                       </tr>
                       </thead>
                       <tbody>
 
-                      {% for product in listProduct %}
+                      {% for user in listUsers %}
                       <tr>
-                          <td> {{ product.id }}</td>
-                          <td> <img src="{{ asset(product.image.webPAth) }}" class="img-responsive" style=""> </td>
-                          <td> {{ product.nameProduct }}</td>
-                          <td> {{ product.descriptionProduct }}</td>
-                          <td> {{ product.currentPrice }}</td>
-                          <td> {{ product.otherPrice }}</td>
-                          <td> {{ product.statusProduct }}</td>
-                          <td> {{ product.codeProduct }}</td>
+                          <td> {{ user.id }}</td>
+                          <td> {{ user.username }}</td>
+                          <td> {{ user.email }}</td>
+                        <td>
+                          {% if user.enabled == 1 %}
+                              <a href="" class="btn btn-primary"> TRUE </a>
+                          {% else %}
+                              <a href="" class="btn btn-danger"> FALSE </a>
+                          {% endif %}
+                          </td>
+                          <td>
+                              {% if user.enabled == 1 %}
+                                  <a href="{{ path('adminpage_disable_users', {'id_user' : user.id }) }}" class="btn btn-warning"> Disable </a>
+                              {% else %}
+                                  <a href="{{ path('adminpage_enable_users', {'id_user' : user.id }) }}" class="btn btn-default"> Enable </a>
+                              {% endif %}
+                          </td>
+                          <td> </td>
 
                       </tr>
                       {% endfor %}

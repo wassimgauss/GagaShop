@@ -2,24 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ece8ebc0-93d1-4d1b-8085-c22faad196da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/e1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/e2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/e3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/slides/2m.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/slides/2w.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/users/o1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/users/o2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/users/w1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/app/umber.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/products/p.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/users/wo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/img/users/ww.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Controller/IptvController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Form/ProduitIPTVType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/AboIptv/addAboIptv.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/AboIptv/listAboIptv.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Users/addProduct.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Users/listUsers.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/404.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/center.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/aboiptv.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/build/css/style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/img/1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/img/2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/img/4.jpeg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Controller/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Controller/AdminProductController.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Controller/AdminProductController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Controller/PanierController.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Controller/PanierController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Controller/ShopController.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Controller/ShopController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Controller/WishController.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Controller/WishController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Entity/Produit.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Entity/Produit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Form/ProduitType.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Form/ProduitType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Repository/ProduitRepository.php" afterPath="$PROJECT_DIR$/src/GaussBundle/Repository/ProduitRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/addCategory.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/addCategory.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/listCategory.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/listCategory.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/addProduct.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/addProduct.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/listProduct.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/listProduct.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/index.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/widget-categories.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/widget-categories.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/about.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/about.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection-2.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection-2.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/header.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/header.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/menu-home.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/menu-home.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/promotion.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/promotion.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-sidebar-view.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-sidebar-view.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/widget-categories.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/widget-categories.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar-panier.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar-panier.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/cart.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/cart.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-body.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-body.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/viewProduct.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/viewProduct.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/wish-list.html.twig" afterPath="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/wish-list.html.twig" />
     </list>
@@ -43,45 +77,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/index.html.twig">
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="50" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="50" />
+            <state relative-caret-position="240">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collection-2.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection-2.html.twig">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="94" column="88" selection-start-line="94" selection-start-column="88" selection-end-line="94" selection-end-column="88" />
-              <folding>
-                <element signature="e#1#1378#0#Twig" expanded="false" />
-              </folding>
+            <state relative-caret-position="319">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/header.html.twig">
+      <file leaf-file-name="listUsers.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Users/listUsers.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding>
-                <element signature="n#style#0;n#header#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="634">
+              <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml">
+      <file leaf-file-name="widget-categories.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/widget-categories.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="195">
+              <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -95,57 +125,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/slider.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Form/CategoryType.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/addCategory.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/listCategory.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/AdminCategoryController.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/widget-categories.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/AdminProductController.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/listProduct.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/admin-sidebar.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Entity/Category.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Form/ProduitType.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/addProduct.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-sidebar.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-view-product-body.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-view-product.html.twig" />
-        <option value="$PROJECT_DIR$/src/MultimediaBundle/Entity/Image.php" />
-        <option value="$PROJECT_DIR$/src/MultimediaBundle/Entity/Gallery.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/EventListener/LastRouteListener.php" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar-panier.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/widget-top-seller.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Repository/ProduitRepository.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/cart.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-body.html.twig" />
         <option value="$PROJECT_DIR$/src/UserBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Entity/Produit.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/PanierController.php" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index-categ.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/ShopController.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/contact.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-sidebar-view.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/WishController.php" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/wish-list.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/widget-categories.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/menu-home.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/viewProduct.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/about.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/promotion.html.twig" />
-        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection-2.html.twig" />
         <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/header.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/about.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/404.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/PanierController.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/ShopController.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Entity/AboIptv.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Form/AboIptvType.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/addCategory.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/listCategory.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/listProduct.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/web/build/css/style.css" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/WishController.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Entity/Produit.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/AdminProductController.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/AboIptv/listAboIptv.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection-2.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-body.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Repository/ProduitRepository.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar-panier.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/viewProduct.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/wish-list.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Form/ProduitType.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Form/ProduitIPTVType.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/AboIptv/addAboIptv.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/addProduct.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/cart.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/aboiptv.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/IptvController.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/center.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/widget-categories.html.twig" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Users/listUsers.html.twig" />
       </list>
     </option>
   </component>
@@ -160,9 +190,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1366" />
     <option name="y" value="24" />
-    <option name="width" value="1366" />
-    <option name="height" value="697" />
+    <option name="width" value="1600" />
+    <option name="height" value="829" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -264,8 +295,34 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Shop" />
+              <option name="myItemId" value="GagaShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GagaShop" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GaussBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,7 +352,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Users" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -322,6 +383,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,15 +430,65 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GagaShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GagaShop" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GaussBundle" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GagaShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GagaShop" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GagaShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GagaShop" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,11 +507,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/build/img/slides" />
-      <recent name="$PROJECT_DIR$/web/build/img/users" />
-      <recent name="$PROJECT_DIR$/web/build/img" />
+      <recent name="$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin" />
+      <recent name="$PROJECT_DIR$/web/build/app" />
       <recent name="$PROJECT_DIR$/src/GaussBundle/Resources/views/Default" />
-      <recent name="$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop" />
+      <recent name="$PROJECT_DIR$/web/build/img/products" />
+      <recent name="$PROJECT_DIR$/src/GaussBundle/Form" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/build/img" />
@@ -462,18 +581,18 @@
       <workItem from="1514465034837" duration="3161000" />
       <workItem from="1514478342592" duration="7685000" />
       <workItem from="1514489928731" duration="15575000" />
-      <workItem from="1514553501540" duration="5764000" />
+      <workItem from="1514553501540" duration="37338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142581000" />
+    <option name="totallyTimeSpent" value="174155000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="697" extended-state="7" />
+    <frame x="1366" y="24" width="1600" height="829" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2979502" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.254375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05305466" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -508,329 +627,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/uploads/img/4.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/img/5.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/img/6.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/img/7.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/img/8.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploads/img/9.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/header.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/slides/01.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/slides/02.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/slides/03.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/slides/04.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/slides/05.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Repository/ProduitRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="32" column="72" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/collections/01.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="58" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/cart.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="73" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Entity/Favoris.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/PanierController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/x.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/slider_2.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/slider.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Entity/Produit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index-categ.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar-panier.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="89" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="78" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="85" column="64" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/contact.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/WishController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="225">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding>
-            <element signature="e#42#83#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#header#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="127" selection-start-line="26" selection-start-column="127" selection-end-line="26" selection-end-column="127" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/ShopController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="28" column="133" selection-start-line="28" selection-start-column="117" selection-end-line="28" selection-end-column="133" />
-          <folding>
-            <element signature="e#42#90#0#PHP" expanded="true" />
-            <marker date="1514503117475" expanded="true" signature="2370:2415" ph="select count... GaussBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/menu-home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/widget-categories.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/wish-list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-sidebar-view.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-body.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/users/5.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/img/users/1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/about.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-          <folding>
-            <element signature="e#4046#4957#0#Twig" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="e#5868#6522#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/viewProduct.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="335" column="109" selection-start-line="335" selection-start-column="109" selection-end-line="335" selection-end-column="109" />
-          <folding>
-            <element signature="e#10144#22022#0#Twig" expanded="false" />
-            <marker date="1514554291522" expanded="false" signature="7023:7705" ph="..." />
-            <marker date="1514554291522" expanded="false" signature="7784:8458" ph="..." />
-            <marker date="1514554291522" expanded="false" signature="14912:14921" ph="..." />
-            <marker date="1514554291522" expanded="false" signature="16887:16896" ph="..." />
-            <marker date="1514554291522" expanded="false" signature="18806:18815" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/promotion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,23 +645,417 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection-2.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/PanierController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="94" column="88" selection-start-line="94" selection-start-column="88" selection-end-line="94" selection-end-column="88" />
+        <state relative-caret-position="-68">
+          <caret line="62" column="75" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/404.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/ShopController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="59" column="71" selection-start-line="59" selection-start-column="71" selection-end-line="59" selection-end-column="71" />
           <folding>
-            <element signature="e#1#1378#0#Twig" expanded="false" />
+            <element signature="e#42#90#0#PHP" expanded="true" />
+            <marker date="1514582879154" expanded="true" signature="2404:2449" ph="select count... GaussBundle" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/header.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/addCategory.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Category/listCategory.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Form/AboIptvType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="94" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/build/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="296" column="23" selection-start-line="296" selection-start-column="17" selection-end-line="296" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Entity/AboIptv.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Entity/Produit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="237" column="4" selection-start-line="237" selection-start-column="4" selection-end-line="237" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/AdminProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="60" column="61" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/WishController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="55" column="74" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/AboIptv/listAboIptv.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="73" column="60" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/listProduct.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="71" column="55" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Repository/ProduitRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/collection-2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
           <folding>
-            <element signature="n#style#0;n#header#0;n#!!top" expanded="true" />
+            <element signature="e#1#1378#0#Twig" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#section#1;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/10.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/6.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/5.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/2.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/1.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/4.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/7.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/9.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/img/11.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/viewProduct.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="e#10827#22705#0#Twig" expanded="false" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <marker date="1514666448076" expanded="false" signature="7706:8388" ph="..." />
+            <marker date="1514666448076" expanded="false" signature="8467:9141" ph="..." />
+            <marker date="1514666448076" expanded="false" signature="15595:15604" ph="..." />
+            <marker date="1514666448076" expanded="false" signature="17570:17579" ph="..." />
+            <marker date="1514666448076" expanded="false" signature="19489:19498" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Form/ProduitType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Form/ProduitIPTVType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/AboIptv/addAboIptv.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="80" column="131" selection-start-line="80" selection-start-column="131" selection-end-line="80" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Product/addProduct.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="53" column="125" selection-start-line="53" selection-start-column="125" selection-end-line="53" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/wish-list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="59" column="131" selection-start-line="59" selection-start-column="131" selection-end-line="59" selection-end-column="131" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/cart.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="69" selection-start-line="37" selection-start-column="69" selection-end-line="37" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="e#5497#6318#0#Twig" expanded="false" />
+            <element signature="e#9121#11880#0#Twig" expanded="false" />
+            <marker date="1514667789890" expanded="false" signature="9569:9583" ph="..." />
+            <marker date="1514667789890" expanded="false" signature="9584:11877" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="82" column="81" selection-start-line="82" selection-start-column="81" selection-end-line="82" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/aboiptv.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding>
+            <element signature="e#1038#3505#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/IptvController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Shop/layout/shop-body.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="22" />
+          <folding>
+            <element signature="e#2210#6581#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/build/app/6.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/center.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="50" column="82" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Users/addProduct.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Default/layout/navbar-panier.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="99" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/admin-sidebar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/layout/widget-categories.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussBundle/Resources/views/Admin/Users/listUsers.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

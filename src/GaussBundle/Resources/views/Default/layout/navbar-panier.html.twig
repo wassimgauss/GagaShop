@@ -8,9 +8,17 @@
                 {% if listproduct is not empty %}
                 {% for product in listproduct %}
                     <li>
-                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}"><img src="{{ asset(product.image.webPath) }}" class="img-responsive product-img" alt=""></a>
+                        {% if  product.category.id != 5 %}
+                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                            <img src="{{ asset(product.image.webPath) }}" class="img-responsive product-img" alt="">
+                        </a>
+                        {% else %}
+                        <a href="#">
+                            <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive product-img" alt="">
+                        </a>
+                        {% endif %}
                         <div class="product-details">
-                            <p class="product-title clearfix"><a href="product.html">{{ product.nameProduct  }}</a></p>
+                            <p class="product-title clearfix"><a href="#">{{ product.nameProduct  }}</a></p>
                             <p class="product-price clearfix">
                                 <ins>
                                     <span class="amount">{{ product.currentPrice }}.000 TTc</span>
@@ -24,7 +32,9 @@
                     </li>
                 {% else %}
                     <li>
-                        <a href="product.html"><img src="{{ asset('build/img/empty.png') }}" class="img-responsive" alt=""></a>
+                        <a href="product.html">
+                            <img src="{{ asset('build/img/empty.png') }}" class="img-responsive" alt="">
+                        </a>
                         <br>
                         <p class="product-price clearfix">
                             <ins>

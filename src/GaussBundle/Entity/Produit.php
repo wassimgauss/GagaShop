@@ -94,6 +94,13 @@ class Produit
     private $codeProduct;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="duree", type="string", length=255 , nullable=true)
+     */
+    private $duree;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="classement", type="integer", nullable=true)
@@ -212,6 +219,23 @@ class Produit
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getDuree()
+    {
+        return $this->duree;
+    }
+
+    /**
+     * @param string $duree
+     */
+    public function setDuree($duree)
+    {
+        $this->duree = $duree;
+    }
+
+    
     /**
      * Get otherPrice
      *

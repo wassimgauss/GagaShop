@@ -60,7 +60,8 @@ class PanierController extends Controller
                 $em->flush();
             }
             else {
-                throw new EntityNotFoundException();
+                return $this->redirect($this->generateUrl('homepage_404'));
+                //throw new EntityNotFoundException();
             }
             return $this->redirect($this->generateUrl('adminpage_view_cart'));
         }

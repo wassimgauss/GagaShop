@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block navbar %}
+
     <div class="container">
         <div class="row">
             {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
@@ -49,13 +50,16 @@
                       <thead>
                       <tr>
                       <th> ID</th>
-                      <th> Picture</th>
+                      <th> &nbsp;</th>
                       <th> Name</th>
+                      <th> duree</th>
                       <th> Description</th>
                       <th> Current Price</th>
                       <th> Other Price</th>
                       <th> Status</th>
                       <th> Code</th>
+                      <th> Classement</th>
+
 
                       </tr>
                       </thead>
@@ -64,13 +68,15 @@
                       {% for product in listProduct %}
                       <tr>
                           <td> {{ product.id }}</td>
-                          <td> <img src="{{ asset(product.image.webPAth) }}" class="img-responsive" style=""> </td>
+                          <td> <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive" style=""> </td>
                           <td> {{ product.nameProduct }}</td>
+                          <td> {{ product.duree }}</td>
                           <td> {{ product.descriptionProduct }}</td>
                           <td> {{ product.currentPrice }}</td>
                           <td> {{ product.otherPrice }}</td>
                           <td> {{ product.statusProduct }}</td>
                           <td> {{ product.codeProduct }}</td>
+                          <td> {{ product.classement }}</td>
 
                       </tr>
                       {% endfor %}

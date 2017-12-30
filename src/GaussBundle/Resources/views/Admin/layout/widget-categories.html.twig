@@ -8,13 +8,24 @@
             <a href="{{ path('adminpage_add_category') }}">Add Category</a>
         </li>#}
         <li>
+            <a href="#!">Users <span class="count">(6)</span> </a>
+            <ul class="children">
+                <li>
+                    <a href="{{ path('adminpage_list_users') }}">list Users</a>
+                </li>
+                <li>
+                    <a href="{{ path('adminpage_list_users') }}">Add Category</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="#!">Category <span class="count">(6)</span> </a>
             <ul class="children">
                 <li>
                     <a href="{{ path('adminpage_list_category') }}">list Category</a>
                 </li>
                 <li>
-                    <a href="{{ path('adminpage_add_category') }}">Add Category</a>
+                    <a href="{{ path('adminpage_add_category') }}">Add User</a>
                 </li>
             </ul>
         </li>
@@ -27,6 +38,18 @@
                 </li>
                 <li>
                     <a href="{{ path('adminpage_add_product') }}">Add Product</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#!">Abonnements IPTV <span class="count">(3)</span></a>
+            <ul class="children">
+                <li>
+                    <a href="{{ path('adminpage_list_aboIptv') }}">list Abo_IPTV</a>
+                </li>
+                <li>
+                    <a href="{{ path('adminpage_add_aboiptv') }}">Add Abo_IPTV</a>
                 </li>
             </ul>
         </li>

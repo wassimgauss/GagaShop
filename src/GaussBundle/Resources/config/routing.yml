@@ -6,6 +6,18 @@ shoppage:
     path:     /shop
     defaults: { _controller: GaussBundle:Shop:index }
 
+homepage_contact:
+    path:     /contact
+    defaults: { _controller: GaussBundle:Default:contact }
+
+homepage_about:
+    path:     /about
+    defaults: { _controller: GaussBundle:Default:about }
+
+homepage_404:
+    path:     /notFound
+    defaults: { _controller: GaussBundle:Default:notFound }
+
 shoppage_category:
     path:     /shop/{id_categ}
     defaults: { _controller: GaussBundle:Shop:indexCateg }
@@ -22,6 +34,20 @@ adminpage_add_product:
 adminpage_list_product:
     path:     /Shop/allProducts
     defaults: { _controller: GaussBundle:AdminProduct:listProduct }
+adminpage_list_users:
+    path:     /Shop/allUsers
+    defaults: { _controller: GaussBundle:Admin:listUser }
+
+adminpage_enable_users:
+    path:     /Shop/allUsers/enable/{id_user}
+    defaults: { _controller: GaussBundle:Admin:enable }
+    requirements:
+        id_user: \d+
+adminpage_disable_users:
+    path:     /Shop/allUsers/disable/{id_user}
+    defaults: { _controller: GaussBundle:Admin:disable }
+    requirements:
+        id_user: \d+
 
 adminpage_view_product:
     path:     /Shop/viewProduct/{id_product}
@@ -68,11 +94,18 @@ adminpage_delete_from_wish:
     defaults: { _controller: GaussBundle:Wish:deleteFromWish }
     requirements:
         id_product: \d+
+adminpage_add_aboiptv:
+    path:     /admin/addAboIptv
+    defaults: { _controller: GaussBundle:AdminProduct:addIptv }
 
-homepage_contact:
-    path:     /contact
-    defaults: { _controller: GaussBundle:Default:contact }
+adminpage_list_aboIptv:
+    path:     /admin/allAboIptv
+    defaults: { _controller: GaussBundle:AdminProduct:listIptv }
 
-homepage_about:
-    path:     /about
-    defaults: { _controller: GaussBundle:Default:about }
+shoppage_list_aboIptv:
+    path:     /Shop/allAboIptv
+    defaults: { _controller: GaussBundle:Iptv:index }
+
+shoppage_center:
+    path:     /Shop/downloadCenter
+    defaults: { _controller: GaussBundle:Iptv:center }

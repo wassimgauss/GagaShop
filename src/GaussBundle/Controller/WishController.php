@@ -18,6 +18,7 @@ class WishController extends Controller
         if($user != null) {
             $myfav = $em->getRepository("GaussBundle:Favoris")->findBy(array('idUser' => $user->getId()));
             $listProduct = array();
+            $listIptv = array();
             foreach ($myfav as $item) {
                 $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $item->getIdProduct()));
                 array_push($listProduct,$product);
@@ -43,7 +44,7 @@ class WishController extends Controller
             $em->flush();
         }
         else {
-            throw new EntityNotFoundException();
+            return $this->redirect($this->generateUrl('homepage_404'));
         }
       if($session->get('last_route')['name'] === "shoppage"){
             return $this->redirect($this->generateUrl('shoppage'));
@@ -51,6 +52,9 @@ class WishController extends Controller
         elseif ($session->get('last_route')['name'] === "adminpage_view_product") {
             return $this->redirect($this->generateUrl('adminpage_view_product',array('id_product' => $id_product)));
         }
+      elseif ($session->get('last_route')['name'] === "shoppage_list_aboIptv") {
+          return $this->redirect($this->generateUrl('shoppage_list_aboIptv'));
+      }
         else {
             return $this->redirect($this->generateUrl('shoppage_wishlist'));
         }
@@ -66,9 +70,12 @@ class WishController extends Controller
             $em->flush();
         }
         else {
-            throw new EntityNotFoundException();
+            return $this->redirect($this->generateUrl('homepage_404'));
         }
         return $this->redirect($this->generateUrl('shoppage_wishlist'));
     }
 
+    
+    
+    
 }

@@ -52,6 +52,7 @@
                   <div class="container">
                       <div class="row">
                           <div class="col-sm-4">
+                              {% if product.category.id != 5 %}
                               <div class="product-images">
                                   <div class="product-thumbnail">
                                       <a href="{{ asset(product.image.webPath) }}" class="fancybox" rel="gallery">
@@ -86,6 +87,15 @@
                                       </div>
                                   </div>
                               </div><!-- /.product-images -->
+                              {% else %}
+                                  <div class="product-images">
+                                      <div class="product-thumbnail">
+                                          <a href="{{ asset('build/img/products/p.png') }}" class="fancybox" rel="gallery">
+                                              <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive">
+                                          </a>
+                                      </div>
+                                  </div><!-- /.product-images -->
+                              {% endif %}
                           </div>
                           <div class="col-sm-4">
                               <div class="product-details">
@@ -325,7 +335,11 @@
                                       <span class="onsale new" style="background-color: #4DB6AC">New!</span>
                                   {% endif %}
                                   <div class="product-thumbnail">
+                                      {% if product.image is not null %}
                                       <img src="{{ asset(product.image.webPath) }}" class="img-responsive" alt="">
+                                      {% else %}
+                                          <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive" alt="">
+                                      {% endif %}
                                   </div>
                                   <div class="product-details text-center">
                                       <div class="product-btns">

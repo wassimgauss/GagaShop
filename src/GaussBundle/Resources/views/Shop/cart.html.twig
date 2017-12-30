@@ -20,7 +20,7 @@
 </div>
 {% endblock %}
 {% block content %}
-<section class="section products-grid second-style" style="margin-top: -70px;">
+<section class="section products-grid second-style" style="margin-top: -30px;">
    <div class="container">
       <div class="row">
          {% block shop_sidebar %}
@@ -35,7 +35,7 @@
                                   <table class="table cart-table" cellspacing="0">
                                       <thead>
                                       <tr>
-                                          <th class="product-remove">&nbsp;&nbsp;&nbsp;</th>
+                                          <th class="product-remove">&nbsp;</th>
                                           <th class="product-thumbnail">&nbsp;</th>
                                           <th class="product-name">Product</th>
                                           <th class="product-price">Price</th>
@@ -44,6 +44,7 @@
                                       </tr>
                                       </thead>
                                       <tbody>
+                                      {% set subtotal = 0 %}
                                     {% if listproduct is not null %}
                                         {% for product in listproduct %}
                                                 <tr class="item">
@@ -52,12 +53,18 @@
                                               <a href="{{ path('adminpage_delete_from_cart', {'id_product' : product.id}) }}" class="remove" title="Remove this item"><i class="lil-close"></i></a>
                                           </td>
                                           <td class="product-thumbnail">
-                                              <a href="product.html">
-                                                  <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
+
+                                                  {% if product.image is not null %}
+                                              <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                                                      <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
+                                                  {% else %}
+                                                  <a href="#">
+                                                      <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive">
+                                                  {% endif %}
                                               </a>
                                           </td>
                                           <td class="product-name">
-                                              <a href="product.html">{{ product.nameProduct }}</a>
+                                              <a href="#">{{ product.nameProduct }}</a>
                                           </td>
                                           <td class="product-price">
                                               <span class="amount">{{ product.currentPrice }}.000 TTc</span>
@@ -74,6 +81,7 @@
                                           </td>
                                           <td class="product-subtotal">
                                               <span class="amount">{{ product.currentPrice * panier[product.id]}}.000 TTc</span>
+                                              {% set subtotal = subtotal + (product.currentPrice * panier[product.id])  %}
                                           </td>
                                                     </form>
                                       </tr>
@@ -100,19 +108,19 @@
                                                           <tr class="cart-subtotal">
                                                               <th>Subtotal</th>
                                                               <td class="text-right">
-                                                                  <span class="amount">$899.00</span>
+                                                                  <span class="amount">{{ subtotal }}.000 TTc</span>
                                                               </td>
                                                           </tr>
                                                           <tr class="shipping">
                                                               <th>Shipping</th>
                                                               <td class="text-right">
-                                                                  <span class="amount">$50.00</span>
+                                                                  <span class="amount">20.000 TTc</span>
                                                               </td>
                                                           </tr>
                                                           <tr class="order-total">
                                                               <th>Total</th>
                                                               <td class="text-right">
-                                                                  <strong><span class="amount">$999.00</span></strong>
+                                                                  <strong><span class="amount">{{ subtotal - 20 }}.000 TTc</span></strong>
                                                               </td>
                                                           </tr>
                                                           </tbody>
@@ -126,7 +134,7 @@
                                                           </div>
                                                       </div>
 
-                                                      <div class="text-right">
+{#                                                      <div class="text-right">
                                                           <a href="#!" class="shipping-calculator-button effect" data-slide-toggle=".shipping-calculator-form">Calculate Shipping</a>
                                                       </div>
 
@@ -155,7 +163,7 @@
                                                           <div class="form-group text-right">
                                                               <button type="submit" class="btn btn-default">Update Totals</button>
                                                           </div>
-                                                      </div>
+                                                      </div>#}
                                                   </div>
                                               </div>
                                           </td>

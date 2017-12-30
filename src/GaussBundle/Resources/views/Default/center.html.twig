@@ -1,0 +1,249 @@
+{% extends "base.html.twig" %}
+
+{% block navbar %}
+    <div class="container">
+        <div class="row">
+            {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+
+      <div class="page-head content-top-margin">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-8 col-sm-7">
+               <ol class="breadcrumb">
+                  <li><a href="index-2.html">Home</a></li>
+                  <li class="active">Download Center</li>
+               </ol>
+            </div>
+         </div><!-- /.row -->
+      </div><!-- /.container -->
+      </div><!-- /.page-head -->
+
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<section class="section products-grid second-style" style="margin-top: -30px;">
+   <div class="container">
+      <div class="row">
+         {% block shop_sidebar %}
+            {{ include ('@Gauss/Shop/layout/shop-sidebar.html.twig') }}
+         {% endblock %}
+          <div class="col-md-8 col-lg-offset-1">
+          <div class="row masonry">
+              <div class="product col-md-4 col-sm-4 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/umber.png') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/umbertv.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">UMBER IPTV</a></h3>
+                  <div class="star-rating">
+                      <span style="width:100%"></span>
+                  </div>
+              </div><!-- /.product -->
+              <div class="product col-md-4 col-sm-4 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/8.png') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/com.mxtech2.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">MX Player</a></h3>
+                  <div class="star-rating">
+                      <span style="width:80%"></span>
+                  </div>
+              </div><!-- /.product -->
+              <div class="product col-md-4 col-sm-4 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/10.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="product.html" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">SMART IPTV</a></h3>
+                  <div class="star-rating">
+                      <span style="width:90%"></span>
+                  </div>
+              </div><!-- /.product -->
+          </div>
+          </div>
+
+          <div class="col-md-9 col-lg-offset-0">
+          <div class="row masonry">
+
+              <div class="product col-md-2 col-sm-2 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/1.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/scorpionIpTvV1_withoutList_new.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">Scorpion V2</a></h3>
+                  <div class="star-rating">
+                      <span style="width:70%"></span>
+                  </div>
+              </div><!-- /.product -->
+
+              <div class="product col-md-2 col-sm-2 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/2.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/ScorpionMaxMovies8.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">Scorpion Max_Movies</a></h3>
+                  <div class="star-rating">
+                      <span style="width:70%"></span>
+                  </div>
+              </div><!-- /.product -->
+
+              <div class="product col-md-2 col-sm-2 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/3.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/ScorpionRadio5.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">Scorpion Live_Radio</a></h3>
+                  <div class="star-rating">
+                      <span style="width:60%"></span>
+                  </div>
+              </div><!-- /.product -->
+
+              <div class="product col-md-2 col-sm-2 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/4.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/ScorpionLauncher15.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">Scorpion Launcher</a></h3>
+                  <div class="star-rating">
+                      <span style="width:30%"></span>
+                  </div>
+              </div><!-- /.product -->
+
+              <div class="product col-md-2 col-sm-2 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/6.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/Scorpion _Xtream.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">Scorpion Code</a></h3>
+                  <div class="star-rating">
+                      <span style="width:70%"></span>
+                  </div>
+              </div><!-- /.product -->
+
+          </div>
+          </div>
+
+          <div class="col-md-4 col-lg-offset-2">
+          <div class="row masonry">
+
+              <div class="product col-md-6 col-sm-6 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/5.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/ScorpionVOD3_3.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">Scorpion V3</a></h3>
+                  <div class="star-rating">
+                      <span style="width:80%"></span>
+                  </div>
+              </div><!-- /.product -->
+
+              <div class="product col-md-6 col-sm-6 col-xs-12" data-product-id="1">
+                  <div class="inner-product">
+                      <div class="product-thumbnail">
+                          <img src="{{ asset('build/app/7.jpg') }}" class="img-responsive" alt="">
+                      </div>
+                      <div class="product-details text-center">
+                          <div class="product-btns">
+								<span data-toggle="tooltip" data-placement="top" title="View">
+									<a href="http://scorpion-tv.com/android/Xtream Codes IPTV_v1.1.apk" class="li-icon view-details"><i class="fa fa-download"></i> </a>
+								</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h3 class="product-title"><a href="#!">Scorpion Xtream</a></h3>
+                  <div class="star-rating">
+                      <span style="width:40%"></span>
+                  </div>
+              </div><!-- /.product -->
+
+
+          </div><!-- /.masonry -->
+          </div>
+      </div>
+   </div><!-- /.container -->
+
+
+</section><!-- /.products-grid -->
+{% endblock %}
+
+
+{% block brands %}
+
+{% endblock %}
+
+{% block footer %}
+   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+{% endblock %}

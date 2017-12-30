@@ -50,9 +50,15 @@ class ShopController extends Controller
         $em = $this->getDoctrine()->getManager();
         $allproduct= $em->getRepository("GaussBundle:Produit")->findBy(array(),array('statusProduct' => 'desc'));
         $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $id_product));
-        $query = $em->createQuery('select count(p.id) from GaussBundle:Produit p');
-        $count = $query->getResult();
-        return $this->render('@Gauss/Shop/viewProduct.html.twig',array('product' => $product, 'allProdcut' => $allproduct, 'count' => $count));
+        if($product != null){
+            $query = $em->createQuery('select count(p.id) from GaussBundle:Produit p');
+            $count = $query->getResult();
+            return $this->render('@Gauss/Shop/viewProduct.html.twig',array('product' => $product, 'allProdcut' => $allproduct, 'count' => $count));
+
+        }
+        else {
+            return $this->redirect($this->generateUrl('homepage_404'));
+        }
     }
     
 }

@@ -2,6 +2,7 @@
     <div class="masonry row">
 
         {% for product in listProduct %}
+            {% if product.category.id != 5 %}
         <div class="product col-md-4 col-sm-6 col-xs-12" data-product-id="1">
             <div class="inner-product">
                 {% if (product.statusProduct == 1) %}
@@ -39,6 +40,7 @@
                 </ins>
             </p>
         </div><!-- /.product -->
+            {% endif %}
         {% endfor %}
 
 {#        <div class="product col-md-4 col-sm-6 col-xs-12" data-product-id="1">

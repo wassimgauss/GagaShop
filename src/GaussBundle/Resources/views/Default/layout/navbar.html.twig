@@ -1,103 +1,117 @@
 <div class="nav-container nav-sticky" style="position: fixed; z-index: 99;">
-            <nav class="sub-navbar" style="background-color:#B0BEC5">
-                <div class="list-select">
-                    <div class="inner-select">
-                        <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
-                        <ul>
-                            <li><a href="#!">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
-                            <li><a href="#!">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
-                            <li><a href="#!">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="list-select">
-                    <div class="inner-select">
-                        <div class="selected">TTc</div>
-                        <ul>
-                            <li><a href="#!">TTc</a></li>
-                            <li><a href="#!"><i class="lil-dollar"></i></a></li>
-                            <li><a href="#!"><i class="lil-try"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <ul class="pull-right list-inline">
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('fos_user_profile_show') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Account</a></li>
-                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
-                        <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
-                    {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-
-                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Account</a></li>
-                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
-                        <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-
-                    {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                        <li><a href="{{ path('fos_user_security_login') }}">&nbsp;LOGIN&nbsp;</a></li>
-                        <li><a href="{{ path('fos_user_registration_register') }}">REGISTER&nbsp;</a></li>
-                        <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;</a></li>
-                    {% endif %}
+    <nav class="sub-navbar" style="background-color:#B0BEC5">
+        <div class="list-select">
+            <div class="inner-select">
+                <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
+                <ul>
+                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
                 </ul>
-                <div class="clearfix"></div>
-            </nav><!-- /.sub-navbar -->
-            <nav class="navbar navbar-default" style="background-color:#B0BEC5">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="{{ path('homepage') }}">
-                            <img src="{{ asset('build/img/apple_icons_114x114.png') }}" alt="Sham Theme" class="img-responsive" style="max-width:40px; margin-top: 0px;">
-                        </a>
-                    </div>
-                    {{ render(controller('GaussBundle:Panier:getProduct')) }}
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-left">
-                            <li class="active">
-                                <a href="index-2.html" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Home <i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
-                                {#    <li><a href="index-3.html">Home Default Slider</a></li>
-                                    <li><a href="index-4.html">Home Overlay Products</a></li>
-                                    <li><a href="index-5.html#instagram">Home instagram section</a></li>#}
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Shop <i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ path('shoppage') }}"> All products</a></li>
-                                    {{ render(controller('GaussBundle:Default:getCategMenu')) }}
-{#                                    <li><a href="products-sidebar-left.html">Sidebar Left</a></li>
-                                    <li><a href="products-sidebar-right.html">Sidebar Right</a></li>
-                                    <li><a href="product.html">Simple Product</a></li>#}
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">IPTV <i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                {#    <li><a href="{{ path('shoppage') }}"> All products</a></li>
-                                    {{ render(controller('GaussBundle:Default:getCategMenu')) }}#}
-                                    <li><a href="{{ path('shoppage_list_aboIptv') }}"> Abonnement IPTV</a></li>
-                                    <li><a href="{{ path('shoppage_center') }}"> Download Center</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">eCommerce Pages <i class="caret"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ path('shoppage_wishlist') }}">Wishlist</a></li>
-                                    <li><a href="{{ path('adminpage_view_cart') }}">Cart</a></li>
-{#                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="order-received.html">Order Received</a></li>
-                                    <li><a href="order-tracking.html">Order Tracking</a></li>#}
-                                </ul>
-                            </li>
-                            <li><a href="{{ path('homepage_about') }}">About</a></li>
-                            <li><a href="{{ path('homepage_contact') }}">Contact</a></li>
+            </div>
+        </div>
+        <div class="list-select">
+            <div class="inner-select">
+                <div class="selected">TTc</div>
+                <ul>
+                    <li><a href="#!">TTc</a></li>
+                    <li><a href="#!"><i class="lil-dollar"></i></a></li>
+                    <li><a href="#!"><i class="lil-try"></i></a></li>
+                </ul>
+            </div>
+        </div>
+{#        <script>
+            if( screen.width < 360 ) {
+                var x = document.getElementById("resolution");
+                x.addClass("escape");
+                //$("p").append("Some appended text.");
+            }
+        </script>#}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <ul class="pull-right list-inline">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li><a href="{{ path('fos_user_profile_show') }}">
+                        &nbsp;&nbsp;&nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i> Account</a></li>
+                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
+            {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+
+                <li><a href="{{ path('fos_user_profile_show') }}">
+                        &nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>Account</a></li>
+                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+
+            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                <li><a href="{{ path('fos_user_security_login') }}">
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;LOGIN</a></li>
+                <li><a href="{{ path('fos_user_registration_register') }}">&nbsp;REGISTER</a></li>
+                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;</a></li>
+            {% endif %}
+        </ul>
+        <div class="clearfix"></div>
+    </nav><!-- /.sub-navbar -->
+    <nav class="navbar navbar-default" style="background-color:#B0BEC5">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('homepage') }}">
+                    <img src="{{ asset('build/img/apple_icons_114x114.png') }}" alt="Sham Theme" class="img-responsive" style="max-width:40px; margin-top: 0px;">
+                </a>
+            </div>
+            {{ render(controller('GaussBundle:Panier:getProduct')) }}
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active">
+                        <a href="index-2.html" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Home <i class="caret"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
+                            {#    <li><a href="index-3.html">Home Default Slider</a></li>
+                                <li><a href="index-4.html">Home Overlay Products</a></li>
+                                <li><a href="index-5.html#instagram">Home instagram section</a></li>#}
                         </ul>
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container -->
-            </nav>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Shop <i class="caret"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('shoppage') }}"> All products</a></li>
+                            {{ render(controller('GaussBundle:Default:getCategMenu')) }}
+                            {#                                    <li><a href="products-sidebar-left.html">Sidebar Left</a></li>
+                                                                <li><a href="products-sidebar-right.html">Sidebar Right</a></li>
+                                                                <li><a href="product.html">Simple Product</a></li>#}
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">IPTV <i class="caret"></i></a>
+                        <ul class="dropdown-menu">
+                            {#    <li><a href="{{ path('shoppage') }}"> All products</a></li>
+                                {{ render(controller('GaussBundle:Default:getCategMenu')) }}#}
+                            <li><a href="{{ path('shoppage_list_aboIptv') }}"> Abonnement IPTV</a></li>
+                            <li><a href="{{ path('shoppage_center') }}"> Download Center</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">eCommerce Pages <i class="caret"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('shoppage_wishlist') }}">Wishlist</a></li>
+                            <li><a href="{{ path('adminpage_view_cart') }}">Cart</a></li>
+                            {#                                    <li><a href="checkout.html">Checkout</a></li>
+                                                                <li><a href="order-received.html">Order Received</a></li>
+                                                                <li><a href="order-tracking.html">Order Tracking</a></li>#}
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('homepage_about') }}">About</a></li>
+                    <li><a href="{{ path('homepage_contact') }}">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+    </nav>
 </div><!-- /.nav-container -->
 

@@ -35,10 +35,20 @@ class ShopController extends Controller
         return $this->render('@Gauss/Shop/layout/shop-body.html.twig',array('listProduct' => $listProduct));
     }
 
-    public function getProductAction(){
+    public function getProductAction(Request $request){
         $em = $this->getDoctrine()->getManager();
-        $listProduct = $em->getRepository("GaussBundle:Produit")->findAll();
-        return $this->render('@Gauss/Shop/layout/shop-body.html.twig',array('listProduct' => $listProduct));
+        //$listProduct = $em->getRepository("GaussBundle:Produit")->findAll();
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "select a from GaussBundle:Produit a where a.category != 5";
+        $query = $em->createQuery($dql);
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            6/*limit per page*/
+        );
+
+        return $this->render('@Gauss/Shop/layout/shop-body.html.twig',array('pagination' => $pagination));
     }
     public function getTopSellerAction(){
         $em = $this->getDoctrine()->getManager();

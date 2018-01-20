@@ -10,7 +10,7 @@
          <div class="row">
             <div class="col-md-8 col-sm-7">
                <ol class="breadcrumb">
-                  <li><a href="index-2.html">Home</a></li>
+                  <li><a href="#">Home</a></li>
                   <li class="active">Products</li>
                </ol>
             </div>
@@ -30,7 +30,7 @@
          {% endblock %}
 
           {% block content_shop %}
-              {{ render(controller('GaussBundle:Shop:getProductCateg',{'id_categ' : id_categ})) }}
+              {{ render(controller('GaussBundle:Shop:getProductCateg',{'id_categ' : id_categ, 'page' : page })) }}
           {% endblock %}
 
       </div>

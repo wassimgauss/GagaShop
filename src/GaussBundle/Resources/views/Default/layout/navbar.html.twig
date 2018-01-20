@@ -4,9 +4,9 @@
             <div class="inner-select">
                 <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
                 <ul>
-                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
-                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
-                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('homepage', { Local : 'en' }) }}">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('homepage', {  Local : 'de' }) }}">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('homepage', {  Local : 'fr' }) }}">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
                 </ul>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
                     <li class="active">
-                        <a href="index-2.html" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Home <i class="caret"></i></a>
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_home'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
                             {#    <li><a href="index-3.html">Home Default Slider</a></li>
@@ -79,7 +79,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Shop <i class="caret"></i></a>
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_shop'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('shoppage') }}"> All products</a></li>
                             {{ render(controller('GaussBundle:Default:getCategMenu')) }}
@@ -89,7 +89,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">IPTV <i class="caret"></i></a>
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_iptv'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             {#    <li><a href="{{ path('shoppage') }}"> All products</a></li>
                                 {{ render(controller('GaussBundle:Default:getCategMenu')) }}#}
@@ -98,7 +98,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">eCommerce Pages <i class="caret"></i></a>
+                        <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_pages'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('shoppage_wishlist') }}">Wishlist</a></li>
                             <li><a href="{{ path('adminpage_view_cart') }}">Cart</a></li>
@@ -107,8 +107,8 @@
                                                                 <li><a href="order-tracking.html">Order Tracking</a></li>#}
                         </ul>
                     </li>
-                    <li><a href="{{ path('homepage_about') }}">About</a></li>
-                    <li><a href="{{ path('homepage_contact') }}">Contact</a></li>
+                    <li><a href="{{ path('homepage_about') }}">{{ 'navbar.label_about'|trans }}</a></li>
+                    <li><a href="{{ path('homepage_contact') }}">{{ 'navbar.label_contact'|trans }}</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container -->

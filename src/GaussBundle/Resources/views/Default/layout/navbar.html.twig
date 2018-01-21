@@ -2,11 +2,17 @@
     <nav class="sub-navbar" style="background-color:#B0BEC5">
         <div class="list-select">
             <div class="inner-select">
-                <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
+                {% if app.request.getLocale() == "en" %}
+                    <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
+                {% elseif app.request.getLocale() == "fr" %}
+                    <div class="selected">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</div>
+                {% else %}
+                    <div class="selected">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</div>
+                {% endif %}
                 <ul>
-                    <li><a href="{{ path('homepage', { Local : 'en' }) }}">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
-                    <li><a href="{{ path('homepage', {  Local : 'de' }) }}">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
-                    <li><a href="{{ path('homepage', {  Local : 'fr' }) }}">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('set_local_user', { 'lang' : 'en' }) }}">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('set_local_user', {  'lang' : 'de' }) }}">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('set_local_user', {  'lang' : 'fr' }) }}">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
                 </ul>
             </div>
         </div>
@@ -35,20 +41,20 @@
         <ul class="pull-right list-inline">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li><a href="{{ path('fos_user_profile_show') }}">
-                        &nbsp;&nbsp;&nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i> Account</a></li>
-                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
+                        &nbsp;&nbsp;&nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_account'|trans }}</a></li>
+                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_wishlist'|trans }}</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
             {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 
                 <li><a href="{{ path('fos_user_profile_show') }}">
-                        &nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>Account</a></li>
-                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
+                        &nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_account'|trans }}</a></li>
+                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_wishlist'|trans }}</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
             {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
                 <li><a href="{{ path('fos_user_security_login') }}">
-                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;LOGIN</a></li>
-                <li><a href="{{ path('fos_user_registration_register') }}">&nbsp;REGISTER</a></li>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{ 'navbar.label_login'|trans }}</a></li>
+                <li><a href="{{ path('fos_user_registration_register') }}">&nbsp;{{ 'navbar.label_register'|trans }}</a></li>
                 <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;</a></li>
             {% endif %}
         </ul>
@@ -63,7 +69,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ path('homepage') }}">
-                    <img src="{{ asset('build/img/a.png') }}" class="img-responsive" style="max-width:100px; margin-top: 0px;">
+                    <img src="{{ asset('build/img/apple_icons_114x114.png') }}" class="img-responsive" style="max-width:38px; margin-top: 8px;">
                 </a>
             </div>
             {{ render(controller('GaussBundle:Panier:getProduct')) }}

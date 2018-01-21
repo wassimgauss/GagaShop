@@ -12,10 +12,13 @@ class PanierController extends Controller
     public function viewCartAction(Request $request){
 
         $session = $request->getSession();
+        $local = $session->get('_local');
+        $request->setLocale($local);
+        $request->setDefaultLocale($local);
+        $this->get('translator')->setLocale($local);
         $em = $this->getDoctrine()->getManager();
         if(!$session->has('panier'))
             $session->set('panier',array());
-        //print_r(array_keys($session->get('panier')));
         $listproduct = array();
         foreach (array_keys($session->get('panier')) as $key ){
            $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => intval($key)));
@@ -43,7 +46,6 @@ class PanierController extends Controller
             }
         }
         $session->set('panier',$panier);
-        //print_r($session->get('last_route')['name']);
         sleep(2);
         if($session->get('last_route')['name'] === "shoppage"){
             return $this->redirect($this->generateUrl('shoppage'));
@@ -61,7 +63,6 @@ class PanierController extends Controller
             }
             else {
                 return $this->redirect($this->generateUrl('homepage_404'));
-                //throw new EntityNotFoundException();
             }
             return $this->redirect($this->generateUrl('adminpage_view_cart'));
         }

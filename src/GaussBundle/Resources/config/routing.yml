@@ -2,6 +2,10 @@ homepage:
     path:     /
     defaults: { _controller: GaussBundle:Default:index }
 
+set_local_user:
+    path:     /updateLang/{lang}
+    defaults: { _controller: GaussBundle:Default:setLocal }
+
 shoppage:
     path:     /shop
     defaults: { _controller: GaussBundle:Shop:index }

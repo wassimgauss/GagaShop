@@ -1,5 +1,4 @@
 {% extends "base.html.twig" %}
-
 {% block navbar %}
     <div class="container">
         <div class="row">
@@ -9,8 +8,8 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-7">
                         <ol class="breadcrumb">
-                            <li><a href="index-2.html">Home</a></li>
-                            <li><a href="#!">Products</a></li>
+                            <li><a href="{{ path('homepage') }}">{{ 'navbar.label_home'|trans }}</a></li>
+                            <li><a href="{{ path('shoppage') }}">{{ 'navbar.label_shop'|trans }}</a></li>
                             <li class="active">{{ product.nameProduct }}</li>
                         </ol>
                     </div>
@@ -29,8 +28,8 @@
                         {% else %}
                             {% set id_next = product.id - 1 %}
                         {% endif %}
-                        <a rel="previous" href="{{ path('adminpage_view_product', {'id_product' : id_prev }) }}"><i class="lil-angle-left"></i> Previous</a>
-                        <a rel="next" href="{{ path('adminpage_view_product', {'id_product' : id_next  }) }}">Next <i class="lil-angle-right"></i></a>
+                        <a rel="previous" href="{{ path('adminpage_view_product', {'id_product' : id_prev }) }}"><i class="lil-angle-left"></i> {{ 'label_prev'|trans }}</a>
+                        <a rel="next" href="{{ path('adminpage_view_product', {'id_product' : id_next  }) }}">{{ 'label_next'|trans }} <i class="lil-angle-right"></i></a>
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.container -->
@@ -321,7 +320,7 @@
               <section class="section related-products second-style no-padding-top">
                   <div class="container">
                       <div class="section-title text-center">
-                          <h3><i class="line"></i>Related Products<i class="line"></i></h3>
+                          <h3><i class="line"></i>{{ 'view.related_product'|trans }}<i class="line"></i></h3>
                       </div>
                       <div id="related-products">
                           {% for product in allProdcut %}

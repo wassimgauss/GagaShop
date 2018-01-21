@@ -8,17 +8,29 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ShopController extends Controller
 {
-    public function indexAction(Request $request)
-    {
+    public function indexAction(Request $request) {
+        $session = $request->getSession();
+        $local = $session->get('_local');
+        $request->setLocale($local);
+        $request->setDefaultLocale($local);
+        $this->get('translator')->setLocale($local);
         $page = $request->query->get('page');
-        return $this->render('@Gauss/Shop/index.html.twig',array('page' => $page));
+        $price = $request->query->get('price');
+        return $this->render('@Gauss/Shop/index.html.twig',array('page' => $page, 'price' => $price));
     }
-
-    public function getProductAction(Request $request,$page){
+    
+    public function getProductAction(Request $request, $page, $price) {
         if(!$page)
-            $request->query->set('page',1);
-        $em    = $this->get('doctrine.orm.entity_manager');
-        $dql   = "select a from GaussBundle:Produit a where a.category != 5";
+        $request->query->set('page',1);
+        $em = $this->get('doctrine.orm.entity_manager');
+        if($price != null) {
+            $value = explode(',',$price);
+            $min = $value[0];
+            $max = $value[1];
+            $dql   = "select a from GaussBundle:Produit a where a.currentPrice BETWEEN ".$min."AND ".$max;
+        }
+        else
+            $dql   = "select a from GaussBundle:Produit a where a.category != 5";
         $query = $em->createQuery($dql);
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -32,15 +44,28 @@ class ShopController extends Controller
 
     public function indexCategAction(Request $request, $id_categ){
 
+        $session = $request->getSession();
+        $local = $session->get('_local');
+        $request->setLocale($local);
+        $request->setDefaultLocale($local);
+        $this->get('translator')->setLocale($local);
         $page = $request->query->get('page');
-        return $this->render('@Gauss/Shop/index-categ.html.twig',array('id_categ' => $id_categ, 'page' => $page));
+        $price = $request->query->get('price');
+        return $this->render('@Gauss/Shop/index-categ.html.twig',array('id_categ' => $id_categ, 'page' => $page, 'price' => $price));
     }
 
-    public function getProductCategAction($id_categ, Request $request, $page){
+    public function getProductCategAction($id_categ, Request $request, $page, $price){
 
         if(!$page)
             $request->query->set('page',1);
         $em    = $this->get('doctrine.orm.entity_manager');
+        if($price != null) {
+            $value = explode(',',$price);
+            $min = $value[0];
+            $max = $value[1];
+            $dql   = "select a from GaussBundle:Produit a where a.category = ".$id_categ." AND a.currentPrice BETWEEN ".$min."AND ".$max;
+        }
+        else
         $dql   = "select a from GaussBundle:Produit a where a.category = ".$id_categ;
         $query = $em->createQuery($dql);
         $paginator  = $this->get('knp_paginator');
@@ -69,7 +94,13 @@ class ShopController extends Controller
         return $this->render('@Gauss/Shop/layout/widget-top-seller.html.twig',array('listProductTop' => $listProductTop));
     }
 
-    public function viewProductAction($id_product){
+    public function viewProductAction($id_product, Request $request){
+        $session = $request->getSession();
+        $session->set('id_product',$id_product);
+        $local = $session->get('_local');
+        $request->setLocale($local);
+        $request->setDefaultLocale($local);
+        $this->get('translator')->setLocale($local);
         $em = $this->getDoctrine()->getManager();
         $allproduct= $em->getRepository("GaussBundle:Produit")->findBy(array(),array('statusProduct' => 'desc'));
         $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $id_product));

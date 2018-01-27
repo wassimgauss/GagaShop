@@ -2,8 +2,8 @@
 {% block navbar %}
     <div class="container">
         <div class="row">
-        {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
-        <div class="page-head content-top-margin">
+            {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+            <div class="page-head content-top-margin">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-7">
@@ -124,29 +124,6 @@
                                       </ins>
                                   </p>
                                     <form action="{{ path('adminpage_add_to_cart', {'id_product' : product.id }) }}" method="GET" class="inputs-border">
-{#                                        <div class="product-attributes row">
-                                            <div class="form-group col-md-6">
-                                                <label for="attr_1">Size</label>
-                                                <select class="form-control" id="attr_1">
-                                                    <option selected>Choose an option</option>
-                                                    <option>Extra Small</option>
-                                                    <option>Small</option>
-                                                    <option>Medium</option>
-                                                    <option>Large</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <label for="attr_2">Color</label>
-                                                <select class="form-control" id="attr_2">
-                                                    <option selected>Choose an option</option>
-                                                    <option>Red</option>
-                                                    <option>Blue</option>
-                                                    <option>Green</option>
-                                                    <option>Yellow</option>
-                                                </select>
-                                            </div>
-                                        </div>#}
                                         <div class="form-group">
                                             <div class="quantity">
                                                 <input type="button" value="+" class="plus">
@@ -376,15 +353,10 @@
           {% endblock %}
       </div>
    </div><!-- /.container -->
-
-
 </section><!-- /.products-grid -->
 {% endblock %}
 
 
-{% block brands %}
-
-{% endblock %}
 
 {% block footer %}
    {{ include ('@Gauss/Default/layout/footer.html.twig') }}

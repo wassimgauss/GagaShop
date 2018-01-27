@@ -104,3 +104,19 @@ knp_paginator:
         pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig'     # sliding pagination controls template
         sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
         filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+google:
+    analytics:
+        enhanced_ecommerce: false
+        session_auto_started: true
+        trackers:
+            default:
+                name: google_analytics
+                accountId: UA-113189580-1
+                domain: http://www.bizertenet.com/
+                setSiteSpeedSampleRate: 5
+                allowAnchor: true
+                allowHash: true
+                includeNamePrefix: false
+                plugins:
+                    - 'linkid'
+        whitelist: [ 'q', 'utm_source', 'utm_medium', 'utm_term', 'utm_content', 'utm_campaign' ]

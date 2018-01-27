@@ -39,7 +39,7 @@
 
                     </div>#}
     </div>
-    <div class="masonry row">
+    <div class="masonry row" id="zone">
         {% for product in pagination %}
             {% if product.category.id != 5 %}
         <div class="product col-md-4 col-sm-6 col-xs-12" data-product-id="1">
@@ -60,7 +60,7 @@
 											<a href="{{ path('adminpage_add_to_cart',{'id_product' : product.id }) }}" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
 										</span>
 										<span data-toggle="tooltip" data-placement="top" title="Add to Favorites">
-											<a href="{{ path('adminpage_add_to_wish',{'id_product' : product.id }) }}" class="li-icon"><i class="lil-favorite"></i></a>
+											<a href="{{ path('adminpage_add_to_wish',{'id_product' : product.id }) }}" class="li-icon add-to-fav"><i class="lil-favorite"></i></a>
 										</span>
 										<span data-toggle="tooltip" data-placement="top" title="View">
 											<a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}" class="li-icon view-details"><i class="lil-search"></i></a>

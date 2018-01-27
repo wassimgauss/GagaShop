@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new MultimediaBundle\MultimediaBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new AntiMattr\GoogleBundle\GoogleBundle(),
 
         ];
 

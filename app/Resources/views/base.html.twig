@@ -29,6 +29,7 @@
         <script src="https://use.fontawesome.com/c788770a31.js"></script>
 
 
+        {% include "@Google/Analytics/async_universal.html.twig" %}
 
     </head>
     <body>
@@ -74,25 +75,10 @@
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('build/js/min.js') }}"></script>
             <script>
-                //jQuery to collapse the navbar on scroll
-                $(window).scroll(function() {
-                    if ($(".navbar").offset().top > 50) {
-                        $(".navbar-fixed-top").addClass("top-nav-collapse");
-                    } else {
-                        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-                    }
-                });
-
-                //jQuery for page scrolling feature - requires jQuery Easing plugin
-                $(function() {
-                    $(document).on('click', 'a.page-scroll', function(event) {
-                        var $anchor = $(this);
-                        $('html, body').stop().animate({
-                            scrollTop: $($anchor.attr('href')).offset().top
-                        }, 1500, 'easeInOutExpo');
-                        event.preventDefault();
-                    });
-                });
+                $(".add-to-fav:not(.added)").on("click",function(){
+                    if(!$(this).hasClass("added"))
+                    {var b=$(".shopping-fav"),c=$(this).parents(".product"),d=c.find("img").eq(0);
+                        if(d){var e=d.clone().offset({top:d.offset().top+150,left:d.offset().left+150}).css({opacity:".9",position:"absolute",height:"50px",width:"50px","z-index":"999999","border-radius":"50%"}).appendTo($("body")).animate({top:b.offset().top+12,left:b.offset().left+12,width:75,height:75},1e3,"easeInOutExpo");setTimeout(function(){b.effect("shake",{times:2},400,a(c))},1500),e.animate({width:0,height:0},function(){$(this).detach()})}$(this).addClass("added"),$(this).parent().attr("data-original-title","Added")}})
 
 
             </script>

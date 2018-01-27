@@ -51,6 +51,7 @@ class WishController extends Controller
         else {
             return $this->redirect($this->generateUrl('homepage_404'));
         }
+        sleep(2);
       if($session->get('last_route')['name'] === "shoppage"){
             return $this->redirect($this->generateUrl('shoppage'));
         }

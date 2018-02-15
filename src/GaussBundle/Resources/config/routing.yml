@@ -23,7 +23,7 @@ homepage_404:
     defaults: { _controller: GaussBundle:Default:notFound }
 
 shoppage_category:
-    path:     /shop/{id_categ}
+    path:     /shop/{id_categ}/{nom_categ}
     defaults: { _controller: GaussBundle:Shop:indexCateg }
     requirements:
         id_categ: \d+

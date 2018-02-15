@@ -8,7 +8,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bizertenet!{% endblock %}</title>
         {% block stylesheets %}
             <!-- Load Fonts -->
             <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Inconsolata:300,400,500,700|Unica+One:300,400,500,700">
@@ -18,6 +18,54 @@
             <link rel="stylesheet" type="text/css" media="all" href="{{ asset('build/css/style.css') }}">
             <!-- Data tables style -->
             <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+            <style>
+                /*!
+                 * Start Bootstrap - Business Casual (http://startbootstrap.com/)
+                 * Copyright 2013-2016 Start Bootstrap
+                 * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+                 */
+
+                /* body {
+                   background: url('{{ asset('build/img/bg.jpg') }}') no-repeat center center fixed;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    background-size: cover;
+                    -o-background-size: cover;
+                }*/
+
+                .box {
+                    padding: 0px 0px 0px;
+                    //background: #FAFAFA;
+                    background: rgba(255,255,255,1);
+                }
+
+                .effect3
+                {
+                    position: relative;
+                }
+                .effect3:before
+                {
+                    z-index: -1;
+                    position: absolute;
+                    content: "";
+                    bottom: 15px;
+                    left: 10px;
+                    width: 50%;
+                    top: 80%;
+                    max-width:300px;
+                    background: #777;
+                    -webkit-box-shadow: 0 15px 10px #777;
+                    -moz-box-shadow: 0 15px 10px #777;
+                    box-shadow: 0 15px 10px #777;
+                    -webkit-transform: rotate(-3deg);
+                    -moz-transform: rotate(-3deg);
+                    -o-transform: rotate(-3deg);
+                    -ms-transform: rotate(-3deg);
+                    transform: rotate(-3deg);
+                }
+
+
+            </style>
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -33,24 +81,34 @@
 
     </head>
     <body>
+
         {% block body %}
+            <div class="container">
+                <div class="row">
+                    <div class="box">
 
-            {% block navbar %} {% endblock %}
+                        {% block navbar %} {% endblock %}
 
-            {% block slider %} {% endblock %}
+                        {% block slider %} {% endblock %}
 
-            {% block collection %} {% endblock %}
+                        {% block collection %} {% endblock %}
 
-            {% block promotion %} {% endblock %}
+                        {% block promotion %} {% endblock %}
 
-            {% block content %} {% endblock %}
+                        {% block content %} {% endblock %}
 
-            {% block brands %} {% endblock %}
-
-
+                        {% block brands %} {% endblock %}
 
 
-           {% block footer %} {% endblock %}
+
+
+                        {% block footer %} {% endblock %}
+
+
+                    </div>
+                </div>
+            </div>
+
 
                      <!-- open/close -->
             <div class="overlay overlay-simplegenie">

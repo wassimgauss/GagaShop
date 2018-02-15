@@ -1,4 +1,4 @@
-<section class="section products" id="home-products" >
+<div class="section products" id="home-products" >
     <div class="container">
         <div class="row" >
             <div class="col-sm-12 section-title text-center">
@@ -9,7 +9,7 @@
                 <div class="masonry row">
                     {% for product in listProduct %}
                         {% if product.category.id != 5 %}
-                    <div class="product col-md-4 col-sm-6 col-xs-12" data-product-id="1">
+                    <div class="product col-md-3 col-sm-3 col-xs-12" data-product-id="1">
                         <div class="inner-product">
                             {% if (product.statusProduct == 1) %}
                                 <span class="onsale">Sale!</span>
@@ -57,9 +57,9 @@
             </div>
         </div><!-- /.row -->
     </div><!-- /.container -->
-</section><!-- /.products -->
+</div><!-- /.products -->
 
-<section class="most-popular section">
+<div class="most-popular section">
     <div class="bg-cover" style="background-image: url({{ asset('build/img/slides/2w.jpg') }})"></div>
     <div class="container">
         <div class="row">
@@ -84,4 +84,4 @@
             </div>
         </div><!-- /.row -->
     </div><!-- /.container -->
-</section><!-- /.most-popular -->
+</div><!-- /.most-popular -->

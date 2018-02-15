@@ -42,7 +42,7 @@ class ShopController extends Controller
         return $this->render('@Gauss/Shop/layout/shop-body.html.twig',array('pagination' => $pagination));
     }
 
-    public function indexCategAction(Request $request, $id_categ){
+    public function indexCategAction(Request $request, $id_categ, $nom_categ){
 
         $session = $request->getSession();
         $local = $session->get('_local');
@@ -51,13 +51,14 @@ class ShopController extends Controller
         $this->get('translator')->setLocale($local);
         $page = $request->query->get('page');
         $price = $request->query->get('price');
-        return $this->render('@Gauss/Shop/index-categ.html.twig',array('id_categ' => $id_categ, 'page' => $page, 'price' => $price));
+        return $this->render('@Gauss/Shop/index-categ.html.twig',array('id_categ' => $id_categ,'nom_categ' => $nom_categ, 'page' => $page, 'price' => $price));
     }
 
-    public function getProductCategAction($id_categ, Request $request, $page, $price){
+    public function getProductCategAction($id_categ, $nom_categ, Request $request, $page, $price){
 
         if(!$page)
             $request->query->set('page',1);
+
         $em    = $this->get('doctrine.orm.entity_manager');
         if($price != null) {
             $value = explode(',',$price);

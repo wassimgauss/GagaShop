@@ -177,8 +177,12 @@
                   </div><!-- /.container -->
               </div><!-- #page-cart -->
           {% endblock %}
+
       </div>
    </div><!-- /.container -->
+    <div style="margin-top: 60px;" class="footer">
+        {{ include ('@Gauss/Default/layout/footer-menu.html.twig') }}
+    </div>
 </section><!-- /.products-grid -->
 {% endblock %}
 
@@ -188,5 +192,5 @@
 
 {% block footer %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+
 {% endblock %}

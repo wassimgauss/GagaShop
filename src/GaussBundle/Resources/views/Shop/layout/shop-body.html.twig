@@ -1,44 +1,4 @@
 <div class="col-md-9">
-    <div class="row">
-{#                    <div class="col-md-12 col-sm-12">
-                          #}{#  <li class="active"> {{ pagination.getTotalItemCount }} Products</li>#}{#
-                                        <a  class="btn btn-default">{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}
-                                            <span class="badge">
-                                                     {% if app.request.query.get('direction') == "desc" %}
-                                                         <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                                                     {% else %}
-                                                         <i class="fa fa-sort-asc" aria-hidden="true"></i>
-                                                     {% endif %}
-                                            </span></a>
-
-                                        <a  class="btn btn-default">{{ knp_pagination_sortable(pagination, 'Title', 'a.nameProduct') }}
-                                            <span class="badge">
-                                                     {% if app.request.query.get('direction') == "desc" %}
-                                                         <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                                                     {% else %}
-                                                         <i class="fa fa-sort-asc" aria-hidden="true"></i>
-                                                     {% endif %}
-                                            </span></a>
-
-                                        <a  class="btn btn-default">{{ knp_pagination_sortable(pagination, 'Price', 'a.currentPrice') }}
-                                            <span class="badge">
-                                                     {% if app.request.query.get('direction') == "desc" %}
-                                                         <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                                                     {% else %}
-                                                         <i class="fa fa-sort-asc" aria-hidden="true"></i>
-                                                     {% endif %}
-                                            </span></a>
-
-                    </div>#}
-
-     {#               <div class="col-md-4 col-lg-offset-4">
-                         sorting of properties based on query components
-                        <div>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</div>
-                        <div{% if pagination.isSorted('a.nameProduct') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Title', 'a.nameProduct') }}</div>
-                        <div{% if pagination.isSorted('a.currentPrice') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Price', 'a.currentPrice') }}</div>
-
-                    </div>#}
-    </div>
     <div class="masonry row" id="zone">
         {% for product in pagination %}
             {% if product.category.id != 5 %}
@@ -85,6 +45,8 @@
 
 
 </div>
+
+
 <div class="col-lg-offset-8 col-lg-8 col-md-8 " style="margin-top: -95px;">
     {{ knp_pagination_render(pagination) }}
 </div>

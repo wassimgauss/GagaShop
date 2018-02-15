@@ -9,42 +9,26 @@
    </div>
 
 {% endblock %}
-
-
 {% block slider %}
    <div class="container">
       <div class="row">
          {{ include ('@Gauss/Default/layout/header.html.twig') }}
-
 {% endblock %}
-
 {% block collection %}
   {# {{ include ('@Gauss/Default/layout/collection.html.twig') }}#}
    {{ render(controller('GaussBundle:Default:getCollection')) }}
-
-      </div>
-   </div>
 {% endblock %}
 
 {% block promotion %}
-   <div class="container">
-      <div class="row">
+
    {{ include ('@Gauss/Default/layout/promotion.html.twig') }}
-         <hr>
-      </div>
-   </div>
-
-{% endblock %}
-
-
-{% block content %}
-
-{% endblock %}
-
-{% block brands %}
-
 {% endblock %}
 
 {% block footer %}
-   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+
+      </div>
+   </div>
+   <div style="margin-top: 60px;" class="footer">
+      {{ include ('@Gauss/Default/layout/footer-menu.html.twig') }}
+   </div>
 {% endblock %}

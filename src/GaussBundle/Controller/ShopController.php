@@ -57,20 +57,21 @@ class ShopController extends Controller
 
     public function getProductCategAction($id_categ, $nom_categ, Request $request, $page, $price)
     {
+        $session = $request->getSession();
         if(!$page)
             $request->query->set('page',1);
         $em    = $this->get('doctrine.orm.entity_manager');
         $category = $em->getRepository("GaussBundle:Category")->find(array("id" => $id_categ));
         if(strcmp($nom_categ,str_replace(" ","-",strtolower($category->getNom())))){
-            return $this->redirectToRoute('homepage_404');
+            exit();
         }
+
         if($price != null) {
             $value = explode(',',$price);
             $min = $value[0];
             $max = $value[1];
             $dql   = "select a from GaussBundle:Produit a where a.category = ".$id_categ." AND a.currentPrice BETWEEN ".$min."AND ".$max;
         }
-        else
         $dql   = "select a from GaussBundle:Produit a where a.category = ".$id_categ;
         $query = $em->createQuery($dql);
         $paginator  = $this->get('knp_paginator');

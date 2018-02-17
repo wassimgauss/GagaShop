@@ -4,6 +4,7 @@ namespace GaussBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class DefaultController extends Controller
 {
@@ -17,8 +18,8 @@ class DefaultController extends Controller
         return $this->render('@Gauss/Default/index.html.twig');
     }
 
-    public function setLocalAction($lang, Request $request){
-
+    public function setLocalAction($lang, Request $request)
+    {
         $session = $request->getSession();
         $request->setLocale($lang);
         $request->setDefaultLocale($lang);
@@ -26,21 +27,21 @@ class DefaultController extends Controller
         $session->set('_local',$lang);
         if(!$session->get('last_route')['name'])
             $session->get('last_route')['name'] ="homepage";
-        if($session->get('last_route')['name'] == "adminpage_view_product"){
-            return $this->redirect($this->generateUrl('adminpage_view_product',array("id_product" => $session->get('id_product'))));
-        }
-        return $this->redirect($this->generateUrl($session->get('last_route')['name']));
+        $parm_routes = $session->get('last_route')['params'];
+        return $this->redirect($this->generateUrl($session->get('last_route')['name'],$parm_routes));
 
     }
 
-    public function getCollectionAction(){
+    public function getCollectionAction()
+    {
         $em= $this->getDoctrine()->getManager();
         //$listProduct = $em->getRepository("GaussBundle:Produit")->findBy(array(),array('id' => 'desc'),6);
         $listProduct = $em->getRepository("GaussBundle:Produit")->getCollection();
         return $this->render('@Gauss/Default/layout/collection-2.html.twig',array('listProduct' => $listProduct));
     }
     
-    public function getCategMenuAction(){
+    public function getCategMenuAction()
+    {
         $em= $this->getDoctrine()->getManager();
         $listCategory = $em->getRepository("GaussBundle:Category")->findAll();
         $data = array();
@@ -48,7 +49,11 @@ class DefaultController extends Controller
             $listProduct = $em->getRepository("GaussBundle:Produit")->findBy(array('category' => $value));
             array_push($data,(count($listProduct)));
         }
-        return $this->render('@Gauss/Default/layout/menu-home.html.twig',array('listCategory' => $listCategory,'count' => $data));
+        $names_url = array();
+        foreach ($listCategory as $value) {
+            array_push($names_url,str_replace(" ","-",strtolower($value->getNom())));
+        }
+        return $this->render('@Gauss/Default/layout/menu-home.html.twig',array('listCategory' => $listCategory,'names_url' => $names_url,'count' => $data));
     }
 
     public function contactAction(Request $request)

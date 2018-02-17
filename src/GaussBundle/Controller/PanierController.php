@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 class PanierController extends Controller
 {
     
-    public function viewCartAction(Request $request){
-
+    public function viewCartAction(Request $request)
+    {
         $session = $request->getSession();
         $local = $session->get('_local');
         $request->setLocale($local);
@@ -27,8 +27,8 @@ class PanierController extends Controller
         return $this->render('@Gauss/Shop/cart.html.twig',array('listproduct' => $listproduct,'panier' =>$session->get('panier')));
     }
 
-    public function addToCartAction($id_product, Request $request){
-
+    public function addToCartAction($id_product, Request $request)
+    {
         $session = $request->getSession();
         if(!$session->has('panier'))
             $session->set('panier',array());
@@ -71,8 +71,8 @@ class PanierController extends Controller
         }
     }
 
-    public function deleteFromCartAction($id_product, Request $request){
-
+    public function deleteFromCartAction($id_product, Request $request)
+    {
         $session = $request->getSession();
         $panier = $session->get('panier');
         if(array_key_exists($id_product, $panier)) {
@@ -81,10 +81,9 @@ class PanierController extends Controller
         $panier = $session->set('panier',$panier);
         return $this->redirect($this->generateUrl('adminpage_view_cart'));
     }
-
-
-    public function getProductAction(Request $request){
-
+    
+    public function getProductAction(Request $request)
+    {
         $session = $request->getSession();
         $em = $this->getDoctrine()->getManager();
         if(!$session->has('panier'))

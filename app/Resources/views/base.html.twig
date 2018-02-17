@@ -25,20 +25,24 @@
                  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
                  */
 
-                /* body {
-                   background: url('{{ asset('build/img/bg.jpg') }}') no-repeat center center fixed;
+                body {
+                   background: url('{{ asset('build/img/poly-bg.jpg') }}') no-repeat center center fixed;
                     -webkit-background-size: cover;
                     -moz-background-size: cover;
                     background-size: cover;
                     -o-background-size: cover;
-                }*/
-
+                    width:100%;
+                    height:100%;
+                    background-size: calc(100% + 50px);
+                }
+                .btn {
+                    border-radius: 25px;
+                }
                 .box {
                     padding: 0px 0px 0px;
                     //background: #FAFAFA;
                     background: rgba(255,255,255,1);
                 }
-
                 .effect3
                 {
                     position: relative;
@@ -63,7 +67,35 @@
                     -ms-transform: rotate(-3deg);
                     transform: rotate(-3deg);
                 }
-
+                .navbar {
+                    border: none;
+                    -webkit-transition: 0.2s;
+                    transition: 0.2s;
+                }
+                .navbar--size--xl-stick {
+                    padding: 1.2rem 0;
+                }
+                .navbar--size--md {
+                    padding: 1rem 0;
+                }
+                .navbar--color--white {
+                    background: #fff;
+                }
+                .navbar--color--ghost {
+                   /* background: rgba(53, 59, 72,0.5);*/
+                   /* background: rgba(47, 54, 64,0.4);*/
+                    background: rgba(255, 255, 255,.98);
+                    margin-bottom: 0px;
+                }
+                .navbar--color--ghost .navbar-brand,
+                .navbar--color--ghost .navbar-text,
+                .navbar--color--ghost li a{
+                    /*color:white;*/
+                }
+/*                .sub-navbar ul li{
+                    border-right:1px solid #83939C;
+                    border-bottom:1px solid #83939C;
+                }*/
 
             </style>
         {% endblock %}
@@ -77,14 +109,15 @@
         <script src="https://use.fontawesome.com/c788770a31.js"></script>
 
 
-        {% include "@Google/Analytics/async_universal.html.twig" %}
+        {#{% include "@Google/Analytics/async_universal.html.twig" %}#}
 
     </head>
-    <body>
+    <body id="top-image">
 
         {% block body %}
             <div class="container">
                 <div class="row">
+
                     <div class="box">
 
                         {% block navbar %} {% endblock %}
@@ -139,6 +172,87 @@
                         if(d){var e=d.clone().offset({top:d.offset().top+150,left:d.offset().left+150}).css({opacity:".9",position:"absolute",height:"50px",width:"50px","z-index":"999999","border-radius":"50%"}).appendTo($("body")).animate({top:b.offset().top+12,left:b.offset().left+12,width:75,height:75},1e3,"easeInOutExpo");setTimeout(function(){b.effect("shake",{times:2},400,a(c))},1500),e.animate({width:0,height:0},function(){$(this).detach()})}$(this).addClass("added"),$(this).parent().attr("data-original-title","Added")}})
 
 
+                'use strict';
+                //sub-navbar
+                // grabbing the class names from the data attributes
+                var navBar = $('.navbar'),
+                        data = navBar.data();
+                var subnavBar = $('.sub-navbar'),
+                        data = navBar.data();
+                // booleans used to tame the scroll event listening a little..
+                var scrolling = false,
+                        scrolledPast = false;
+
+                // transition Into
+                function switchInto() {
+                    // update `scrolledPast` bool
+                    scrolledPast = true;
+                    // add/remove CSS classes
+                    navBar.removeClass(data.startcolor);
+                    navBar.removeClass(data.startsize);
+                    navBar.addClass(data.intocolor);
+                    navBar.addClass(data.intosize);
+                    subnavBar.removeClass(data.startcolor);
+                    subnavBar.removeClass(data.startsize);
+                    subnavBar.addClass(data.intocolor);
+                    subnavBar.addClass(data.intosize);
+                    console.log('into transition triggered!');
+                };
+
+                // transition Start
+                function switchStart() {
+                    // update `scrolledPast` bool
+                    scrolledPast = false;
+                    // add/remove CSS classes
+                    navBar.addClass(data.startcolor);
+                    navBar.addClass(data.startsize);
+                    navBar.removeClass(data.intocolor);
+                    navBar.removeClass(data.intosize);
+                    subnavBar.addClass(data.startcolor);
+                    subnavBar.addClass(data.startsize);
+                    subnavBar.removeClass(data.intocolor);
+                    subnavBar.removeClass(data.intosize);
+                    console.log('start transition triggered!');
+                }
+
+                // set `scrolling` to true when user scrolls
+                $(window).scroll(function () {
+                    return scrolling = true;
+                });
+
+                setInterval(function () {
+                    // when `scrolling` becomes true...
+                    if (scrolling) {
+                        // set it back to false
+                        scrolling = false;
+                        // check scroll position
+                        if ($(window).scrollTop() > 100) {
+                            // user has scrolled > 100px from top since last check
+                            if (!scrolledPast) {
+                                switchInto();
+                            }
+                        } else {
+                            // user has scrolled back <= 100px from top since last check
+                            if (scrolledPast) {
+                                switchStart();
+                            }
+                        }
+                    }
+                    // take a breath.. hold event listener from firing for 100ms
+                }, 100);
+
+                $(document).ready(function() {
+                    var movementStrength = 25;
+                    var height = movementStrength / $(window).height();
+                    var width = movementStrength / $(window).width();
+                    $("#top-image").mousemove(function(e){
+                        var pageX = e.pageX - ($(window).width() / 2);
+                        var pageY = e.pageY - ($(window).height() / 2);
+                        var newvalueX = width * pageX * -1 - 25;
+                        var newvalueY = height * pageY * -1 - 50;
+                        $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+                    });
+                });
             </script>
         {% endblock %}
     </body>

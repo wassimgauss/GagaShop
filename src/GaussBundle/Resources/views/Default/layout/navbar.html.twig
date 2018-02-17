@@ -5,10 +5,16 @@
     background-image: -moz-linear-gradient(right, #FC7864, #FDA366);
     background-image: -o-linear-gradient(right, #FC7864, #FDA366);
     background-image: -ms-linear-gradient(right, #FC7864, #FDA366);
-    background-image: linear-gradient(right, #FC7864, #FDA366);*/
+    background-image: linear-gradient(right, #FC7864, #FDA366);
+
+
+    background: url('{{ asset('build/img/linear-gradient.png') }}') no-repeat center center fixed;
+
+    */
 </style>
-<div class="nav-container " style="position: fixed; z-index: 99; margin-top: -2px !important; margin-left: -2px;">
-    <nav class="sub-navbar" style=" background: url('{{ asset('build/img/linear-gradient.png') }}') no-repeat center center fixed; ">
+<div class="nav-container nav-sticky " style=" position: fixed; z-index: 99; margin-top: -2px !important; margin-left: 0px !important;">
+    <nav class="sub-navbar navbar--color--ghost navbar--size--xl-stick" data-startColor="navbar--color--ghost" data-startSize="navbar--size--xl-stick"
+         data-intoColor="navbar--color--secondary" data-intoSize="navbar--size--xl-stick"  style="width:99.72%">
         <div class="list-select">
             <div class="inner-select">
                 {% if app.request.getLocale() == "en" %}
@@ -29,12 +35,18 @@
         </div>
         <div class="list-select">
             <div class="inner-select">
-                <div class="selected">TTc</div>
+                <div class="selected"><a href="#!"><i class="lil-dollar"></i></a></div>
                 <ul>
-                    <li><a href="#!">TTc</a></li>
+                    <li><a href="#!">TTC</a></li>
                     <li><a href="#!"><i class="lil-dollar"></i></a></li>
                     <li><a href="#!"><i class="lil-try"></i></a></li>
                 </ul>
+{#                <div class="selected"><img src="{{ asset('build/img/money/currency_euro.png') }}" alt="EURO" style="margin-top: -5px;"></div>
+                <ul>
+                    <li><a href="#!"><img src="{{ asset('build/img/money/money_coin.png') }}" alt="DINAR"></a></li>
+                    <li><a href="#!"><img src="{{ asset('build/img/money/currency_euro.png') }}" alt="EURO"></a></li>
+                    <li><a href="#!"><img src="{{ asset('build/img/money/currency_dollar.png') }}" alt="DOLLAR"></a></li>
+                </ul>#}
             </div>
         </div>
 {#        <script>
@@ -54,13 +66,13 @@
                 <li><a href="{{ path('fos_user_profile_show') }}">
                         &nbsp;&nbsp;&nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_account'|trans }}</a></li>
                 <li class="shopping-fav"><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_wishlist'|trans }}</a></li>
-                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
+                <li style="border-right:none"><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
             {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 
                 <li><a href="{{ path('fos_user_profile_show') }}">
-                        &nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_account'|trans }}</a></li>
+                        &nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_account'|trans }}</a></li>
                 <li class="shopping-fav"><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_wishlist'|trans }}</a></li>
-                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                <li style="border-right:none"><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
             {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
                 <li><a href="{{ path('fos_user_security_login') }}">
@@ -71,12 +83,8 @@
         </ul>
         <div class="clearfix"></div>
     </nav><!-- /.sub-navbar -->
-    <nav class="navbar navbar-default" style="  background-color: #bad0b8;
-  background-image: -webkit-linear-gradient(right, #FC7864, #FDA366);
-  background-image: -moz-linear-gradient(right, #FC7864, #FDA366);
-  background-image: -o-linear-gradient(right, #FC7864, #FDA366);
-  background-image: -ms-linear-gradient(right, #FC7864, #FDA366);
-  background-image: linear-gradient(right, #FC7864, #FDA366); background: url('{{ asset('build/img/linear-gradient.png') }}') no-repeat center center fixed;">
+    <nav class="navbar navbar-default navbar--color--ghost navbar--size--xl"      data-startColor="navbar--color--ghost" data-startSize="navbar--size--xl"
+         data-intoColor="navbar--color--secondary" data-intoSize="navbar--size--md" style="width:99.72%">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

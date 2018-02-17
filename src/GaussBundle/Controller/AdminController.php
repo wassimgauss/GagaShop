@@ -14,8 +14,8 @@ class AdminController extends Controller
         return $this->render('@Gauss/Admin/index.html.twig');
     }
     
-    public function listUserAction(){
-
+    public function listUserAction()
+    {
         $listUsers =array();
         $em = $this->getDoctrine()->getManager();
         $listUsersAll = $em->getRepository('UserBundle:User')->findAll();
@@ -25,11 +25,11 @@ class AdminController extends Controller
                     array_push($listUsers,$user);
             }
         }
-
         return $this->render('@Gauss/Admin/Users/listUsers.html.twig',array('listUsers' => $listUsers));
     }
 
-    public function enableAction($id_user){
+    public function enableAction($id_user)
+    {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("UserBundle:User")->find($id_user);
         if($user != null) {
@@ -43,7 +43,8 @@ class AdminController extends Controller
         }
     }
 
-    public function disableAction($id_user){
+    public function disableAction($id_user)
+    {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("UserBundle:User")->find($id_user);
         if($user != null) {

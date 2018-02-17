@@ -20,8 +20,8 @@ class IptvController extends Controller
         return $this->render('@Gauss/Shop/aboiptv.html.twig',array('listIptv' => $listProduct));
     }
 
-    public function centerAction(Request $request) {
-
+    public function centerAction(Request $request)
+    {
         $session = $request->getSession();
         $local = $session->get('_local');
         $request->setLocale($local);

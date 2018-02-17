@@ -8,7 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ShopController extends Controller
 {
-    public function indexAction(Request $request) {
+    public function indexAction(Request $request)
+    {
         $session = $request->getSession();
         $local = $session->get('_local');
         $request->setLocale($local);
@@ -19,7 +20,8 @@ class ShopController extends Controller
         return $this->render('@Gauss/Shop/index.html.twig',array('page' => $page, 'price' => $price));
     }
     
-    public function getProductAction(Request $request, $page, $price) {
+    public function getProductAction(Request $request, $page, $price)
+    {
         if(!$page)
         $request->query->set('page',1);
         $em = $this->get('doctrine.orm.entity_manager');
@@ -38,12 +40,11 @@ class ShopController extends Controller
             $request->query->get('page',$page)/*page number*/,
             6/*limit per page*/
         );
-
         return $this->render('@Gauss/Shop/layout/shop-body.html.twig',array('pagination' => $pagination));
     }
 
-    public function indexCategAction(Request $request, $id_categ, $nom_categ){
-
+    public function indexCategAction(Request $request, $id_categ, $nom_categ)
+    {
         $session = $request->getSession();
         $local = $session->get('_local');
         $request->setLocale($local);
@@ -51,15 +52,18 @@ class ShopController extends Controller
         $this->get('translator')->setLocale($local);
         $page = $request->query->get('page');
         $price = $request->query->get('price');
-        return $this->render('@Gauss/Shop/index-categ.html.twig',array('id_categ' => $id_categ,'nom_categ' => $nom_categ, 'page' => $page, 'price' => $price));
+        return $this->render('@Gauss/Shop/index-categ.html.twig',array('id_categ' => $id_categ,'nom_categ' => str_replace(" ","-",strtolower($nom_categ)), 'page' => $page, 'price' => $price));
     }
 
-    public function getProductCategAction($id_categ, $nom_categ, Request $request, $page, $price){
-
+    public function getProductCategAction($id_categ, $nom_categ, Request $request, $page, $price)
+    {
         if(!$page)
             $request->query->set('page',1);
-
         $em    = $this->get('doctrine.orm.entity_manager');
+        $category = $em->getRepository("GaussBundle:Category")->find(array("id" => $id_categ));
+        if(strcmp($nom_categ,str_replace(" ","-",strtolower($category->getNom())))){
+            return $this->redirectToRoute('homepage_404');
+        }
         if($price != null) {
             $value = explode(',',$price);
             $min = $value[0];
@@ -78,7 +82,8 @@ class ShopController extends Controller
         return $this->render('@Gauss/Shop/layout/shop-body.html.twig',array('pagination' => $pagination));
     }
 
-    public function getCategoryAction(){
+    public function getCategoryAction()
+    {
         $em= $this->getDoctrine()->getManager();
         $listCategory = $em->getRepository("GaussBundle:Category")->findAll();
         $data = array();
@@ -86,16 +91,22 @@ class ShopController extends Controller
             $listProduct = $em->getRepository("GaussBundle:Produit")->findBy(array('category' => $value));
             array_push($data,(count($listProduct)));
         }
-        return $this->render('@Gauss/Shop/layout/widget-categories.html.twig',array('listCategory' => $listCategory, 'count' => $data));
+        $names_url = array();
+        foreach ($listCategory as $value) {
+            array_push($names_url,str_replace(" ","-",strtolower($value->getNom())));
+        }
+        return $this->render('@Gauss/Shop/layout/widget-categories.html.twig',array('listCategory' => $listCategory, 'count' => $data,'names_url' => $names_url,));
     }
 
-    public function getTopSellerAction(){
+    public function getTopSellerAction()
+    {
         $em = $this->getDoctrine()->getManager();
         $listProductTop = $em->getRepository("GaussBundle:Produit")->findBy(array(),array('classement' => 'desc'), 4);
         return $this->render('@Gauss/Shop/layout/widget-top-seller.html.twig',array('listProductTop' => $listProductTop));
     }
 
-    public function viewProductAction($id_product, Request $request){
+    public function viewProductAction($id_product, Request $request)
+    {
         $session = $request->getSession();
         $session->set('id_product',$id_product);
         $local = $session->get('_local');
@@ -109,7 +120,6 @@ class ShopController extends Controller
             $query = $em->createQuery('select count(p.id) from GaussBundle:Produit p');
             $count = $query->getResult();
             return $this->render('@Gauss/Shop/viewProduct.html.twig',array('product' => $product, 'allProdcut' => $allproduct, 'count' => $count));
-
         }
         else {
             return $this->redirect($this->generateUrl('homepage_404'));

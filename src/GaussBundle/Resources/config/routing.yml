@@ -107,9 +107,9 @@ adminpage_list_aboIptv:
     defaults: { _controller: GaussBundle:AdminProduct:listIptv }
 
 shoppage_list_aboIptv:
-    path:     /Shop/allAboIptv
+    path:     /Shop/abonnement-iptv
     defaults: { _controller: GaussBundle:Iptv:index }
 
 shoppage_center:
-    path:     /Shop/downloadCenter
+    path:     /Shop/download-center
     defaults: { _controller: GaussBundle:Iptv:center }

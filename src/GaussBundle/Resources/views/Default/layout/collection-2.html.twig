@@ -1,6 +1,6 @@
 <div class="section products" id="home-products" >
     <div class="container">
-        <div class="row" >
+        <div class="row">
             <div class="col-sm-12 section-title text-center">
                 <h3><i class="line"></i>{{ 'home.label_Latest_Products'|trans }}<i class="line"></i></h3>
                 <p>{{ 'home.label_parg_last_prod'|trans }}.</p>
@@ -23,7 +23,7 @@
                             </div>
                             <div class="product-details text-center">
                                 <div class="align-vertical">
-                                    <h3 class="product-title">{{ product.nameProduct }}</h3>
+                                    <h3 class="product-title">{{ asset(product.nameProduct) }}</h3>
                                     <p>{{ product.descriptionProduct |truncate(60, false, "...") }}</p>
                                     <p class="product-price">
                                         {% if(product.otherPrice > 0) %}
@@ -49,18 +49,109 @@
                     </div><!-- /.product -->
                     {% endif %}
                     {% endfor %}
-
                 </div><!-- /.masonry -->
             </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 section-title text-center">
+                <h3><i class="line"></i>LATEST PACKS IPTV<i class="line"></i></h3>
+                <p>The latest packs iptv added in our stock.</p>
+            </div>
+            <div class="col-sm-12">
+                <div class="masonry row">
+{#                    {% for product in listIptvs %}
+                            <div class="product col-md-6 col-sm-6 col-xs-12" data-product-id="1">
+                                <div class="inner-product">
+                                    {% if (product.statusProduct == 1) %}
+                                        <span class="onsale">Sale!</span>
+                                    {% elseif (product.statusProduct == 2) %}
+                                        <span class="onsale hot">Hot!</span>
+                                    {% elseif (product.statusProduct == 3) %}
+                                        <span class="onsale new" style="background-color: #4DB6AC">New!</span>
+                                    {% endif %}
+                                    <div class="product-thumbnail">
+                                        <img src="{{ asset('build/img/iptv1.png') }}" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="product-details text-center">
+                                        <div class="align-vertical">
+                                            <h3 class="product-title">{{ product.nameProduct }}</h3>
+                                            <p>{{ product.descriptionProduct |truncate(60, false, "...") }}</p>
+                                            <p class="product-price">
+                                                {% if(product.otherPrice > 0) %}
+                                                    <del>
+                                                        <span class="amount">{{ product.otherPrice }}.000 TTc</span>
+                                                    </del>
+                                                {% endif %}
+                                                <ins>
+                                                    <span class="amount">{{ product.currentPrice }}.000 TTc</span>
+                                                </ins>
+                                            </p>
+                                            <div class="product-btns">
+											<span data-toggle="tooltip" data-placement="top" title="Add To Cart">
+												<a href="{{ path('adminpage_add_to_cart',{'id_product' : product.id }) }}" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
+											</span>
+											<span data-toggle="tooltip" data-placement="top" title="View">
+												<a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
+											</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.product -->
+                    {% endfor %}#}
+                    {% for iptv in listIptvs %}
+                        <div class="product col-lg-4 col-md-4 col-xs-12">
+                            <!-- START PRICING TABLE -->
+                            <div class="pricing-option">
+                                <div class="pricing-top">
+                                    {% if (iptv.statusProduct == 1) %}
+                                        <span class="special-label">Sale!</span>
+                                    {% elseif (iptv.statusProduct == 2) %}
+                                        <span class="special-label">Hot!</span>
+                                    {% elseif (iptv.statusProduct == 3) %}
+                                        <span class="special-label">New!</span>
+                                    {% endif %}
+                                    <span class="pricing-edition">{{ iptv.nameProduct }}</span>
+                            <span class="price">
+                                <sup>$</sup>
+                                <span class="price-amount">{{ iptv.currentPrice }}</span>
+                                <small>/{{ iptv.duree }}</small>
+                            </span>
+
+                                </div>
+                                <ul>
+                                    <li style="background-color:#EEEEEE"> {{ iptv.descriptionProduct|truncate(140, false, "..") }}</li>
+
+                                    <div class="product-details text-center">
+                                        <div class="product-btns">
+										<span data-toggle="tooltip" data-placement="top" title="Add To Cart">
+											<a href="{{ path('adminpage_add_to_cart',{'id_product' : iptv.id }) }}" class="li-icon add-to-cart" style="background-color: #e74c3c"><i class="lil-shopping_cart"></i></a>
+										</span>
+										<span data-toggle="tooltip" data-placement="top" title="Add to Favorites">
+											<a href="{{ path('adminpage_add_to_wish',{'id_product' : iptv.id }) }}" class="li-icon" style="background-color: #e74c3c"><i class="lil-favorite"></i></a>
+										</span>
+										<span data-toggle="tooltip" data-placement="top" title="View">
+											<a href="{{ path('adminpage_view_product', {'id_product' : iptv.id }) }}" class="li-icon view-details" style="background-color: #e74c3c"><i class="lil-search"></i></a>
+										</span>
+                                        </div>
+                                    </div>
+
+                                </ul>
+                            </div><!-- /pricing-option -->
+                            <!-- END PRICING TABLE -->
+                        </div><!-- /col -->
+                    {% endfor %}
+                </div><!-- /.masonry -->
+            </div>
+            <!-- /IPTV prod -->
             <div class="col-sm-12 text-center">
                 <a href="{{ path('shoppage') }}" class="btn btn-default">{{ 'home.label_show_more'|trans }}</a>
             </div>
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div><!-- /.products -->
-
 <div class="most-popular section" style="width: 99.7%">
-    <div class="bg-cover" style="background-image: url({{ asset('build/img/slides/2w.jpg') }})"></div>
+    <div class="bg-cover" style="background-image: url({{ asset('build/img/slides/2.jpg') }})"></div>
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-6 text-left">

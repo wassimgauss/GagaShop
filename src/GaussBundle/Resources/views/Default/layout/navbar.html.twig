@@ -99,15 +99,16 @@
             {{ render(controller('GaussBundle:Panier:getProduct')) }}
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active">
+                    <li class="active"><a href="{{ path('homepage_about') }}">{{ 'navbar.label_home'|trans }}</a></li>
+{#                    <li class="active">
                         <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_home'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
-                            {#    <li><a href="index-3.html">Home Default Slider</a></li>
+                            #}{#    <li><a href="index-3.html">Home Default Slider</a></li>
                                 <li><a href="index-4.html">Home Overlay Products</a></li>
-                                <li><a href="index-5.html#instagram">Home instagram section</a></li>#}
+                                <li><a href="index-5.html#instagram">Home instagram section</a></li>#}{#
                         </ul>
-                    </li>
+                    </li>#}
                     <li>
                         <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_shop'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">

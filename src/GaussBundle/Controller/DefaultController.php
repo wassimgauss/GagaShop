@@ -37,7 +37,8 @@ class DefaultController extends Controller
         $em= $this->getDoctrine()->getManager();
         //$listProduct = $em->getRepository("GaussBundle:Produit")->findBy(array(),array('id' => 'desc'),6);
         $listProduct = $em->getRepository("GaussBundle:Produit")->getCollection();
-        return $this->render('@Gauss/Default/layout/collection-2.html.twig',array('listProduct' => $listProduct));
+        $listiptvs = $em->getRepository("GaussBundle:Produit")->findBy(array('category' => 5),array('id' => 'desc'),3);
+        return $this->render('@Gauss/Default/layout/collection-2.html.twig',array('listProduct' => $listProduct, 'listIptvs' => $listiptvs));
     }
     
     public function getCategMenuAction()

@@ -14,22 +14,8 @@
                         </ol>
                     </div>
                     <div class="col-md-4 col-sm-5 header-nav text-right">
-                        {% set id_next = product.id  %}
-                        {% set id_prev = product.id  %}
-                        {#{{ count[0][1] }}#}
-                        {% if id_next < count[0][1] %}
-                            {% set id_next = product.id + 1 %}
-                        {% else %}
-                            {% set id_next = 1 %}
-                        {% endif %}
-
-                        {% if id_prev >= 1 %}
-                            {% set id_prev = count[0][1] %}
-                        {% else %}
-                            {% set id_next = product.id - 1 %}
-                        {% endif %}
-                        <a rel="previous" href="{{ path('adminpage_view_product', {'id_product' : id_prev }) }}"><i class="lil-angle-left"></i> {{ 'label_prev'|trans }}</a>
-                        <a rel="next" href="{{ path('adminpage_view_product', {'id_product' : id_next  }) }}">{{ 'label_next'|trans }} <i class="lil-angle-right"></i></a>
+                        <a rel="previous" href="{{ path('adminpage_view_product', {'nom_product' : prev }) }}"><i class="lil-angle-left"></i> {{ 'label_prev'|trans }}</a>
+                        <a rel="next" href="{{ path('adminpage_view_product', {'nom_product' : suiv  }) }}">{{ 'label_next'|trans }} <i class="lil-angle-right"></i></a>
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.container -->
@@ -326,7 +312,7 @@
 									<a href="{{ path('adminpage_add_to_wish',{'id_product' : product.id }) }}" class="li-icon"><i class="lil-favorite"></i></a>
 								</span>
 								<span data-toggle="tooltip" data-placement="top" title="View">
-									<a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
+									<a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
 								</span>
                                       </div>
                                   </div>

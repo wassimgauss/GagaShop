@@ -54,10 +54,10 @@ adminpage_disable_users:
         id_user: \d+
 
 adminpage_view_product:
-    path:     /Shop/viewProduct/{id_product}
+    path:     /Shop/viewProduct/{nom_product}
     defaults: { _controller: GaussBundle:Shop:viewProduct }
     requirements:
-        id_product: \d+
+        nom_product: '[a-zA-Z0-9-_\/\s.^]+'
 
 adminpage_add_category:
     path:     /admin/addCategory
@@ -113,3 +113,7 @@ shoppage_list_aboIptv:
 shoppage_center:
     path:     /Shop/download-center
     defaults: { _controller: GaussBundle:Iptv:center }
+
+reset_data:
+    path:     /admin/data
+    defaults: { _controller: GaussBundle:Admin:reset }

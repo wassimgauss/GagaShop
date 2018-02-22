@@ -30,6 +30,7 @@ class PanierController extends Controller
     public function addToCartAction($id_product, Request $request)
     {
         $session = $request->getSession();
+        $em = $this->getDoctrine()->getManager();
         if(!$session->has('panier'))
             $session->set('panier',array());
         $panier = $session->get('panier');
@@ -47,11 +48,13 @@ class PanierController extends Controller
         }
         $session->set('panier',$panier);
         sleep(2);
+        $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $id_product));
+        $nom_product = $product->getNameProductUrl();
         if($session->get('last_route')['name'] === "shoppage"){
             return $this->redirect($this->generateUrl('shoppage'));
         }
         elseif ($session->get('last_route')['name'] === "adminpage_view_product") {
-            return $this->redirect($this->generateUrl('adminpage_view_product',array('id_product' => $id_product)));
+            return $this->redirect($this->generateUrl('adminpage_view_product',array('nom_product' => $nom_product)));
         }
         elseif ($session->get('last_route')['name'] === "shoppage_wishlist"){
             $user = $this->getUser();

@@ -55,16 +55,16 @@
                                           <td class="product-thumbnail">
 
                                                   {% if product.image is not null %}
-                                              <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                                              <a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}">
                                                       <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
                                                   {% else %}
-                                                  <a href="#">
-                                                      <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive">
+                                                  <a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}">
+                                                      <img src="{{ asset('build/img/products/iptv2.png') }}" class="img-responsive">
                                                   {% endif %}
                                               </a>
                                           </td>
                                           <td class="product-name">
-                                              <a href="#">{{ product.nameProduct }}</a>
+                                              <a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}">{{ product.nameProduct }}</a>
                                           </td>
                                           <td class="product-price">
                                               <span class="amount">{{ product.currentPrice }}.000 TTc</span>

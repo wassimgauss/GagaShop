@@ -32,6 +32,7 @@ class AdminProductController extends Controller
         if($request->isMethod('POST')) {
             $form->handleRequest($request);
             if($form->isValid()) {
+                $product->setNameProductUrl(str_replace(" ","-",strtolower($product->getNameProduct())));
                 $em->persist($product);
                 $em->flush();
                 return $this->redirectToRoute('adminpage');

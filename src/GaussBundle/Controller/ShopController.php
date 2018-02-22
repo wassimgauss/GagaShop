@@ -3,6 +3,7 @@
 namespace GaussBundle\Controller;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use GaussBundle\Entity\Produit;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -58,14 +59,15 @@ class ShopController extends Controller
     public function getProductCategAction($id_categ, $nom_categ, Request $request, $page, $price)
     {
         $session = $request->getSession();
-        if(!$page)
-            $request->query->set('page',1);
         $em    = $this->get('doctrine.orm.entity_manager');
         $category = $em->getRepository("GaussBundle:Category")->find(array("id" => $id_categ));
         if(strcmp($nom_categ,str_replace(" ","-",strtolower($category->getNom())))){
+            $pagination = null;
+            return $this->render('@Gauss/Shop/layout/shop-body.html.twig',array('pagination' => $pagination));
             exit();
         }
-
+        if(!$page)
+            $request->query->set('page',1);
         if($price != null) {
             $value = explode(',',$price);
             $min = $value[0];
@@ -106,23 +108,49 @@ class ShopController extends Controller
         return $this->render('@Gauss/Shop/layout/widget-top-seller.html.twig',array('listProductTop' => $listProductTop));
     }
 
-    public function viewProductAction($id_product, Request $request)
+    public function viewProductAction($nom_product, Request $request)
     {
         $session = $request->getSession();
-        $session->set('id_product',$id_product);
         $local = $session->get('_local');
         $request->setLocale($local);
         $request->setDefaultLocale($local);
         $this->get('translator')->setLocale($local);
         $em = $this->getDoctrine()->getManager();
-        $allproduct= $em->getRepository("GaussBundle:Produit")->findBy(array(),array('statusProduct' => 'desc'));
-        $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $id_product));
+        $allproduct= $em->getRepository("GaussBundle:Produit")->findBy(array(),array('statusProduct' => 'desc'),10);
+        $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('nameProductUrl' => $nom_product));
+        $count=0;
+        $all_id = array();
         if($product != null){
-            $query = $em->createQuery('select count(p.id) from GaussBundle:Produit p');
-            $count = $query->getResult();
-            return $this->render('@Gauss/Shop/viewProduct.html.twig',array('product' => $product, 'allProdcut' => $allproduct, 'count' => $count));
+            //$query = $em->createQuery('select count(p.id) from GaussBundle:Produit p WHERE p.category = 1');
+            //$count = $query->getResult();
+            $counts = $em->getRepository("GaussBundle:Produit")->getProductCateg($product->getCategory());
+            foreach ($counts as $c){
+                $count++;
+                array_push($all_id,$c->getId());
+            }
+            $session->set('id_product',$product->getId());
+            $current_key = array_search($product->getId(),$all_id);
+                if($current_key == $count-1 ){
+                    $suiv_id = $all_id[0];
+                }
+                else {
+                    $suiv_id =$all_id[$current_key +1];
+                }
+                if($current_key == 0){
+                    $prev_id =$all_id[$count-1];
+                }
+                else {
+                    $prev_id = $all_id[$current_key -1];
+                }
+            $product_prev = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $prev_id));
+            $product_suiv = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $suiv_id));
+            $prev = $product_prev->getNameProductUrl();
+            $suiv = $product_suiv->getNameProductUrl();
+            return $this->render('@Gauss/Shop/viewProduct.html.twig',array('product' => $product,
+                'allProdcut' => $allproduct, 'prev' =>$prev, 'suiv' => $suiv));
         }
         else {
+            var_dump($nom_product);
             return $this->redirect($this->generateUrl('homepage_404'));
         }
     }

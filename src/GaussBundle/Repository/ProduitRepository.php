@@ -18,4 +18,11 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
             ->setMaxResults(8);
         return $qb->getQuery()->getResult();
     }
+    
+    public function getProductCateg($name){
+        $qb = $this->createQueryBuilder('u');
+        $qb->where('u.category = :param ')
+            ->setParameter('param', $name);
+        return $qb->getQuery()->getResult();
+    }
 }

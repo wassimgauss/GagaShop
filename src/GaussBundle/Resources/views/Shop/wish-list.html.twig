@@ -53,17 +53,17 @@
                                                         </td>
                                                         <td class="product-thumbnail">
                                                     {% if product.image is not null %}
-                                                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                                                        <a href="{{ path('adminpage_view_product', {'nom_product' : product.nameproductUrl}) }}">
                                                         <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
                                                         </a>
                                                         {% else %}
-                                                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                                                        <a href="{{ path('adminpage_view_product', {'nom_product' : product.nameproductUrl}) }}">
                                                         <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive">
                                                         </a>
                                                         {% endif %}
                                                         </td>
                                                         <td class="product-name">
-                                                        <a href="product.html">{{ product.nameProduct }}</a>
+                                                        <a href="{{ path('adminpage_view_product', {'nom_product' : product.nameproductUrl}) }}">{{ product.nameProduct }}</a>
                                                         </td>
                                                         <td class="product-subtotal">
                                                         <span class="amount">{{ product.currentPrice }}.000 TTc</span>

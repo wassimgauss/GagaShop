@@ -57,6 +57,29 @@ class AdminController extends Controller
             return $this->redirectToRoute("homepage_404");
         }
     }
-    
-    
+
+
+    public function resetAction(Request $request)
+    {
+        $em= $this->getDoctrine()->getManager();
+        $listProduct = $em->getRepository("GaussBundle:Produit")->findAll();
+        foreach ($listProduct as $product){
+            $product->setNameProductUrl(str_replace(" ","-",strtolower($product->getNameProduct())));
+            //echo $product->getNameProductUrl();
+            $em->persist($product);
+            $em->flush();
+            echo iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $product->getNameProductUrl());
+        }
+        $listCateg = $em->getRepository("GaussBundle:Category")->findAll();
+        foreach ($listCateg as $catg){
+            $catg->setNomUrl(str_replace(" ","-",strtolower($catg->getNom())));
+            $em->persist($catg);
+            $em->flush();
+            echo iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $catg->getNomUrl());
+        }
+        return $this->render('@Gauss/Admin/AboIptv/listAboIptv.html.twig',array('listProduct' => $listProduct));
+    }
+
+
+
 }

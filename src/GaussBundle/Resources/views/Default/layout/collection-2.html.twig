@@ -40,7 +40,7 @@
 												<a href="{{ path('adminpage_add_to_cart',{'id_product' : product.id }) }}" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
 											</span>
 											<span data-toggle="tooltip" data-placement="top" title="View">
-												<a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
+												<a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
 											</span>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
 											<a href="{{ path('adminpage_add_to_wish',{'id_product' : iptv.id }) }}" class="li-icon" style="background-color: #e74c3c"><i class="lil-favorite"></i></a>
 										</span>
 										<span data-toggle="tooltip" data-placement="top" title="View">
-											<a href="{{ path('adminpage_view_product', {'id_product' : iptv.id }) }}" class="li-icon view-details" style="background-color: #e74c3c"><i class="lil-search"></i></a>
+											<a href="{{ path('adminpage_view_product', {'nom_product': iptv.nameProductUrl }) }}" class="li-icon view-details" style="background-color: #e74c3c"><i class="lil-search"></i></a>
 										</span>
                                         </div>
                                     </div>

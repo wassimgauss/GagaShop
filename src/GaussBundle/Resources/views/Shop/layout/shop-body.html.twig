@@ -1,4 +1,5 @@
 <div class="col-md-9">
+    {% if pagination is not null %}
     <div class="masonry row" id="zone">
         {% for product in pagination %}
             {% if product.category.id != 5 %}
@@ -17,13 +18,13 @@
                 <div class="product-details text-center">
                     <div class="product-btns">
 										<span data-toggle="tooltip" data-placement="top" title="Add To Cart">
-											<a href="{{ path('adminpage_add_to_cart',{'id_product' : product.id }) }}" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
+											<a href="{{ path('adminpage_add_to_cart',{'id_product' : product.id,'nom_product' : product.nameproductUrl}) }}" class="li-icon add-to-cart"><i class="lil-shopping_cart"></i></a>
 										</span>
 										<span data-toggle="tooltip" data-placement="top" title="Add to Favorites">
-											<a href="{{ path('adminpage_add_to_wish',{'id_product' : product.id }) }}" class="li-icon add-to-fav"><i class="lil-favorite"></i></a>
+											<a href="{{ path('adminpage_add_to_wish',{'id_product' : product.id,'nom_product' : product.nameproductUrl }) }}" class="li-icon add-to-fav"><i class="lil-favorite"></i></a>
 										</span>
 										<span data-toggle="tooltip" data-placement="top" title="View">
-											<a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
+											<a href="{{ path('adminpage_view_product', {'nom_product' : product.nameproductUrl  }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
 										</span>
                     </div>
                 </div>
@@ -42,15 +43,35 @@
             {% endif %}
         {% endfor %}
     </div><!-- /.masonry -->
-
-
+    {% else %}
+        <div class="page-wrapper">
+            <section class="section" id="page-404">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-1 text-center">
+                            <h1>404</h1>
+                            <h3>Sorry, the page you were looking for doesn’t exist.</h3>
+                            <p>Let's get back on track..</p>
+                            <div class="button-group">
+                                <a href="{{ path('homepage') }}" class="btn btn-primary">Home</a>
+                                <a href="{{ path('shoppage') }}" class="btn btn-default">Shop</a>
+                            </div>
+                            <h2 class="or">OR</h2>
+                            <form action="#!" method="GET" class="inputs-border">
+                                <input type="text" class="form-control" placeholder="What's on your mind?">
+                            </form>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section>
+        </div><!-- /.page-wrapper -->
+    {% endif %}
 </div>
-
-
+{% if pagination is not null %}
 <div class="col-lg-offset-8 col-lg-8 col-md-8 " style="margin-top: -95px;">
     {{ knp_pagination_render(pagination) }}
 </div>
 </div><!-- /.row -->
-
+{% endif %}
 
 

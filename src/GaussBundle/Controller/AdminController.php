@@ -65,17 +65,19 @@ class AdminController extends Controller
         $listProduct = $em->getRepository("GaussBundle:Produit")->findAll();
         foreach ($listProduct as $product){
             $product->setNameProductUrl(str_replace(" ","-",strtolower($product->getNameProduct())));
+            $product->getNameProduct(iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $product->getNameProduct()));
             //echo $product->getNameProductUrl();
             $em->persist($product);
             $em->flush();
-            echo iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $product->getNameProductUrl());
+            //echo iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $product->getNameProductUrl());
         }
         $listCateg = $em->getRepository("GaussBundle:Category")->findAll();
         foreach ($listCateg as $catg){
             $catg->setNomUrl(str_replace(" ","-",strtolower($catg->getNom())));
+            $catg->setNomUrl(iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $catg->getNomUrl()));
             $em->persist($catg);
             $em->flush();
-            echo iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $catg->getNomUrl());
+            echo $catg->getNomUrl();
         }
         return $this->render('@Gauss/Admin/AboIptv/listAboIptv.html.twig',array('listProduct' => $listProduct));
     }

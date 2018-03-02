@@ -1,32 +1,35 @@
 homepage:
     path:     /
     defaults: { _controller: GaussBundle:Default:index }
-
+erreur:
+    path:     /{path}
+    defaults: { _controller: GaussBundle:Default:erreur }
+    requirements:
+        path: .
 set_local_user:
     path:     /updateLang/{lang}
     defaults: { _controller: GaussBundle:Default:setLocal }
 
 shoppage:
-    path:     /shop
+    path:     /shop.html
     defaults: { _controller: GaussBundle:Shop:index }
 
 homepage_contact:
-    path:     /contact
+    path:     /contact.html
     defaults: { _controller: GaussBundle:Default:contact }
 
 homepage_about:
-    path:     /about
+    path:     /about.html
     defaults: { _controller: GaussBundle:Default:about }
 
 homepage_404:
-    path:     /notFound
+    path:     /not-found.html
     defaults: { _controller: GaussBundle:Default:notFound }
 
 shoppage_category:
-    path:     /shop/{id_categ}/{nom_categ}
+    path:     /shop/{nom_categ}.html
     defaults: { _controller: GaussBundle:Shop:indexCateg }
-    requirements:
-        id_categ: \d+
+
 adminpage:
     path:     /admin
     defaults: { _controller: GaussBundle:Admin:index }
@@ -36,7 +39,7 @@ adminpage_add_product:
     defaults: { _controller: GaussBundle:AdminProduct:addProduct }
 
 adminpage_list_product:
-    path:     /Shop/allProducts
+    path:     /Shop/all-products.html
     defaults: { _controller: GaussBundle:AdminProduct:listProduct }
 adminpage_list_users:
     path:     /Shop/allUsers
@@ -54,7 +57,7 @@ adminpage_disable_users:
         id_user: \d+
 
 adminpage_view_product:
-    path:     /Shop/viewProduct/{nom_product}
+    path:     /Shop/view-product/{nom_product}.html
     defaults: { _controller: GaussBundle:Shop:viewProduct }
     requirements:
         nom_product: '[a-zA-Z0-9-_\/\s.^]+'
@@ -68,7 +71,7 @@ adminpage_list_category:
     defaults: { _controller: GaussBundle:AdminCategory:listCategory }
 
 adminpage_view_cart:
-    path:     /Shop/viewCart
+    path:     /Shop/viewCart.html
     defaults: { _controller: GaussBundle:Panier:viewCart }
 
 adminpage_add_to_cart:
@@ -84,7 +87,7 @@ adminpage_delete_from_cart:
         id_product: \d+
 
 shoppage_wishlist:
-    path:     /WishList
+    path:     /WishList.html
     defaults: { _controller: GaussBundle:Wish:index }
 
 adminpage_add_to_wish:
@@ -107,11 +110,11 @@ adminpage_list_aboIptv:
     defaults: { _controller: GaussBundle:AdminProduct:listIptv }
 
 shoppage_list_aboIptv:
-    path:     /Shop/abonnement-iptv
+    path:     /Shop/abonnement-iptv.html
     defaults: { _controller: GaussBundle:Iptv:index }
 
 shoppage_center:
-    path:     /Shop/download-center
+    path:     /Shop/download-center.html
     defaults: { _controller: GaussBundle:Iptv:center }
 
 reset_data:

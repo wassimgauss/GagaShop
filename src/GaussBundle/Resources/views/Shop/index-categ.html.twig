@@ -29,7 +29,7 @@
             {{ include ('@Gauss/Shop/layout/shop-sidebar.html.twig') }}
          {% endblock %}
           {% block content_shop %}
-              {{ render(controller('GaussBundle:Shop:getProductCateg',{'request': app.request, 'id_categ' : id_categ, 'page' : page, 'price' : price, 'nom_categ' : nom_categ  })) }}
+              {{ render(controller('GaussBundle:Shop:getProductCateg',{'page' : page, 'price' : price, 'nom_categ' : nom_categ  })) }}
           {% endblock %}
       </div>
        <div style="margin-top: 60px;" class="footer">

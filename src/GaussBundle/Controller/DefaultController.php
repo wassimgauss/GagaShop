@@ -50,11 +50,7 @@ class DefaultController extends Controller
             $listProduct = $em->getRepository("GaussBundle:Produit")->findBy(array('category' => $value));
             array_push($data,(count($listProduct)));
         }
-        $names_url = array();
-        foreach ($listCategory as $value) {
-            array_push($names_url,str_replace(" ","-",strtolower($value->getNom())));
-        }
-        return $this->render('@Gauss/Default/layout/menu-home.html.twig',array('listCategory' => $listCategory,'names_url' => $names_url,'count' => $data));
+        return $this->render('@Gauss/Default/layout/menu-home.html.twig',array('listCategory' => $listCategory,'count' => $data));
     }
 
     public function contactAction(Request $request)
@@ -86,4 +82,15 @@ class DefaultController extends Controller
         $this->get('translator')->setLocale($local);
         return $this->render('@Gauss/Default/404.html.twig');
     }
+    
+    public function erreurAction(Request $request)
+    {
+        $session = $request->getSession();
+        $local = $session->get('_local');
+        $request->setLocale($local);
+        $request->setDefaultLocale($local);
+        $this->get('translator')->setLocale($local);
+        return $this->render('@Gauss/Default/404.html.twig');
+    }
+
 }

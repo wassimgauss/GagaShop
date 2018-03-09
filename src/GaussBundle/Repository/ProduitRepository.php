@@ -12,9 +12,17 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
     public function getCollection(){
         $qb = $this->createQueryBuilder('u');
-        $qb->where('u.category != :param order by u.id desc ')
+        $qb->where('u.category != :param and u.statusProduct = :param2 order by u.id desc ')
             ->setParameter('param', 5)
-            ->setMaxResults(6);
+            ->setParameter('param2', 2)
+            ->setMaxResults(8);
+        return $qb->getQuery()->getResult();
+    }
+    
+    public function getProductCateg($name){
+        $qb = $this->createQueryBuilder('u');
+        $qb->where('u.category = :param ')
+            ->setParameter('param', $name);
         return $qb->getQuery()->getResult();
     }
 }

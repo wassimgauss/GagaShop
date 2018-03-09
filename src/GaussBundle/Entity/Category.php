@@ -69,9 +69,32 @@ class Category
     /**
      * @var string
      *
+     * @ORM\Column(name="nomUrl", type="string", length=255, nullable=true)
+     */
+    private $nomUrl;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="description", type="string", length=255, nullable=true)
      */
     private $description;
+
+    /**
+     * @return string
+     */
+    public function getNomUrl()
+    {
+        return $this->nomUrl;
+    }
+
+    /**
+     * @param string $nomUrl
+     */
+    public function setNomUrl($nomUrl)
+    {
+        $this->nomUrl = $nomUrl;
+    }
 
 
     /**

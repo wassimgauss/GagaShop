@@ -1,20 +1,32 @@
-<div class="container">
-    <div class="row">
-        <header class="header fullscreen" style="background-image: url('{{ asset('build/img/slides/2m.jpg') }}');">
-            <div class="container align-vertical">
-                <div class="row">
-                    <div class="col-sm-5 text-left content-top-margin">
-                        <h1>Why not say <span class="autotype">Hello</span><span class="typed-cursor">?</span></h1>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                        <div class="button-group">
-                            <a href="{{ path('shoppage') }}" class="btn btn-primary">Shop Now</a>
-                            <a href="{{ path('shoppage') }}" class="btn btn-default">Products</a>
-                        </div>
+
+<section class="most-popular section" style="margin-top: 0px; margin-right: 1px; padding-bottom: 200px; width: 99.72%">
+    <div class="bg-cover" style="background-image: url({{ asset('build/img/slides/2.jpg') }})"></div>
+    <div class="container">
+        <div class="row" style="margin-top: 255px;">
+            <div class="col-sm-6 text-left">
+                <div class="">
+                    {#  <img src="{{ asset('build/img/iptv1.png') }}" class="img-responsive">#}
+{#                    <img src="{{ asset('build/img/slide-three copie.png') }}" class="img-responsive">
+                    <img src="{{ asset('build/img/slide-two copie.png') }}" class="img-responsive">#}
+                  <img src="{{ asset('build/img/IPTV.png') }}" class="img-responsive">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-left">
+                <div class="mask-left">
+                    <h1>{{ 'header.label_Why_not_say'|trans }}&nbsp;<span class="autotype">Hello</span><span class="typed-cursor">?</span></h1>
+                    <p class="description">{{ 'header.label_parg_1'|trans }}</p>
+                    <div class="button-group" style="text-align: center">
+                        <a href="{{ path('shoppage') }}" class="btn btn-primary">Shop Now</a>
+                        <a href="{{ path('shoppage') }}" class="btn btn-default">Products</a>
                     </div>
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </header>
-    </div>
-</div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+{#            <div class="col-md-12">
+                <img src="{{ asset('build/img/slide-three copie.png') }}" class="img-responsive">
+                <img src="{{ asset('build/img/slide-two copie.png') }}" class="img-responsive">
+            </div>#}
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.most-popular -->

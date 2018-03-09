@@ -9,8 +9,8 @@
             <div class="row">
                 <div class="col-md-8 col-sm-7">
                     <ol class="breadcrumb">
-                        <li><a href="index-2.html">Home</a></li>
-                        <li class="active">Wishlist</li>
+                        <li><a href="{{ path('homepage') }}">{{ 'navbar.label_home'|trans }}</a></li>
+                        <li class="active">{{ 'navbar.label_wishlist'|trans }}</li>
                     </ol>
                 </div>
             </div><!-- /.row -->
@@ -53,17 +53,17 @@
                                                         </td>
                                                         <td class="product-thumbnail">
                                                     {% if product.image is not null %}
-                                                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                                                        <a href="{{ path('adminpage_view_product', {'nom_product' : product.nameproductUrl}) }}">
                                                         <img src="{{ asset(product.image.webPath) }}" class="img-responsive">
                                                         </a>
                                                         {% else %}
-                                                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                                                        <a href="{{ path('adminpage_view_product', {'nom_product' : product.nameproductUrl}) }}">
                                                         <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive">
                                                         </a>
                                                         {% endif %}
                                                         </td>
                                                         <td class="product-name">
-                                                        <a href="product.html">{{ product.nameProduct }}</a>
+                                                        <a href="{{ path('adminpage_view_product', {'nom_product' : product.nameproductUrl}) }}">{{ product.nameProduct }}</a>
                                                         </td>
                                                         <td class="product-subtotal">
                                                         <span class="amount">{{ product.currentPrice }}.000 TTc</span>
@@ -111,6 +111,9 @@
           {% endblock %}
       </div>
    </div><!-- /.container -->
+    <div style="margin-top: 60px;" class="footer">
+        {{ include ('@Gauss/Default/layout/footer-menu.html.twig') }}
+    </div>
 </section><!-- /.products-grid -->
 {% endblock %}
 
@@ -120,5 +123,4 @@
 
 {% block footer %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
 {% endblock %}

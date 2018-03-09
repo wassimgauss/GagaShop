@@ -1,36 +1,21 @@
 {% extends "base.html.twig" %}
-
 {% block navbar %}
     <div class="container">
         <div class="row">
-        {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
-        <div class="page-head content-top-margin">
+            {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
+            <div class="page-head content-top-margin">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-7">
                         <ol class="breadcrumb">
-                            <li><a href="index-2.html">Home</a></li>
-                            <li><a href="#!">Products</a></li>
+                            <li><a href="{{ path('homepage') }}">{{ 'navbar.label_home'|trans }}</a></li>
+                            <li><a href="{{ path('shoppage') }}">{{ 'navbar.label_shop'|trans }}</a></li>
                             <li class="active">{{ product.nameProduct }}</li>
                         </ol>
                     </div>
                     <div class="col-md-4 col-sm-5 header-nav text-right">
-                        {% set id_next = product.id  %}
-                        {% set id_prev = product.id  %}
-                        {#{{ count[0][1] }}#}
-                        {% if id_next < count[0][1] %}
-                            {% set id_next = product.id + 1 %}
-                        {% else %}
-                            {% set id_next = 1 %}
-                        {% endif %}
-
-                        {% if id_prev >= 1 %}
-                            {% set id_prev = count[0][1] %}
-                        {% else %}
-                            {% set id_next = product.id - 1 %}
-                        {% endif %}
-                        <a rel="previous" href="{{ path('adminpage_view_product', {'id_product' : id_prev }) }}"><i class="lil-angle-left"></i> Previous</a>
-                        <a rel="next" href="{{ path('adminpage_view_product', {'id_product' : id_next  }) }}">Next <i class="lil-angle-right"></i></a>
+                        <a rel="previous" href="{{ path('adminpage_view_product', {'nom_product' : prev }) }}"><i class="lil-angle-left"></i> {{ 'label_prev'|trans }}</a>
+                        <a rel="next" href="{{ path('adminpage_view_product', {'nom_product' : suiv  }) }}">{{ 'label_next'|trans }} <i class="lil-angle-right"></i></a>
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.container -->
@@ -90,8 +75,8 @@
                               {% else %}
                                   <div class="product-images">
                                       <div class="product-thumbnail">
-                                          <a href="{{ asset('build/img/products/p.png') }}" class="fancybox" rel="gallery">
-                                              <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive">
+                                          <a href="{{ asset('build/img/products/iptv2.png') }}" class="fancybox" rel="gallery">
+                                              <img src="{{ asset('build/img/products/iptv2.png') }}" class="img-responsive">
                                           </a>
                                       </div>
                                   </div><!-- /.product-images -->
@@ -125,29 +110,6 @@
                                       </ins>
                                   </p>
                                     <form action="{{ path('adminpage_add_to_cart', {'id_product' : product.id }) }}" method="GET" class="inputs-border">
-{#                                        <div class="product-attributes row">
-                                            <div class="form-group col-md-6">
-                                                <label for="attr_1">Size</label>
-                                                <select class="form-control" id="attr_1">
-                                                    <option selected>Choose an option</option>
-                                                    <option>Extra Small</option>
-                                                    <option>Small</option>
-                                                    <option>Medium</option>
-                                                    <option>Large</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <label for="attr_2">Color</label>
-                                                <select class="form-control" id="attr_2">
-                                                    <option selected>Choose an option</option>
-                                                    <option>Red</option>
-                                                    <option>Blue</option>
-                                                    <option>Green</option>
-                                                    <option>Yellow</option>
-                                                </select>
-                                            </div>
-                                        </div>#}
                                         <div class="form-group">
                                             <div class="quantity">
                                                 <input type="button" value="+" class="plus">
@@ -321,7 +283,7 @@
               <section class="section related-products second-style no-padding-top">
                   <div class="container">
                       <div class="section-title text-center">
-                          <h3><i class="line"></i>Related Products<i class="line"></i></h3>
+                          <h3><i class="line"></i>{{ 'view.related_product'|trans }}<i class="line"></i></h3>
                       </div>
                       <div id="related-products">
                           {% for product in allProdcut %}
@@ -350,7 +312,7 @@
 									<a href="{{ path('adminpage_add_to_wish',{'id_product' : product.id }) }}" class="li-icon"><i class="lil-favorite"></i></a>
 								</span>
 								<span data-toggle="tooltip" data-placement="top" title="View">
-									<a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
+									<a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}" class="li-icon view-details"><i class="lil-search"></i></a>
 								</span>
                                       </div>
                                   </div>
@@ -377,16 +339,14 @@
           {% endblock %}
       </div>
    </div><!-- /.container -->
-
-
+    <div style="margin-top: 60px;" class="footer">
+        {{ include ('@Gauss/Default/layout/footer-menu.html.twig') }}
+    </div>
 </section><!-- /.products-grid -->
 {% endblock %}
 
 
-{% block brands %}
-
-{% endblock %}
 
 {% block footer %}
-   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+
 {% endblock %}

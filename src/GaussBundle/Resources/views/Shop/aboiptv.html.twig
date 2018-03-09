@@ -10,7 +10,7 @@
          <div class="row">
             <div class="col-md-8 col-sm-7">
                <ol class="breadcrumb">
-                  <li><a href="index-2.html">Home</a></li>
+                   <li><a href="{{ path('homepage') }}">{{ 'navbar.label_home'|trans }}</a></li>
                   <li class="active">Abonnement IPTV</li>
                </ol>
             </div>
@@ -31,46 +31,8 @@
 
           {% block content_shop %}
               <div class="col-lg-offset-0 col-md-9">
-         {#     <div class="cd-pricing-container cd-full-width cd-secondary-theme">
-                  <ul class="cd-pricing-list cd-bounce-invert">
-                        {% for iptv in listIptv %}
-                            {% if iptv.status == 1%}
-                                 {% set status = "Basic" %}
-                                 <li class="col-md-2">
-                            {% elseif iptv.status ==  2%}
-                                 {% set status = "Premier" %}
-                                <li class="col-md-2">
-                            {% else %}
-                                 {% set status = "Popular" %}
-                                     <li class="col-md-2 cd-popular">
-                            {% endif %}
-                                  <ul class="cd-pricing-wrapper">
-                                  <li data-type="monthly" class="is-visible">
-                                      <header class="cd-pricing-header">
-                                          <h2>{{ iptv.nom }} _{{ status }} </h2>
-                                          <div class="cd-price">
-                                              <span class="cd-currency">$</span>
-                                              <span class="cd-value">{{ iptv.currentPrice }}</span>
-                                              <span class="cd-duration">{{ iptv.duree }}</span>
-                                          </div>
-                                      </header> <!-- .cd-pricing-header -->
-                                      <div class="cd-pricing-body">
-                                          <ul class="cd-pricing-features">
-                                              <li>{{ iptv.description }}</li>
-                                              <li><em>24/7</em> Support</li>
-                                          </ul>
-                                      </div> <!-- .cd-pricing-body -->
-                                      <footer class="cd-pricing-footer">
-                                          <a class="cd-select" href="http://codyhouse.co/?p=429">{{ iptv.nom }}</a>
-                                      </footer> <!-- .cd-pricing-footer -->
-                                  </li>
-                              </ul> <!-- .cd-pricing-wrapper -->
-                          </li>
-                        {% endfor %}
-                  </ul> <!-- .cd-pricing-list -->
-              </div> <!-- .cd-pricing-container -->#}
-              {% for iptv in listIptv %}
-              <div class="product col-lg-4">
+                {% for iptv in listIptv %}
+              <div class="product col-lg-6 col-md-6">
                   <!-- START PRICING TABLE -->
                   <div class="pricing-option">
                       <div class="pricing-top">
@@ -90,18 +52,18 @@
 
                       </div>
                       <ul>
-                          <li style="background-color:#EEEEEE"> {{ iptv.descriptionProduct|truncate(80, false, "..") }}</li>
+                          <li style="background-color:#EEEEEE"> {{ iptv.descriptionProduct|truncate(120, false, "..") }}</li>
 
                               <div class="product-details text-center">
                                   <div class="product-btns">
 										<span data-toggle="tooltip" data-placement="top" title="Add To Cart">
-											<a href="{{ path('adminpage_add_to_cart',{'id_product' : iptv.id }) }}" class="li-icon add-to-cart" style="background-color: #e74c3c"><i class="lil-shopping_cart"></i></a>
+											<a href="{{ path('adminpage_add_to_cart',{'id_product' : iptv.id,'nom_product' : iptv.nameproductUrl }) }}" class="li-icon add-to-cart" style="background-color: #e74c3c"><i class="lil-shopping_cart"></i></a>
 										</span>
 										<span data-toggle="tooltip" data-placement="top" title="Add to Favorites">
-											<a href="{{ path('adminpage_add_to_wish',{'id_product' : iptv.id }) }}" class="li-icon" style="background-color: #e74c3c"><i class="lil-favorite"></i></a>
+											<a href="{{ path('adminpage_add_to_wish',{'id_product' : iptv.id,'nom_product' : iptv.nameproductUrl }) }}" class="li-icon" style="background-color: #e74c3c"><i class="lil-favorite"></i></a>
 										</span>
 										<span data-toggle="tooltip" data-placement="top" title="View">
-											<a href="{{ path('adminpage_view_product', {'id_product' : iptv.id }) }}" class="li-icon view-details" style="background-color: #e74c3c"><i class="lil-search"></i></a>
+											<a href="{{ path('adminpage_view_product', {'nom_product' : iptv.nameproductUrl}) }}" class="li-icon view-details" style="background-color: #e74c3c"><i class="lil-search"></i></a>
 										</span>
                                   </div>
                               </div>
@@ -113,8 +75,11 @@
                 {% endfor %}
               </div>
           {% endblock %}
+      </div><!-- /.container -->
       </div>
-   </div><!-- /.container -->
+       <div style="margin-top: 60px;" class="footer">
+           {{ include ('@Gauss/Default/layout/footer-menu.html.twig') }}
+       </div>
 </section><!-- /.AboIptv-grid -->
 {% endblock %}
 
@@ -124,5 +89,5 @@
 
 {% block footer %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+
 {% endblock %}

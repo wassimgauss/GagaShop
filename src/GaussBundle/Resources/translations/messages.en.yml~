@@ -1,0 +1,27 @@
+navbar.label_home: home
+navbar.label_shop: shop
+navbar.label_iptv: IPTV
+navbar.label_pages: ECommerce
+navbar.label_about: about
+navbar.label_contact: contact
+navbar.label_account: account
+navbar.label_wishlist: wishlist
+navbar.label_login: login
+navbar.label_register: register
+header.label_Why_not_say: 'Why not say'
+header.label_parg_1: 'Are you looking for a smartphone? A laptop ? Maybe a digital receiver !! Do you want a stable IPTV subscription that allows you to watch all channels in FHD resolution. Bizertenet offers several products at low prices. What are you waiting for, start now.'
+home.label_Latest_Products: 'Latest Products'
+home.label_show_more: 'SHOW MORE'
+home.label_parg_last_prod: 'The latest products added in our stock.'
+home.label_payement: 'Secure payment'
+home.label_Customer_Service: 'Customer Service'
+home.label_Shipping: Shipping
+home.label_Shipping_parg: 'To send your order validated at the delivery service of Gshop, Our Site offers 3 delivery methods, packages are oversized and protected.'
+home.label_send_message: 'Send Message'
+label_prev: previous
+label_next: next
+view.related_product: Related Products
+label_filtre_price: Filter By Price
+label_filtre_category: Categories
+label_top_seler: Top Seller
+label_mind: What's on your mind

@@ -30,7 +30,7 @@
          {% endblock %}
 
           {% block content_shop %}
-              {{ render(controller('GaussBundle:Shop:getProduct',{'page' : page, 'price' : price })) }}
+              {{ render(controller('GaussBundle:Shop:getProduct',{'page' : page, 'price' : price, 'param' : param, 'nom_prod' : nom_prod })) }}
           {% endblock %}
       </div>
        <div style="margin-top: 60px;" class="footer">

@@ -1,5 +1,6 @@
 <div class="col-md-9">
     {% if pagination is not null %}
+        {% if pagination is not empty %}
     <div class="masonry row" id="zone">
         {% for product in pagination %}
             {% if product.category.id != 5 %}
@@ -43,7 +44,31 @@
             {% endif %}
         {% endfor %}
     </div><!-- /.masonry -->
-    {% else %}
+        {% else %}
+            <div class="page-wrapper">
+                <section class="section" id="page-404">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-1 text-center">
+                                <h1>OUPSS</h1>
+                                <h3>Sorry, the product you were looking for doesn’t exist.</h3>
+                                <p>Let's get back on track..</p>
+                                <div class="button-group">
+                                    <a href="{{ path('homepage') }}" class="btn btn-primary">Home</a>
+                                    <a href="{{ path('shoppage') }}" class="btn btn-default">Shop</a>
+                                </div>
+                                <h2 class="or">OR</h2>
+                                <form action="#!" method="GET" class="inputs-border">
+                                    <input type="text" class="form-control" placeholder="What's on your mind?">
+                                </form>
+                            </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </section>
+            </div><!-- /.page-wrapper -->
+
+        {% endif %}
+        {% else %}
         <div class="page-wrapper">
             <section class="section" id="page-404">
                 <div class="container">

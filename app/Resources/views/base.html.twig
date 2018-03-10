@@ -74,6 +74,7 @@
                 }
                 .navbar--size--xl-stick {
                     padding: 1.2rem 0;
+
                 }
                 .navbar--size--md {
                     padding: 1rem 0;
@@ -84,8 +85,16 @@
                 .navbar--color--ghost {
                    /* background: rgba(53, 59, 72,0.5);*/
                    /* background: rgba(47, 54, 64,0.4);*/
-                    background: rgba(255, 255, 255,.98);
+                    background:
+                -webkit-linear-gradient(left,#F2F3F5 1%,#F2F3F5 40%,#F2F3F5 52%,rgba(242,243,245,.63) 90%);
                     margin-bottom: 0px;
+                    border-bottom: inherit !important;
+                    border-right: inherit !important;
+                }
+                .navbar--color--ghost a {
+                    //color: white;
+                    //border-left: inherit !important;
+
                 }
                 .navbar--color--ghost .navbar-brand,
                 .navbar--color--ghost .navbar-text,
@@ -96,7 +105,13 @@
                     border-right:1px solid #83939C;
                     border-bottom:1px solid #83939C;
                 }*/
+                .nav-sticky {
+                  border-right: inherit !important;
 
+                }
+                .gs {
+                    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+                }
             </style>
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -242,7 +257,10 @@
                 }, 100);
 
                 $(document).ready(function() {
-                    var movementStrength = 25;
+                    var a=$(".nav-sticky").offset().top;
+                    $(window).scrollTop();a>70?$(".nav-sticky").addClass("gs"):$(".nav-sticky").removeClass("gs");
+
+                var movementStrength = 25;
                     var height = movementStrength / $(window).height();
                     var width = movementStrength / $(window).width();
                     $("#top-image").mousemove(function(e){

@@ -25,10 +25,9 @@ class DefaultController extends Controller
         $request->setDefaultLocale($lang);
         $this->get('translator')->setLocale($lang);
         $session->set('_local',$lang);
-        if(!$session->get('last_route')['name'])
-            $session->get('last_route')['name'] ="homepage";
-        $parm_routes = $session->get('last_route')['params'];
-        return $this->redirect($this->generateUrl($session->get('last_route')['name'],$parm_routes));
+        $route= $session->get('last_route')['name'];
+        $parm_routes= $session->get('last_route')['params'];
+        return $this->redirect($this->generateUrl($route,$parm_routes));
 
     }
 

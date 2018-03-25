@@ -25,12 +25,11 @@ class ShopController extends Controller
                 $param = $p;
             return $this->render('@Gauss/Shop/index.html.twig',array('page' => $page, 'price' => $price,'param' => $param, 'nom_prod' => $nom_prod));
         }
-        return $this->render('@Gauss/Shop/index.html.twig',array('page' => $page, 'price' => $price, 'nom_prod' => $nom_prod));
+        return $this->render('@Gauss/Shop/index.html.twig',array('page' => $page, 'price' => $price, 'nom_prod' => $nom_prod, 'param' => ''));
     }
     
     public function getProductAction(Request $request, $page, $price, $param, $nom_prod)
     {
-        echo $nom_prod;
         if(!$page)
         $request->query->set('page',1);
         $em = $this->get('doctrine.orm.entity_manager');

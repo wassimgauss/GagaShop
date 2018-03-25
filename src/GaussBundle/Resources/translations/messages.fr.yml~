@@ -20,8 +20,9 @@ home.label_Shipping_parg: 'Pour l''envoi de votre commande validée au service d
 home.label_send_message: 'Envoyer le message'
 label_prev: précédent
 label_next: prochain
-view.related_product: Produits Connexes
-label_filtre_price: Filtrer par prix
+view.related_product: 'Produits Connexes'
+label_filtre_price: 'Filtrer par prix'
 label_filtre_category: Catégories
-label_top_seler:  Plus vendu
-label_mind: What's on your mind
+label_top_seler: 'Plus vendu'
+label_mind: 'What''s on your mind'
+contact.msg: "Parlez à notre équipe si vous avez des questions, si vous avez besoin de conseils ou si vous êtes curieux d'en savoir plus sur ce que nous avons à offrir. Appelez-nous ou envoyez-nous un e-mail."

@@ -20,8 +20,9 @@ home.label_Shipping_parg: 'Um Ihre Bestellung beim Lieferservice von Gshop zu va
 home.label_send_message: 'Nachricht senden'
 label_prev: Bisherige
 label_next: Nächster
-view.related_product: Ähnliche Produkte
-label_filtre_price: Nach Preis filtern
+view.related_product: 'Ähnliche Produkte'
+label_filtre_price: 'Nach Preis filtern'
 label_filtre_category: Kategorien
 label_top_seler: Topseller
-label_mind: Was haben Sie auf dem Herzen
+label_mind: 'Was haben Sie auf dem Herzen'
+contact.msg: "Sprechen Sie mit unserem Team, wenn Sie Fragen haben, Rat benötigen oder wenn Sie neugierig sind, was wir zu bieten haben. Rufen Sie uns an oder senden Sie uns eine E-Mail."

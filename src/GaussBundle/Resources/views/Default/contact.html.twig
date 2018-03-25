@@ -1,5 +1,5 @@
 {% extends "base.html.twig" %}
-
+{% block title %} {{ parent() }} | {{ 'navbar.label_contact'|trans }} {% endblock %}
 {% block navbar %}
    <div class="container">
       <div class="row">
@@ -16,8 +16,8 @@
                <div class="row">
                   <div class="col-md-8 col-sm-7">
                      <ol class="breadcrumb">
-                        <li><a href="index-2.html">Home</a></li>
-                        <li class="active">Contact Us</li>
+                        <li><a href="#">{{ 'navbar.label_home'|trans }}</a></li>
+                        <li class="active">{{ 'navbar.label_contact'|trans }}</li>
                      </ol>
                   </div>
                </div><!-- /.row -->
@@ -35,13 +35,13 @@
                      <div class="col-md-4">
                         <h3 class="no-margin-top">Why not say <span class="autotype">Hello</span><span class="typed-cursor">?</span></h3>
                         <p class="description">
-                           Speak to our team if you have any questions, need advice or if you're curious to hear more about what we have to offer. Give us a call or send us an email.
+                            {{ 'contact.msg'|trans }}
                         </p>
 
                         <div>
-                           <p><strong>Phone:</strong> +90 555 888 111</p>
-                           <p><strong>Email:</strong> info@domain.com</p>
-                           <p><strong>Address:</strong> Avcılar NO:9 DAİRE :2, Istanbul, Turkey</p>
+                           <p><strong>Phone:</strong> +216 023 643 393</p>
+                           <p><strong>Email:</strong> info@bizertenet.com</p>
+                           <p><strong>Address:</strong> Menzel Jemil, Bizerte, Tunisie</p>
                         </div>
                      </div>
                      <div class="col-md-8">

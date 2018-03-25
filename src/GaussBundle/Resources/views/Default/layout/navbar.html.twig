@@ -1,23 +1,52 @@
-<div class="nav-container nav-sticky" style="position: fixed; z-index: 99;">
-    <nav class="sub-navbar" style="background-color:#B0BEC5">
+<style>
+
+ /*   background-color: #bad0b8;
+    background-image: -webkit-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -moz-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -o-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -ms-linear-gradient(right, #FC7864, #FDA366);
+    background-image: linear-gradient(right, #FC7864, #FDA366);
+
+
+    background: url('{{ asset('build/img/linear-gradient.png') }}') no-repeat center center fixed;
+nav-sticky
+    */
+</style>
+<div class="nav-container nav-sticky1" style=" position: fixed; z-index: 99; margin-top: -2px !important; margin-left: 0px !important;">
+    <nav class="sub-navbar navbar--color--ghost navbar--size--xl-stick" data-startColor="navbar--color--ghost" data-startSize="navbar--size--xl-stick"
+         data-intoColor="navbar--color--secondary" data-intoSize="navbar--size--xl-stick"  style="width:99.72%">
         <div class="list-select">
             <div class="inner-select">
-                <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
+                {% if app.request.getLocale() == "en" %}
+                    <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
+                {% elseif app.request.getLocale() == "fr" %}
+                    <div class="selected">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</div>
+                {% elseif app.request.getLocale() == "de" %}
+                    <div class="selected">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</div>
+                {% else %}
+                    <div class="selected">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</div>
+                {% endif %}
                 <ul>
-                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
-                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
-                    <li><a href="#!">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('set_local_user', { 'lang' : 'en' }) }}">&nbsp;<img src="{{ asset('build/img/uk_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('set_local_user', {  'lang' : 'de' }) }}">&nbsp;<img src="{{ asset('build/img/germany_flag.png') }}">&nbsp;</a></li>
+                    <li><a href="{{ path('set_local_user', {  'lang' : 'fr' }) }}">&nbsp;<img src="{{ asset('build/img/france_flag.png') }}">&nbsp;</a></li>
                 </ul>
             </div>
         </div>
         <div class="list-select">
             <div class="inner-select">
-                <div class="selected">TTc</div>
+                <div class="selected"><a href="#!"><i class="lil-dollar"></i></a></div>
                 <ul>
-                    <li><a href="#!">TTc</a></li>
+                    <li><a href="#!">TTC</a></li>
                     <li><a href="#!"><i class="lil-dollar"></i></a></li>
                     <li><a href="#!"><i class="lil-try"></i></a></li>
                 </ul>
+{#                <div class="selected"><img src="{{ asset('build/img/money/currency_euro.png') }}" alt="EURO" style="margin-top: -5px;"></div>
+                <ul>
+                    <li><a href="#!"><img src="{{ asset('build/img/money/money_coin.png') }}" alt="DINAR"></a></li>
+                    <li><a href="#!"><img src="{{ asset('build/img/money/currency_euro.png') }}" alt="EURO"></a></li>
+                    <li><a href="#!"><img src="{{ asset('build/img/money/currency_dollar.png') }}" alt="DOLLAR"></a></li>
+                </ul>#}
             </div>
         </div>
 {#        <script>
@@ -35,26 +64,27 @@
         <ul class="pull-right list-inline">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li><a href="{{ path('fos_user_profile_show') }}">
-                        &nbsp;&nbsp;&nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i> Account</a></li>
-                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
-                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
+                        &nbsp;&nbsp;&nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_account'|trans }}</a></li>
+                <li class="shopping-fav"><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_wishlist'|trans }}</a></li>
+                <li style="border-right:none"><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
             {% elseif is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 
                 <li><a href="{{ path('fos_user_profile_show') }}">
-                        &nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>Account</a></li>
-                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Wishlist</a></li>
-                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                        &nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_account'|trans }}</a></li>
+                <li class="shopping-fav"><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;{{ 'navbar.label_wishlist'|trans }}</a></li>
+                <li style="border-right:none"><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 
             {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
                 <li><a href="{{ path('fos_user_security_login') }}">
-                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;LOGIN</a></li>
-                <li><a href="{{ path('fos_user_registration_register') }}">&nbsp;REGISTER</a></li>
-                <li><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;</a></li>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{ 'navbar.label_login'|trans }}</a></li>
+                <li><a href="{{ path('fos_user_registration_register') }}">&nbsp;{{ 'navbar.label_register'|trans }}</a></li>
+                <li class="shopping-fav" style="border-right:none"><a href="{{ path('shoppage_wishlist') }}"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;</a></li>
             {% endif %}
         </ul>
         <div class="clearfix"></div>
     </nav><!-- /.sub-navbar -->
-    <nav class="navbar navbar-default" style="background-color:#B0BEC5">
+    <nav class="navbar navbar-default navbar--color--ghost navbar--size--xl"      data-startColor="navbar--color--ghost" data-startSize="navbar--size--xl"
+         data-intoColor="navbar--color--secondary" data-intoSize="navbar--size--md" style="width:99.72%">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -63,23 +93,24 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ path('homepage') }}">
-                    <img src="{{ asset('build/img/a.png') }}" class="img-responsive" style="max-width:100px; margin-top: 0px;">
+                    <img src="{{ asset('build/logo.png') }}" class="img-responsive" style="max-width:150px; margin-top: 0px;">
                 </a>
             </div>
             {{ render(controller('GaussBundle:Panier:getProduct')) }}
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active">
-                        <a href="index-2.html" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Home <i class="caret"></i></a>
+                    <li class="active"><a href="{{ path('homepage_about') }}">{{ 'navbar.label_home'|trans }}</a></li>
+{#                    <li class="active">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_home'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
-                            {#    <li><a href="index-3.html">Home Default Slider</a></li>
+                            #}{#    <li><a href="index-3.html">Home Default Slider</a></li>
                                 <li><a href="index-4.html">Home Overlay Products</a></li>
-                                <li><a href="index-5.html#instagram">Home instagram section</a></li>#}
+                                <li><a href="index-5.html#instagram">Home instagram section</a></li>#}{#
                         </ul>
-                    </li>
+                    </li>#}
                     <li>
-                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Shop <i class="caret"></i></a>
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_shop'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('shoppage') }}"> All products</a></li>
                             {{ render(controller('GaussBundle:Default:getCategMenu')) }}
@@ -89,7 +120,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">IPTV <i class="caret"></i></a>
+                        <a href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_iptv'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             {#    <li><a href="{{ path('shoppage') }}"> All products</a></li>
                                 {{ render(controller('GaussBundle:Default:getCategMenu')) }}#}
@@ -98,7 +129,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">eCommerce Pages <i class="caret"></i></a>
+                        <a href="#!" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">{{ 'navbar.label_pages'|trans }}<i class="caret"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('shoppage_wishlist') }}">Wishlist</a></li>
                             <li><a href="{{ path('adminpage_view_cart') }}">Cart</a></li>
@@ -107,8 +138,8 @@
                                                                 <li><a href="order-tracking.html">Order Tracking</a></li>#}
                         </ul>
                     </li>
-                    <li><a href="{{ path('homepage_about') }}">About</a></li>
-                    <li><a href="{{ path('homepage_contact') }}">Contact</a></li>
+                    <li><a href="{{ path('homepage_about') }}">{{ 'navbar.label_about'|trans }}</a></li>
+                    <li><a href="{{ path('homepage_contact') }}">{{ 'navbar.label_contact'|trans }}</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container -->

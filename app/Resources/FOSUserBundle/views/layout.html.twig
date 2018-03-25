@@ -8,7 +8,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Bizertenet{% endblock %}</title>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113189580-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113189580-1');
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5381017606070180",
+    enable_page_level_ads: true
+  });
+</script>
     {% block stylesheets %}
         <!-- Load Fonts -->
         <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Inconsolata:300,400,500,700|Unica+One:300,400,500,700">
@@ -23,16 +39,112 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://use.fontawesome.com/c788770a31.js"></script>
+    <style>
+        /*!
+         * Start Bootstrap - Business Casual (http://startbootstrap.com/)
+         * Copyright 2013-2016 Start Bootstrap
+         * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+         */
+
+        body {
+            background: url('{{ asset('build/img/poly-bg.jpg') }}') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            width:100%;
+            height:100%;
+            background-size: calc(100% + 50px);
+        }
+        .btn {
+            border-radius: 25px;
+        }
+        .boxy {
+            padding: 0px 0px 0px;
+        //background: #FAFAFA;
+            background: rgba(255,255,255,1);
+        }
+        .effect3
+        {
+            position: relative;
+        }
+        .effect3:before
+        {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            top: 80%;
+            max-width:300px;
+            background: #777;
+            -webkit-box-shadow: 0 15px 10px #777;
+            -moz-box-shadow: 0 15px 10px #777;
+            box-shadow: 0 15px 10px #777;
+            -webkit-transform: rotate(-3deg);
+            -moz-transform: rotate(-3deg);
+            -o-transform: rotate(-3deg);
+            -ms-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+        }
+        .navbar {
+            border: none;
+            -webkit-transition: 0.2s;
+            transition: 0.2s;
+        }
+        .navbar--size--xl-stick {
+            padding: 1.2rem 0;
+
+        }
+        .navbar--size--md {
+            padding: 1rem 0;
+        }
+        .navbar--color--white {
+            background: #fff;
+        }
+        .navbar--color--ghost {
+            /* background: rgba(53, 59, 72,0.5);*/
+            /* background: rgba(47, 54, 64,0.4);*/
+            background:
+                    -webkit-linear-gradient(left,#F2F3F5 1%,#F2F3F5 40%,#F2F3F5 52%,rgba(242,243,245,.63) 90%);
+            margin-bottom: 0px;
+            border-bottom: inherit !important;
+            border-right: inherit !important;
+        }
+        .navbar--color--ghost a {
+        //color: white;
+        //border-left: inherit !important;
+
+        }
+        .navbar--color--ghost .navbar-brand,
+        .navbar--color--ghost .navbar-text,
+        .navbar--color--ghost li a{
+            /*color:white;*/
+        }
+        /*                .sub-navbar ul li{
+                            border-right:1px solid #83939C;
+                            border-bottom:1px solid #83939C;
+                        }*/
+        .nav-sticky {
+            border-right: inherit !important;
+
+        }
+        .gs {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+    </style>
 </head>
 <body>
 {% block body %}
-
+    <div class="container">
+    <div class="row">
+    <div class="boxy">
     {% block navbar %}
-        <div class="container">
-            <div class="row">
+
+
                 {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
-            </div>
-        </div>
+
     {% endblock %}
 
     {% block slider %} {% endblock %}
@@ -72,7 +184,9 @@
 
 
     {% block footer %}
-        {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+        <div style="margin-top: 0px;" class="footer">
+            {{ include ('@Gauss/Default/layout/footer-menu.html.twig') }}
+        </div>
     {% endblock %}
 
     <!-- open/close -->
@@ -94,6 +208,9 @@
         <i class="lil-angle-double-down"></i>
     </a>
 
+    </div>
+    </div>
+    </div>
 {% endblock %}
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('build/js/min.js') }}"></script>

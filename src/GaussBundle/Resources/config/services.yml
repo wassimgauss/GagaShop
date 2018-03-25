@@ -7,3 +7,9 @@ services:
         class: GaussBundle\EventListener\LastRouteListener
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 30 }
+
+    kernel.listener.kernel_request:
+        class: GaussBundle\EventListener\ErrorRedirect
+        arguments: ["@router"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException, priority: 25 }

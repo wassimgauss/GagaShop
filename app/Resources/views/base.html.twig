@@ -8,7 +8,23 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bizertenet{% endblock %}</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113189580-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113189580-1');
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5381017606070180",
+    enable_page_level_ads: true
+  });
+</script>
         {% block stylesheets %}
             <!-- Load Fonts -->
             <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Inconsolata:300,400,500,700|Unica+One:300,400,500,700">
@@ -18,6 +34,82 @@
             <link rel="stylesheet" type="text/css" media="all" href="{{ asset('build/css/style.css') }}">
             <!-- Data tables style -->
             <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+            <style>
+                body {
+                   background: url('{{ asset('build/img/poly-bg.jpg') }}') no-repeat center center fixed;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    background-size: cover;
+                    -o-background-size: cover;
+                    width:100%;
+                    height:100%;
+                    background-size: calc(100% + 50px);
+                }
+                .btn {
+                    border-radius: 25px;
+                }
+                .box {
+                    padding: 0px 0px 0px;
+                    background: rgba(255,255,255,1);
+                }
+                .effect3
+                {
+                    position: relative;
+                }
+                .effect3:before
+                {
+                    z-index: -1;
+                    position: absolute;
+                    content: "";
+                    bottom: 15px;
+                    left: 10px;
+                    width: 50%;
+                    top: 80%;
+                    max-width:300px;
+                    background: #777;
+                    -webkit-box-shadow: 0 15px 10px #777;
+                    -moz-box-shadow: 0 15px 10px #777;
+                    box-shadow: 0 15px 10px #777;
+                    -webkit-transform: rotate(-3deg);
+                    -moz-transform: rotate(-3deg);
+                    -o-transform: rotate(-3deg);
+                    -ms-transform: rotate(-3deg);
+                    transform: rotate(-3deg);
+                }
+                .navbar {
+                    border: none;
+                    -webkit-transition: 0.2s;
+                    transition: 0.2s;
+                }
+                .navbar--size--xl-stick {
+                    padding: 1.25rem 0;
+
+                }
+                .navbar--size--md {
+                    padding: 1rem 0;
+                    box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22) !important;
+                }
+                .navbar--color--white {
+                    background: #fff;
+                }
+                .navbar--color--ghost {
+                    background:  -webkit-linear-gradient(left,#F2F3F5 1%,#F2F3F5 40%,#F2F3F5 52%,rgba(242,243,245,.63) 90%);
+                    margin-bottom: 0px;
+                    border-bottom: inherit !important;
+                    border-right: inherit !important;
+                }
+                .navbar--color--ghost a {
+                }
+                .navbar--color--ghost .navbar-brand,
+                .navbar--color--ghost .navbar-text,
+                .navbar--color--ghost li a{
+                    /*color:white;*/
+                }
+                .gs {
+                    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+                }
+
+            </style>
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,28 +121,38 @@
         <script src="https://use.fontawesome.com/c788770a31.js"></script>
 
 
+        {#{% include "@Google/Analytics/async_universal.html.twig" %}#}
 
     </head>
-    <body>
+    <body id="top-image">
+
         {% block body %}
+            <div class="container">
+                <div class="row">
 
-            {% block navbar %} {% endblock %}
+                    <div class="box">
 
-            {% block slider %} {% endblock %}
+                        {% block navbar %} {% endblock %}
 
-            {% block collection %} {% endblock %}
+                        {% block slider %} {% endblock %}
 
-            {% block promotion %} {% endblock %}
+                        {% block collection %} {% endblock %}
 
-            {% block content %} {% endblock %}
+                        {% block promotion %} {% endblock %}
 
-            {% block brands %} {% endblock %}
+                        {% block content %} {% endblock %}
+
+                        {% block brands %} {% endblock %}
 
 
 
 
-           {% block footer %} {% endblock %}
+                        {% block footer %} {% endblock %}
 
+
+                    </div>
+                </div>
+            </div>
                      <!-- open/close -->
             <div class="overlay overlay-simplegenie">
                 <i class="overlay-close lil-close"></i>
@@ -69,32 +171,93 @@
             <a href="#top" class="go-to-top">
                 <i class="lil-angle-double-down"></i>
             </a>
-
         {% endblock %}
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('build/js/min.js') }}"></script>
             <script>
-                //jQuery to collapse the navbar on scroll
-                $(window).scroll(function() {
-                    if ($(".navbar").offset().top > 50) {
-                        $(".navbar-fixed-top").addClass("top-nav-collapse");
-                    } else {
-                        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-                    }
+                $(".add-to-fav:not(.added)").on("click",function(){
+                    if(!$(this).hasClass("added"))
+                    {var b=$(".shopping-fav"),c=$(this).parents(".product"),d=c.find("img").eq(0);
+                        if(d){var e=d.clone().offset({top:d.offset().top+150,left:d.offset().left+150}).css({opacity:".9",position:"absolute",height:"50px",width:"50px","z-index":"999999","border-radius":"50%"}).appendTo($("body")).animate({top:b.offset().top+12,left:b.offset().left+12,width:75,height:75},1e3,"easeInOutExpo");setTimeout(function(){b.effect("shake",{times:2},400,a(c))},1500),e.animate({width:0,height:0},function(){$(this).detach()})}$(this).addClass("added"),$(this).parent().attr("data-original-title","Added")}})
+                'use strict';
+                //sub-navbar
+                // grabbing the class names from the data attributes
+                var navBar = $('.navbar'),
+                        data = navBar.data();
+                var subnavBar = $('.sub-navbar'),
+                        data = navBar.data();
+                // booleans used to tame the scroll event listening a little..
+                var scrolling = false,
+                        scrolledPast = false;
+                // transition Into
+                function switchInto() {
+                    // update `scrolledPast` bool
+                    scrolledPast = true;
+                    // add/remove CSS classes
+                    navBar.removeClass(data.startcolor);
+                    navBar.removeClass(data.startsize);
+                    navBar.addClass(data.intocolor);
+                    navBar.addClass(data.intosize);
+                    subnavBar.removeClass(data.startcolor);
+                    subnavBar.removeClass(data.startsize);
+                    subnavBar.addClass(data.intocolor);
+                    subnavBar.addClass(data.intosize);
+                    console.log('into transition triggered!');
+                };
+                // transition Start
+                function switchStart() {
+                    // update `scrolledPast` bool
+                    scrolledPast = false;
+                    // add/remove CSS classes
+                    navBar.addClass(data.startcolor);
+                    navBar.addClass(data.startsize);
+                    navBar.removeClass(data.intocolor);
+                    navBar.removeClass(data.intosize);
+                    subnavBar.addClass(data.startcolor);
+                    subnavBar.addClass(data.startsize);
+                    subnavBar.removeClass(data.intocolor);
+                    subnavBar.removeClass(data.intosize);
+                    console.log('start transition triggered!');
+                }
+                // set `scrolling` to true when user scrolls
+                $(window).scroll(function () {
+                    return scrolling = true;
                 });
+                setInterval(function () {
+                    // when `scrolling` becomes true...
+                    if (scrolling) {
+                        // set it back to false
+                        scrolling = false;
+                        // check scroll position
+                        if ($(window).scrollTop() > 100) {
+                            // user has scrolled > 100px from top since last check
+                            if (!scrolledPast) {
+                                switchInto();
+                            }
+                        } else {
+                            // user has scrolled back <= 100px from top since last check
+                            if (scrolledPast) {
+                                switchStart();
+                            }
+                        }
+                    }
+                    // take a breath.. hold event listener from firing for 100ms
+                }, 100);
 
-                //jQuery for page scrolling feature - requires jQuery Easing plugin
-                $(function() {
-                    $(document).on('click', 'a.page-scroll', function(event) {
-                        var $anchor = $(this);
-                        $('html, body').stop().animate({
-                            scrollTop: $($anchor.attr('href')).offset().top
-                        }, 1500, 'easeInOutExpo');
-                        event.preventDefault();
+                $(document).ready(function() {
+                    var a=$(".nav-sticky1").offset().top;
+                    //$(window).scrollTop();a>70?$(".nav-sticky1").addClass("gs"):$(".nav-sticky1").removeClass("gs");
+                var movementStrength = 25;
+                    var height = movementStrength / $(window).height();
+                    var width = movementStrength / $(window).width();
+                    $("#top-image").mousemove(function(e){
+                        var pageX = e.pageX - ($(window).width() / 2);
+                        var pageY = e.pageY - ($(window).height() / 2);
+                        var newvalueX = width * pageX * -1 - 25;
+                        var newvalueY = height * pageY * -1 - 50;
+                        $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
                     });
                 });
-
-
             </script>
         {% endblock %}
     </body>

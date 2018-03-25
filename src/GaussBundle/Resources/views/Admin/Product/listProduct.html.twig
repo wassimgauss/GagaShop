@@ -64,7 +64,11 @@
                       {% for product in listProduct %}
                       <tr>
                           <td> {{ product.id }}</td>
+                          {% if product.image is not null %}
                           <td> <img src="{{ asset(product.image.webPAth) }}" class="img-responsive" style=""> </td>
+                          {% else %}
+                          <td> <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive" style=""> </td>
+                          {% endif %}
                           <td> {{ product.nameProduct }}</td>
                           <td> {{ product.descriptionProduct }}</td>
                           <td> {{ product.currentPrice }}</td>

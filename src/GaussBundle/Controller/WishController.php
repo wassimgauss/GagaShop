@@ -13,6 +13,11 @@ class WishController extends Controller
 {
     public function indexAction(Request $request)
     {
+        $session = $request->getSession();
+        $local = $session->get('_local');
+        $request->setLocale($local);
+        $request->setDefaultLocale($local);
+        $this->get('translator')->setLocale($local);
         $em = $this->getDoctrine()->getManager();
         $user = $this->getUser();
         if($user != null) {
@@ -38,26 +43,34 @@ class WishController extends Controller
         $favoris = new Favoris();
         $product = $em->getRepository("GaussBundle:Produit")->findOneBy(array('id' => $id_product));
         if($product != null && $user != null ){
-            $favoris->setIdUser($user->getId());
-            $favoris->setIdProduct($id_product);
-            $em->persist($favoris);
-            $em->flush();
+            //if fav existe
+            $fav = $em->getRepository("GaussBundle:Favoris")->findOneBy(array('idUser'=>$user->getId(),'idProduct' => $id_product));
+            if($fav == null) {
+                $favoris->setIdUser($user->getId());
+                $favoris->setIdProduct($id_product);
+                $em->persist($favoris);
+                $em->flush();
+            }
         }
         else {
             return $this->redirect($this->generateUrl('homepage_404'));
         }
-      if($session->get('last_route')['name'] === "shoppage"){
-            return $this->redirect($this->generateUrl('shoppage'));
-        }
-        elseif ($session->get('last_route')['name'] === "adminpage_view_product") {
-            return $this->redirect($this->generateUrl('adminpage_view_product',array('id_product' => $id_product)));
-        }
-      elseif ($session->get('last_route')['name'] === "shoppage_list_aboIptv") {
-          return $this->redirect($this->generateUrl('shoppage_list_aboIptv'));
-      }
-        else {
-            return $this->redirect($this->generateUrl('shoppage_wishlist'));
-        }
+        sleep(2);
+
+        $nom_product = $product->getNameProductUrl();
+        var_dump($nom_product);
+            if($session->get('last_route')['name'] === "shoppage"){
+                return $this->redirect($this->generateUrl('shoppage'));
+            }
+            elseif ($session->get('last_route')['name'] === "adminpage_view_product") {
+                return $this->redirect($this->generateUrl('adminpage_view_product',array('nom_product'=>$nom_product)));
+            }
+            elseif ($session->get('last_route')['name'] === "shoppage_list_aboIptv") {
+                return $this->redirect($this->generateUrl('shoppage_list_aboIptv'));
+            }
+            else {
+                return $this->redirect($this->generateUrl('shoppage_wishlist'));
+            }
     }
 
     public function deleteFromWishAction($id_product, Request $request){

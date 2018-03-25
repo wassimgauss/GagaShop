@@ -1,0 +1,33 @@
+navbar.label_home: Accueil
+navbar.label_shop: Boutique
+navbar.label_iptv: IPTV
+navbar.label_pages: ECommerce
+navbar.label_about: 'À propos'
+navbar.label_contact: contacter
+navbar.label_account: Compte
+navbar.label_wishlist: Favoris
+navbar.label_login: 's''identifier'
+navbar.label_register: 's''inscrire'
+header.label_Why_not_say: 'Pourquoi ne pas dire'
+header.label_parg_1: 'Vous êtes en train de chercher un smartphone ? Un ordinateur portable ? Peut-être un récepteur numérique !! Voulez-vous un abonnement IPTV stable qui vous permet de regarder tous les chaînes en résolution FHD. Bizertenet vous propose plusieurs produits à bas prix. Qu''est que vous attendez, lancez vous maintenant.'
+home.label_Latest_Products: 'Derniers produits'
+home.label_show_more: 'AFFICHER PLUS'
+home.label_parg_last_prod: 'Les derniers produits ajoutés dans notre stock.'
+home.label_payement: 'Paiement sécurisé'
+home.label_Customer_Service: 'Service Clients'
+home.label_Shipping: Livraison
+home.label_Shipping_parg: 'Pour l''envoi de votre commande validée au service de livraison de Gshop, notre site propose 3 modes de livraison, les colis sont surdimensionnés et protégés.'
+home.label_send_message: 'Envoyer le message'
+label_prev: précédent
+label_next: prochain
+view.related_product: 'Produits Connexes'
+label_filtre_price: 'Filtrer par prix'
+label_filtre_category: Catégories
+label_top_seler: 'Plus vendu'
+label_mind: 'What''s on your mind'
+contact.msg: 'Parlez à notre équipe si vous avez des questions, si vous avez besoin de conseils ou si vous êtes curieux d''en savoir plus sur ce que nous avons à offrir. Appelez-nous ou envoyez-nous un e-mail.'
+about.mg1: "Nous créons des produits selon les normes d'aujourd'hui."
+about.msg2: "Faites-le se fondre ou se démarquer."
+about.h1: "Rencontrez notre équipe"
+about.h2_1: "Notre service"
+about.h2_2: "Notre Mission"

@@ -1,10 +1,10 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="page-wrapper" style="padding: 70px;">
+<div class="page-wrapper" style="padding: 100px;">
     <section class="section" id="page-login">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-lg-offset-3">
+                <div class="col-sm-8 col-lg-offset-1 col-xs-12">
                     <div class="box">
                         <h2>Login</h2><br>
                         <form action="{{ path("fos_user_security_check") }}" method="post" class="login-form inputs-border inputs-bg">
@@ -16,16 +16,19 @@
                                     <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="{{ 'security.login.username'|trans }}">
                                 </div>
                             </div>
+                            <br>
                             <div class="form-group">
                                 <div class="required">
                                     <input type="password" class="form-control" id="password" name="_password" placeholder="{{ 'security.login.password'|trans }}">
                                 </div>
                             </div>
+                            <br>
                             <div class="form-group">
                                 <input type="checkbox" id="rememberme" name="_remember_me" value="on">
                                 <label for="rememberme" class="checkbox">{{ 'security.login.remember_me'|trans }}</label>
                                 <a href="#!" class="effect pull-right">Forgot your password?</a>
                             </div>
+                            <br>
                             <div class="form-group text-right">
                                 <button type="submit" id="_submit" name="_submit" class="btn btn-default">{{ 'security.login.submit'|trans }}</button>
                             </div>

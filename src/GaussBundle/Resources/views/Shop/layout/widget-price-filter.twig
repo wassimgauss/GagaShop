@@ -1,13 +1,25 @@
 <div class="widget widget-price-filter">
-    <h3 class="widget-title">Filter By Price</h3>
+    <h3 class="widget-title">{{ 'label_filtre_price'|trans }}</h3>
     <div class="price-slider-wrapper">
-        <div id="filter-slider" class="filter-slider" data-min="10" data-max="1000" data-values="150,700"></div>
+        {% if app.request.query.get('price') is not empty %}
+            <div id="filter-slider" class="filter-slider" data-min="10" data-max="3000" data-values="{{ app.request.query.get('price') }}"></div>
+        {% else %}
+            <div id="filter-slider" class="filter-slider" data-min="10" data-max="3000" data-values="150,700"></div>
+        {% endif %}
+
+
     </div>
-    <form action="#">
+    <form action="{{ path('shoppage') }}" method="get">
         <div id="amount-slider">
-            <strong>Price: </strong><span>$150 — $700</span>
+            <strong>Price: </strong><span>
+                {% if app.request.query.get('price') is not empty %}
+                {{ app.request.query.get('price')|replace({',': ' - '}) }} TTc
+                {% else %}
+                150 - 700 TTc
+                {% endif %}
+            </span>
         </div>
-        <input type="hidden" id="price" value="150,700">
-        <button type="button" class="btn btn-default">Filter</button>
+        <input type="hidden" id="price" name="price" value="150,700">
+        <button type="submit" class="btn btn-default">Filter</button>
     </form>
 </div><!-- /.widget-price-filter -->

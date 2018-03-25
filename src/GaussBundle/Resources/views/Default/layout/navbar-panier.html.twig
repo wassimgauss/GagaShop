@@ -9,16 +9,16 @@
                 {% for product in listproduct %}
                     <li>
                         {% if  product.category.id != 5 %}
-                        <a href="{{ path('adminpage_view_product', {'id_product' : product.id }) }}">
+                        <a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}">
                             <img src="{{ asset(product.image.webPath) }}" class="img-responsive product-img" alt="">
                         </a>
                         {% else %}
-                        <a href="#">
+                        <a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}">
                             <img src="{{ asset('build/img/products/p.png') }}" class="img-responsive product-img" alt="">
                         </a>
                         {% endif %}
                         <div class="product-details">
-                            <p class="product-title clearfix"><a href="#">{{ product.nameProduct  }}</a></p>
+                            <p class="product-title clearfix"><a href="{{ path('adminpage_view_product', {'nom_product': product.nameProductUrl }) }}">{{ product.nameProduct  }}</a></p>
                             <p class="product-price clearfix">
                                 <ins>
                                     <span class="amount">{{ product.currentPrice }}.000 TTc</span>
@@ -50,7 +50,16 @@
 
         </ul>
     </li>
-    <li><a href="#!" class="li-icon" id="trigger-overlay"><i class="lil-search"></i></a></li>
+    <li>
+        <form action="{{ path('shoppage') }}" method="GET" class="inputs-border inputs-bg">
+
+            <a href="#" type="submit" class="li-icon" id="trigger-overlay" ><i class="lil-search"></i>
+
+            </a>
+
+        </form>
+
+        </li>
 </ul>
 
 

@@ -1,17 +1,17 @@
 {% extends "base.html.twig" %}
-
+{% block title %} {{ parent() }} | {{ 'navbar.label_shop'|trans }} {% endblock %}
 {% block navbar %}
     <div class="container">
         <div class="row">
             {{ include ('@Gauss/Default/layout/navbar.html.twig') }}
 
-      <div class="page-head content-top-margin">
+      <div class="page-head content-top-margin" style="margin-left: 0px; marign-right: 0px;">
       <div class="container">
          <div class="row">
             <div class="col-md-8 col-sm-7">
                <ol class="breadcrumb">
-                  <li><a href="index-2.html">Home</a></li>
-                  <li class="active">Products</li>
+                   <li><a href="{{ path('homepage') }}">{{ 'navbar.label_home'|trans }}</a></li>
+                   <li><a href="{{ path('shoppage') }}">{{ 'navbar.label_shop'|trans }}</a></li>
                </ol>
             </div>
          </div><!-- /.row -->
@@ -22,18 +22,19 @@
     </div>
 {% endblock %}
 {% block content %}
-<section class="section products-grid second-style" style="margin-top: -70px;">
+<section class="section products-grid second-style" style="margin-top: 0px;">
    <div class="container">
       <div class="row">
          {% block shop_sidebar %}
             {{ include ('@Gauss/Shop/layout/shop-sidebar.html.twig') }}
          {% endblock %}
-
           {% block content_shop %}
-              {{ render(controller('GaussBundle:Shop:getProductCateg',{'id_categ' : id_categ})) }}
+              {{ render(controller('GaussBundle:Shop:getProductCateg',{'page' : page, 'price' : price, 'nom_categ' : nom_categ  })) }}
           {% endblock %}
-
       </div>
+       <div style="margin-top: 60px;" class="footer">
+           {{ include ('@Gauss/Default/layout/footer-menu.html.twig') }}
+       </div>
    </div><!-- /.container -->
 
 
@@ -46,5 +47,5 @@
 {% endblock %}
 
 {% block footer %}
-   {{ include ('@Gauss/Default/layout/footer.html.twig') }}
+
 {% endblock %}

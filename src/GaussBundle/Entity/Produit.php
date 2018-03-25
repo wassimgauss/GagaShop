@@ -61,6 +61,14 @@ class Produit
     /**
      * @var string
      *
+     * @ORM\Column(name="nameProductUrl", type="string", length=255, nullable=true)
+     */
+    private $nameProductUrl;
+
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="descriptionProduct", type="string", length=855)
      */
     private $descriptionProduct;
@@ -107,6 +115,23 @@ class Produit
      */
     private $classement;
 
+    /**
+     * @return string
+     */
+    public function getNameProductUrl()
+    {
+        return $this->nameProductUrl;
+    }
+
+    /**
+     * @param string $nameProductUrl
+     */
+    public function setNameProductUrl($nameProductUrl)
+    {
+        $this->nameProductUrl = $nameProductUrl;
+    }
+
+    
     /**
      * @return int
      */

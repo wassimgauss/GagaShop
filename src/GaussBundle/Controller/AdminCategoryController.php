@@ -12,7 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminCategoryController extends Controller
 {
 
-    public function addCategoryAction(Request $request){
+    public function addCategoryAction(Request $request)
+    {
         $user = $this->getUser();
         $em= $this->getDoctrine()->getManager();
         $category = new Category();
@@ -26,16 +27,14 @@ class AdminCategoryController extends Controller
             }
         }
         return $this->render('@Gauss/Admin/Category/addCategory.html.twig',array('form' => $form->createView()));
-
     }
 
-    public function listCategoryAction(Request $request){
+    public function listCategoryAction(Request $request)
+    {
         $user = $this->getUser();
         $em= $this->getDoctrine()->getManager();
         $listCategory = $em->getRepository("GaussBundle:Category")->findAll();
         return $this->render('@Gauss/Admin/Category/listCategory.html.twig',array('listCategory' => $listCategory));
-
     }
-
     
 }

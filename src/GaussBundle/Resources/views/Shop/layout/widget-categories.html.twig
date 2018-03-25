@@ -1,32 +1,17 @@
 <div class="widget widget-categories">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">{{ 'label_filtre_category'|trans }}</h3>
     <ul>
         {% set i =0 %}
         {% for category in listCategory %}
+            {% if category.id != 5 %}
             <li>
-                <a href="{{ path('shoppage_category', { 'id_categ' : category.id }) }}">{{ category.nom }} <span class="count">({{ count[i] }})</span></a>
+                <a href="{{ path('shoppage_category', {'nom_categ' : category.nomUrl  }) }}">{{ category.nom }}
+                    <span class="count">({{ count[i] }})</span></a>
             </li>
             {% set i = i+1 %}
+            {% endif %}
         {% endfor %}
-{#        <li>
-            <a href="#!">Chairs <span class="count">(6)</span></a>
-        </li>
-        <li>
-            <a href="#!">Tables <span class="count">(7)</span></a>
-            <ul class="children">
-                <li>
-                    <a href="#!">Side Tables <span class="count">(2)</span></a>
-                </li>
-                <li>
-                    <a href="#!">Lunch Tables <span class="count">(5)</span></a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#!">Couches <span class="count">(3)</span></a>
-        </li>
-        <li>
-            <a href="#!">Lighting <span class="count">(4)</span></a>
-        </li>#}
+        <li><a href="{{ path('shoppage_list_aboIptv') }}"> Abonnement IPTV <span class="count">({{ count[4] }})</span></a></li>
+        <li><a href="{{ path('shoppage_center') }}"> Download Center</a></li>
     </ul>
 </div><!-- /.widget-categories -->

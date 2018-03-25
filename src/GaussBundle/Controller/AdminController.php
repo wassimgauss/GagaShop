@@ -14,8 +14,8 @@ class AdminController extends Controller
         return $this->render('@Gauss/Admin/index.html.twig');
     }
     
-    public function listUserAction(){
-
+    public function listUserAction()
+    {
         $listUsers =array();
         $em = $this->getDoctrine()->getManager();
         $listUsersAll = $em->getRepository('UserBundle:User')->findAll();
@@ -25,11 +25,11 @@ class AdminController extends Controller
                     array_push($listUsers,$user);
             }
         }
-
         return $this->render('@Gauss/Admin/Users/listUsers.html.twig',array('listUsers' => $listUsers));
     }
 
-    public function enableAction($id_user){
+    public function enableAction($id_user)
+    {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("UserBundle:User")->find($id_user);
         if($user != null) {
@@ -43,7 +43,8 @@ class AdminController extends Controller
         }
     }
 
-    public function disableAction($id_user){
+    public function disableAction($id_user)
+    {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("UserBundle:User")->find($id_user);
         if($user != null) {
@@ -56,6 +57,31 @@ class AdminController extends Controller
             return $this->redirectToRoute("homepage_404");
         }
     }
-    
-    
+
+
+    public function resetAction(Request $request)
+    {
+        $em= $this->getDoctrine()->getManager();
+        $listProduct = $em->getRepository("GaussBundle:Produit")->findAll();
+        foreach ($listProduct as $product){
+            $product->setNameProductUrl(str_replace(" ","-",strtolower($product->getNameProduct())));
+            $product->getNameProduct(iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $product->getNameProduct()));
+            //echo $product->getNameProductUrl();
+            $em->persist($product);
+            $em->flush();
+            //echo iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $product->getNameProductUrl());
+        }
+        $listCateg = $em->getRepository("GaussBundle:Category")->findAll();
+        foreach ($listCateg as $catg){
+            $catg->setNomUrl(str_replace(" ","-",strtolower($catg->getNom())));
+            $catg->setNomUrl(iconv ('UTF-8', 'US-ASCII//TRANSLIT//IGNORE', $catg->getNomUrl()));
+            $em->persist($catg);
+            $em->flush();
+            echo $catg->getNomUrl();
+        }
+        return $this->render('@Gauss/Admin/AboIptv/listAboIptv.html.twig',array('listProduct' => $listProduct));
+    }
+
+
+
 }

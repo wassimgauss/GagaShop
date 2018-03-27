@@ -1,5 +1,5 @@
 {% extends "base.html.twig" %}
-{% block title %} {{ parent() }} | Shopping Cart {% endblock %}
+{% block title %} {{ parent() }} | {{ 'home.label_Shipping'|trans }} Cart {% endblock %}
 {% block navbar %}
 <div class="container">
     <div class="row">
@@ -10,7 +10,7 @@
                 <div class="col-md-8 col-sm-7">
                     <ol class="breadcrumb">
                         <li><a href="{{ path('homepage') }}">{{ 'navbar.label_home'|trans }}</a></li>
-                        <li class="active">Shopping Cart</li>
+                        <li class="active">{{ 'home.label_Shipping'|trans }} Cart</li>
                     </ol>
                 </div>
             </div><!-- /.row -->
@@ -37,10 +37,10 @@
                                       <tr>
                                           <th class="product-remove">&nbsp;</th>
                                           <th class="product-thumbnail">&nbsp;</th>
-                                          <th class="product-name">Product</th>
-                                          <th class="product-price">Price</th>
-                                          <th class="product-quantity">Quantity</th>
-                                          <th class="product-subtotal">Total</th>
+                                          <th class="product-name">{{ 'tab.product'|trans }}</th>
+                                          <th class="product-price">{{ 'tab.price'|trans }}</th>
+                                          <th class="product-quantity">{{ 'tab.qty'|trans }}</th>
+                                          <th class="product-subtotal">{{ 'tab.total'|trans }}</th>
                                       </tr>
                                       </thead>
                                       <tbody>
@@ -102,7 +102,7 @@
 
                                               <div class="cart-collaterals col-md-8 col-sm-8 col-lg-offset-4 no-padding-right">
                                                   <div class="cart-totals">
-                                                      <h2>Cart Totals</h2>
+                                                      <h2>Cart {{ 'tab.total'|trans }}s</h2>
                                                       <table class="table table-condensed" cellspacing="0">
                                                           <tbody>
                                                           <tr class="cart-subtotal">

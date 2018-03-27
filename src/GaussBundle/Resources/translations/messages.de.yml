@@ -14,16 +14,16 @@ home.label_Latest_Products: 'Neueste Produkte'
 home.label_show_more: 'ZEIG MEHR'
 home.label_parg_last_prod: 'Die neuesten Produkte in unserem Lager hinzugefügt.'
 home.label_payement: 'Sichere Bezahlung'
-home.label_Customer_Service: Kundendienst
-home.label_Shipping: Versand
+home.label_Customer_Service: 'Kundendienst'
+home.label_Shipping: 'Versand'
 home.label_Shipping_parg: 'Um Ihre Bestellung beim Lieferservice von Gshop zu validieren, bietet unsere Seite 3 Versandmethoden, Pakete sind überdimensioniert und geschützt.'
 home.label_send_message: 'Nachricht senden'
-label_prev: Bisherige
-label_next: Nächster
+label_prev: 'Bisherige'
+label_next: 'Nächster'
 view.related_product: 'Ähnliche Produkte'
 label_filtre_price: 'Nach Preis filtern'
-label_filtre_category: Kategorien
-label_top_seler: Topseller
+label_filtre_category: 'Kategorien'
+label_top_seler: 'Topseller'
 label_mind: 'Was haben Sie auf dem Herzen'
 contact.msg: 'Sprechen Sie mit unserem Team, wenn Sie Fragen haben, Rat benötigen oder wenn Sie neugierig sind, was wir zu bieten haben. Rufen Sie uns an oder senden Sie uns eine E-Mail.'
 about.mg1: "Wir schaffen Produkte nach heutigen Standards."
@@ -31,3 +31,9 @@ about.msg2: "Lass es einmischen oder auffallen."
 about.h1: "Treffen Sie unser Team"
 about.h2_1: "Unser Service"
 about.h2_2: "Unser Mission"
+tab.product: "Produkt"
+tab.price: "Preis"
+tab.qty: "Menge"
+tab.total: "Gesamt"
+tab.status: "Status"
+tab.rating: "Bewertung"

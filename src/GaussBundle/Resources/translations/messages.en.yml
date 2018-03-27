@@ -15,14 +15,14 @@ home.label_show_more: 'SHOW MORE'
 home.label_parg_last_prod: 'The latest products added in our stock.'
 home.label_payement: 'Secure payment'
 home.label_Customer_Service: 'Customer Service'
-home.label_Shipping: Shipping
+home.label_Shipping: 'Shipping'
 home.label_Shipping_parg: 'To send your order validated at the delivery service of Gshop, Our Site offers 3 delivery methods, packages are oversized and protected.'
 home.label_send_message: 'Send Message'
-label_prev: previous
-label_next: next
+label_prev: 'previous'
+label_next: 'next'
 view.related_product: 'Related Products'
 label_filtre_price: 'Filter By Price'
-label_filtre_category: Categories
+label_filtre_category: 'Categories'
 label_top_seler: 'Top Seller'
 label_mind: 'What''s on your mind'
 contact.msg: 'Speak to our team if you have any questions, need advice or if you''re curious to hear more about what we have to offer. Give us a call or send us an email.'
@@ -31,3 +31,9 @@ about.msg2: "Make it blend in or stand out."
 about.h1: "Meet our Team"
 about.h2_1: "Our Service"
 about.h2_2: "Our Mission"
+tab.product: "Product"
+tab.price: "Price"
+tab.qty: "Quantity"
+tab.total: "Total"
+tab.status: "Status"
+tab.rating: "Rating"
